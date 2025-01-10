@@ -1,2 +1,2 @@
-# HarshavardhanKuthadi.github.io
+# HarshavardhanKuthadi
 Web Portfolio
