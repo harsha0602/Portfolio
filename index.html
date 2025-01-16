@@ -1,12 +1,4 @@
-<!-- HELLO
--
-DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
-Created by Anil Seervi.
--
-GitHub repo: https://github.com/AnilSeervi/DevFolio
-README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
--
-Have fun creating your portfolio on this template!!! -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,47 +9,32 @@ Have fun creating your portfolio on this template!!! -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <!-- Title: add your Portfolio websites's title here -->
     <title>Harshavardhan Kuthadi| JavaScript Developer</title>
 
-    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
     <meta name="keywords" content="[username], [name], skill" />
 
-    <!-- Improve your SEO by adding a small descrption of you -->
     <meta name="description" content="Harshavardhan Kuthadi| Developer" />
 
-    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
     <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
 
-    <!-- Add your primary-theme color for the value of content -->
     <meta name="theme-color" content="#36dc8c" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <!-- Fill content with the URL of this portfolio you'll host -->
     <meta property="og:url" content="https://devfolio.js.org/" />
-    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
     <meta property="og:title" content="Harshavardhan Kuthadi | Developer" />
-    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
-    <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
-      so that a thumbnail image of your portfolio is shown while shared on other platform -->
+
     <meta
       property="og:image"
       content="https://devfolio.js.org/assets/devfolio.png"
     />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <!-- Again fill content attr with the URL of this portfolio you'll host -->
     <meta property="twitter:url" content="https://devfolio.js.org" />
-    <!-- Recommended to use the same text used within <title> element -->
     <meta property="twitter:title" content="[Your name here] | Developer" />
-    <!-- short description that shows up while your portfolio is shared -->
     <meta
       property="twitter:description"
       content="Made using DevFolio Template"
     />
-    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
     <meta
       property="twitter:image"
       content="https://anilseervi.vercel.app/assets/devfolio.png"
@@ -203,7 +180,7 @@ Have fun creating your portfolio on this template!!! -->
             <div class="project-wrapper__text">
               <h3 class="project-wrapper__text-title">Image Restoration of Natural Images</h3>
               <p class="project-wrapper__text-info">
-                In this project, I developed a solution to restore rain-degraded images using deep learning, enhancing applications like outdoor surveillance and autonomous vehicles. Leveraging MATLAB, Simulink, and Python, I implemented a Multi-Stage Progressive Restoration Network (MPRNet) that combines CNNs with an encoder-decoder design. The model breaks restoration into progressive subtasks, uses supervised attention to refine features, and integrates multi-scale feature aggregation for high-quality outputs. This approach achieved state-of-the-art results on synthetic and real-world datasets for image deraining, deblurring, and denoising with computational efficiency.             
+                In this project, I developed a solution to restore rain-degraded images using deep learning, enhancing applications like outdoor surveillance and autonomous vehicles. Leveraging MATLAB, PyTorch, and Python, I implemented a Multi-Stage Progressive Restoration Network (MPRNet) that combines CNNs with an encoder-decoder design. The model breaks restoration into progressive subtasks, uses supervised attention to refine features, and integrates multi-scale feature aggregation for high-quality outputs. This approach achieved state-of-the-art results on synthetic and real-world datasets for image deraining, deblurring, and denoising with computational efficiency.             
             </div>
 
             <div class="project-wrapper__image">
@@ -280,7 +257,36 @@ Have fun creating your portfolio on this template!!! -->
             </div>
           </article>
                   <!-- /END Project -->
-          
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">WhatsApp Group Chat Analysis</h3>
+              <p class="project-wrapper__text-info">
+               This project leverages Python and a diverse set of libraries to analyze exported WhatsApp chat data. The tech stack includes Pandas for data manipulation and statistical analysis, NumPy for efficient numerical operations, regex for parsing message formats, and emoji for identifying and counting emoji usage. By extracting and processing messages, the tool provides comprehensive insights into chat activity, such as message counts, media, emoji usage, and shared links, all broken down by individual users. This versatile project highlights the power of Python for data parsing and exploratory analysis.
+
+             </p>
+              
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/WGCA.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+        </div>
+      </div>
+    </section>
+    <!-- End Projects Section -->
           <!-- Each .row is a project -->
           <article class="row">
             <div class="project-wrapper__text">
