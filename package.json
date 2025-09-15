@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .ts,.tsx src",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
     "test:content": "node scripts/validate-data.mjs"
   },
