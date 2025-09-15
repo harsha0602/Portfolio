@@ -34,9 +34,6 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                 <div className="experience-cover">
                   <img src={img} alt={`${exp.company} cover`} loading="lazy" decoding="async" />
                   <div className="experience-overlay">
-                    <h3 className="experience-title-on-image">{exp.company}</h3>
-                    <p className="card-subtitle" style={{color:'#fff'}}>{exp.role} — {exp.location}</p>
-                    <p className="card-meta" style={{color:'#e8eefc'}}>{formatDate(exp.start)} – {formatDate(exp.end)}</p>
                     <div className="badges" aria-label="Tech stack">
                       {exp.tech.slice(0,4).map((t) => (
                         <TechChip key={t}>{t}</TechChip>
@@ -44,6 +41,12 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                     </div>
                   </div>
                 </div>
+                <header className="card-header">
+                  <h3 className="card-title">{exp.company}</h3>
+                  <p className="card-subtitle">{exp.role}</p>
+                  <p className="card-subtitle card-location">{exp.location}</p>
+                  <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                </header>
               </div>
             ) : (
               <div>
@@ -52,7 +55,8 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                     <span aria-hidden="true" style={{marginRight: '.35rem', verticalAlign: 'middle'}}>{companyIcon(exp.company)}</span>
                     {exp.company}
                   </h3>
-                  <p className="card-subtitle">{exp.role} — {exp.location}</p>
+                  <p className="card-subtitle">{exp.role}</p>
+                  <p className="card-subtitle card-location">{exp.location}</p>
                   <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
                   <div className="badges" aria-label="Tech stack">
                     {exp.tech.map((t) => (
@@ -118,42 +122,6 @@ function logoPath(c: string): string | null {
   if (c.includes('o9')) return new URL('../../assets/images/O9image.png', import.meta.url).href;
   if (c.includes('opennets')) return new URL('../../assets/images/opennetsImage.png', import.meta.url).href;
   return null;
-}
-
-// Remove repeated info: prefer unique highlights not already covered by summary.
-// Previously used to de-duplicate highlights; not needed now.
-
-function tokenize(text: string, stop: Set<string>): string[] {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9+%.\s]/g, ' ')
-    .split(/\s+/)
-    .filter((w) => w && !stop.has(w) && w.length > 2);
-}
-
-function stem(w: string): string {
-  // very light stemming for repetition checks
-  return w.replace(/(ing|ed|es|s)$/i, '').trim();
-}
-
-function similarity(a: string[], b: string[]): number {
-  const setA = new Set(a);
-  const setB = new Set(b);
-  let inter = 0;
-  setA.forEach((t) => { if (setB.has(t)) inter++; });
-  const denom = Math.max(1, setA.size, setB.size);
-  return inter / denom;
-}
-
-function uniqueBySimilarity(items: string[], threshold = 0.7): string[] {
-  const out: string[] = [];
-  const stop = new Set(['the','a','an','and','or','to','of','for','on','in','with','by','vs','into','across','over','under','per','from','that','this','these','those']);
-  for (const h of items) {
-    const ht = tokenize(h, stop).map(stem);
-    const isDup = out.some((o) => similarity(ht, tokenize(o, stop).map(stem)) >= threshold);
-    if (!isDup) out.push(h);
-  }
-  return out;
 }
 
 // Render summary paragraphs from a single string allowing double newlines to break paragraphs

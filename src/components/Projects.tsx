@@ -26,7 +26,6 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
                   <div className="project-cover">
                     <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
                     <div className="project-overlay">
-                      <h3 className="project-title-on-image">{p.name}</h3>
                       <div className="badges">
                         {p.tech.slice(0,4).map((t) => (
                           <TechChip key={t}>{t}</TechChip>
@@ -37,6 +36,9 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
                 ) : (
                   <div className="image-placeholder" aria-hidden="true" />
                 )}
+                <header className="card-header">
+                  <h3 className="card-title">{p.name}</h3>
+                </header>
               </div>
             );
             const back = (

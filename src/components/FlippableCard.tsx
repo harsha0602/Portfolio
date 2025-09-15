@@ -17,7 +17,6 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
   const [flipped, setFlipped] = useState(false);
   const [locked, setLocked] = useState(false);
   const [hovering, setHovering] = useState(false);
-  const [inView, setInView] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   // Unique id per card for coordination
@@ -25,46 +24,34 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
   const autoFlippedRef = useRef(false);
   const isMobileRef = useRef(false);
   const lockedRef = useRef(false);
-  const hoveringRef = useRef(false);
 
   // Global scroll direction tracker (module-local)
   // We intentionally guard initialization to one-time per page load.
-  const SCROLL_EVENT = 'autoFlipScrollInit';
   const AUTO_FLIP_EVENT = 'autoFlipCard';
   // Use module-level flags via window to avoid duplicate listeners across instances
   useEffect(() => {
     // Assign a unique incremental id
     if (!idRef.current) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      window.__flipCardNextId = (window.__flipCardNextId || 0) + 1;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      idRef.current = window.__flipCardNextId;
+      const w: any = window as any;
+      w.__flipCardNextId = (w.__flipCardNextId || 0) + 1;
+      idRef.current = w.__flipCardNextId as number;
     }
 
     let lastY = window.scrollY;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    if (!window.__flipScrollInited) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      window.__flipScrollInited = true;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      window.__flipScrollDir = 'down';
+    const w: any = window as any;
+    if (!w.__flipScrollInited) {
+      w.__flipScrollInited = true;
+      w.__flipScrollDir = 'down';
       window.addEventListener(
         'scroll',
         () => {
           const y = window.scrollY;
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          window.__flipScrollDir = y > lastY ? 'down' : 'up';
+          (window as any).__flipScrollDir = y > lastY ? 'down' : 'up';
           lastY = y;
         },
         { passive: true }
       );
-      window.dispatchEvent(new Event(SCROLL_EVENT));
+      window.dispatchEvent(new window.Event('autoFlipScrollInit'));
     }
   }, []);
 
@@ -79,7 +66,6 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
   // Keep refs in sync for use inside passive listeners/observers
   useEffect(() => { isMobileRef.current = isMobile; }, [isMobile]);
   useEffect(() => { lockedRef.current = locked; }, [locked]);
-  useEffect(() => { hoveringRef.current = hovering; }, [hovering]);
 
   // Observe viewport visibility for mobile flip-on-scroll (direction-aware, 100% threshold)
   useEffect(() => {
@@ -87,16 +73,13 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
     const obs = new IntersectionObserver(
       ([entry]) => {
         const visible = entry.isIntersecting && entry.intersectionRatio >= 1;
-        setInView(visible);
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        const dir = (window.__flipScrollDir as 'down' | 'up') || 'down';
+        const dir = ((window as any).__flipScrollDir as 'down' | 'up') || 'down';
         if (!isMobileRef.current || lockedRef.current) return;
         if (visible && dir === 'down') {
           // Auto-flip this card and notify others to unflip
           setFlipped(true);
           autoFlippedRef.current = true;
-          window.dispatchEvent(new CustomEvent(AUTO_FLIP_EVENT, { detail: { id: idRef.current } }));
+          window.dispatchEvent(new window.CustomEvent(AUTO_FLIP_EVENT, { detail: { id: idRef.current } }));
         }
         // Do not auto-flip on upward scroll; also do not auto-unflip on leave.
       },
@@ -108,17 +91,16 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
 
   // Listen for auto-flip broadcasts to unflip previous auto-flipped cards
   useEffect(() => {
-    const handler = (e: Event) => {
-      const anyEvent = e as CustomEvent<{ id: number }>;
-      const incomingId = anyEvent?.detail?.id;
+    const handler = (e: any) => {
+      const incomingId = (e as any)?.detail?.id as number | undefined;
       if (incomingId == null) return;
       if (incomingId !== idRef.current && autoFlippedRef.current && !lockedRef.current) {
         setFlipped(false);
         autoFlippedRef.current = false;
       }
     };
-    window.addEventListener(AUTO_FLIP_EVENT, handler as EventListener);
-    return () => window.removeEventListener(AUTO_FLIP_EVENT, handler as EventListener);
+    window.addEventListener(AUTO_FLIP_EVENT, handler as any);
+    return () => window.removeEventListener(AUTO_FLIP_EVENT, handler as any);
   }, []);
 
   // Compute flipped state based on interaction mode (desktop hover, mobile lock)

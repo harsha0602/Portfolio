@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Education from './components/Education';
 import Skills from './components/Skills';
-import { Briefcase, Brain, Award, GraduationCap, Instagram, Twitter, Phone, Mail, MessageCircle, MessageSquare } from 'lucide-react';
+import { Briefcase, Brain, Award, GraduationCap, Instagram, Twitter, Phone, Mail, MessageCircle, MessageSquare, Menu } from 'lucide-react';
 import profile from '../data/profile.json';
 
 export type LinkMap = { email: string; github: string; linkedin: string };
@@ -84,7 +84,7 @@ const App: React.FC = () => {
       jobTitle: 'Software Engineer',
     };
     if (ld) ld.textContent = JSON.stringify(jsonLd);
-  }, []);
+  }, [data.links.email, data.links.github, data.links.linkedin, data.name]);
 
   return (
     <div>
@@ -93,6 +93,8 @@ const App: React.FC = () => {
         <nav className="site-nav" aria-label="Primary">
           <a className="brand" href="#hero">{data.name}</a>
           <div className="spacer" />
+          {/* Collapsed navigation for very small screens */}
+          <MobileMenu />
           {/* Icon-only quick nav for mobile */}
           <ul className="nav-icons" aria-label="Quick navigation">
             <li>
@@ -193,3 +195,50 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+// MobileMenu: single dropdown trigger for very small screens
+const MobileMenu: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDocClick = (e: any) => {
+      if (!ref.current) return;
+      if (!ref.current.contains(e.target as any)) setOpen(false);
+    };
+    const onKey = (e: any) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('click', onDocClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  return (
+    <div className="mobile-menu" ref={ref}>
+      <button
+        className="menu-button"
+        aria-label="Open navigation menu"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <Menu size={18} />
+      </button>
+      {open && (
+        <ul className="menu-dropdown" role="menu" aria-label="Sections">
+          <li role="none"><a role="menuitem" href="#experience" onClick={() => setOpen(false)}>Experience</a></li>
+          <li role="none"><a role="menuitem" href="#projects" onClick={() => setOpen(false)}>Projects</a></li>
+          <li role="none"><a role="menuitem" href="#education" onClick={() => setOpen(false)}>Education</a></li>
+          <li role="none"><a role="menuitem" href="#achievements" onClick={() => setOpen(false)}>Achievements</a></li>
+          <li role="none"><a role="menuitem" href="#skills" onClick={() => setOpen(false)}>Skills</a></li>
+          <li role="none"><a role="menuitem" href="#contact" onClick={() => setOpen(false)}>Contact</a></li>
+        </ul>
+      )}
+    </div>
+  );
+};
