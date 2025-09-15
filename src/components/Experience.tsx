@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ExperienceItem } from '../App';
-import { ImpactChip, TechChip } from './Chips';
+import { TechChip } from './Chips';
 import FlippableCard from './FlippableCard';
 import { Briefcase, Cloud, Bot, Building2, Server } from 'lucide-react';
 
@@ -89,17 +89,7 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
 };
 
 // Very small heuristic to create impact chips from the sentence. Keeps WCAG contrast via CSS.
-function extractImpacts(text: string): string[] {
-  const found = new Set<string>();
-  const patterns = [/(\d+\s?\+?\s?(?:rows|messages|engineers|topologies|bugs))/gi, /(\d+\.?\d*\s?dB)/gi, /(\d+K\+?\s?LOC)/gi, /(\d+\s?%)/g, /(\d+\s?TB)/gi, /(\d+\s?GB)/gi, /(p95\s?[<≤]?\s?\d+\s?ms)/i];
-  for (const p of patterns) {
-    let m: RegExpExecArray | null;
-    while ((m = p.exec(text))) {
-      found.add(m[0].replace(/\s+/g, ' ').trim());
-    }
-  }
-  return Array.from(found).slice(0, 3);
-}
+// Previously used to auto-extract impact chips; not needed now.
 
 export default Experience;
 
@@ -131,30 +121,12 @@ function logoPath(c: string): string | null {
 }
 
 // Remove repeated info: prefer unique highlights not already covered by summary.
-function selectHighlights(summary: string | undefined, highlights: string[]): string[] {
-  if (!summary) return uniqueBySimilarity(highlights).slice(0, 3);
-  const stop = new Set(['the','a','an','and','or','to','of','for','on','in','with','by','vs','into','across','over','under','per','from','that','this','these','those']);
-  const sumTokens = new Set(tokenize(summary, stop).map(stem));
-  const scored: { h: string; redundant: boolean }[] = highlights.map((h) => {
-    const ht = tokenize(h, stop).map(stem);
-    const inter = ht.filter((t) => sumTokens.has(t));
-    const ratio = ht.length ? inter.length / ht.length : 0;
-    return { h, redundant: ratio >= 0.5 };
-  });
-  const nonRedundant = scored.filter((x) => !x.redundant).map((x) => x.h);
-  const deduped = uniqueBySimilarity(nonRedundant);
-  let keep = deduped.slice(0, 3);
-  if (keep.length < 2) {
-    const backfill = uniqueBySimilarity(scored.filter((x) => x.redundant).map((x) => x.h));
-    keep = [...keep, ...backfill].slice(0, 3);
-  }
-  return keep;
-}
+// Previously used to de-duplicate highlights; not needed now.
 
 function tokenize(text: string, stop: Set<string>): string[] {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9+%\.\s]/g, ' ')
+    .replace(/[^a-z0-9+%.\s]/g, ' ')
     .split(/\s+/)
     .filter((w) => w && !stop.has(w) && w.length > 2);
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import type { LinkMap } from '../App';
 import { FileDown, Mail, Github, Linkedin } from 'lucide-react';
-import Figure from './Figure';
 
 type Props = {
   name: string;
@@ -11,7 +10,7 @@ type Props = {
   about?: { intro: string; paragraphs: string[]; tags: string[] };
 };
 
-const Hero: React.FC<Props> = ({ name, headline, location, links, about }) => {
+const Hero: React.FC<Props> = ({ name, headline: _headline, location, links, about }) => {
   return (
     <section id="hero" className="section hero" aria-labelledby="hero-title">
       <div className="container">

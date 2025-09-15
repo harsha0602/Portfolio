@@ -3,16 +3,6 @@ import type { AchievementItem } from '../App';
 import { DateChip } from './Chips';
 import { Award } from 'lucide-react';
 
-const fmt = (iso: string) => {
-  const [y, m] = iso.split('-').map(Number);
-  if (!y || !m) return iso;
-  return new Date(Date.UTC(y, m - 1, 1)).toLocaleString(undefined, {
-    month: 'short',
-    year: 'numeric',
-    timeZone: 'UTC',
-  });
-};
-
 const Achievements: React.FC<{ items: AchievementItem[] }> = ({ items }) => (
   <section id="achievements" className="section" aria-labelledby="achievements-title">
     <div className="container">
