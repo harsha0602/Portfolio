@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Education from './components/Education';
 import Skills from './components/Skills';
+import { Briefcase, Brain, Award } from 'lucide-react';
 import profile from '../data/profile.json';
 
 export type LinkMap = { email: string; github: string; linkedin: string };
@@ -51,7 +52,7 @@ export type Profile = {
 };
 
 function useTheme() {
-  const [theme, setTheme] = useState<string>(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState<string>(() => localStorage.getItem('theme') || 'dark');
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem('theme', theme);
@@ -92,6 +93,24 @@ const App: React.FC = () => {
         <nav className="site-nav" aria-label="Primary">
           <a className="brand" href="#hero">{data.name}</a>
           <div className="spacer" />
+          {/* Icon-only quick nav for mobile */}
+          <ul className="nav-icons" aria-label="Quick navigation">
+            <li>
+              <a href="#experience" aria-label="Experience" title="Experience" className="nav-icon">
+                <Briefcase size={20} />
+              </a>
+            </li>
+            <li>
+              <a href="#projects" aria-label="Projects" title="Projects" className="nav-icon">
+                <Brain size={20} />
+              </a>
+            </li>
+            <li>
+              <a href="#achievements" aria-label="Achievements" title="Achievements" className="nav-icon">
+                <Award size={20} />
+              </a>
+            </li>
+          </ul>
           <ul className="nav-list">
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Harshavardhan Kuthadi — Software Engineer</title>
     <meta name="description" content="Software Engineer specializing in data/ML and cloud systems. Projects, experience, and achievements from my latest CV." />
+    <script>
+      // Set theme ASAP to avoid flash; default to dark
+      try {
+        var t = localStorage.getItem('theme') || 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch(e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
     <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
     <link rel="canonical" href="https://portfolio.example.com/" />
     <!--
@@ -32,4 +41,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
