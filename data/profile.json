@@ -186,7 +186,7 @@
     {
       "name": "HAAS (Heuristic Algorithmic Analysis System)",
       "summary": "HAAS is a logic‑driven programming language and environment. Using SWI‑Prolog DCGs, Flex/Bison and GCC, I implemented a full compiler pipeline—tokenizer, parser, abstract syntax tree and runtime evaluator. The language supports arithmetic, logic, control flow, ternary operators and an interactive REPL. I complemented HAAS with tutorial modules and sample programs, which shortened onboarding time by 30% and allowed audit‑ready execution via output redirection.",
-      "tech": ["Prolog", "Language Design"],
+      "tech": ["Prolog", "Language Design", "Algorithms"],
       "highlights": [
         "Implemented 5+ language features (arithmetic, logic, control flow, ternary, REPL).",
         "Executed 10+ sample programs; 30% faster onboarding with tutorials and output redirection."
@@ -205,7 +205,7 @@
     {
       "name": "Agile Project Management App",
       "summary": "To improve planning in software development teams, I created an application in Java (Maven) that integrates Planning Poker estimation. By coupling data‑driven scoring with team collaboration features, the app enhances sprint estimation accuracy and supports feature prioritization across multiple projects.",
-      "tech": ["Java", "Maven"],
+      "tech": ["Java", "Maven", "Data Structures"],
       "highlights": [
         "Boosted sprint estimation accuracy and decision-making across 5+ team projects.",
         "Integrated Planning Poker and data capture for reproducible estimates."

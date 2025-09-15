@@ -90,7 +90,7 @@ function projectImage(name: string): { src: string; alt: string } | null {
   if (n.includes('crypto') && n.includes('notes')) return { src: new URL('../../assets/images/Crypto Notes DApp.png', import.meta.url).href, alt: 'Crypto Notes DApp' };
   if (n.includes('safe') && n.includes('python')) return { src: new URL('../../assets/images/Safe Python Execution Service.png', import.meta.url).href, alt: 'Safe Python Execution Service' };
   if (n.includes('haas')) return { src: new URL('../../assets/images/HAAS (Heuristic Algorithmic Analysis System).png', import.meta.url).href, alt: 'HAAS (Heuristic Algorithmic Analysis System)' };
-  if (n.includes('pokemon')) return { src: new URL('../../assets/images/Pokémon Game Engine (abstract fantasy creatures.png', import.meta.url).href, alt: 'Pokémon Game Engine' };
+  if (n.includes('pokemon')) return { src: new URL('../../assets/images/Pokemon Game Engine.png', import.meta.url).href, alt: 'Pokémon Game Engine' };
   if (n.includes('agile') && n.includes('project')) return { src: new URL('../../assets/images/Agile Project Management App (kanban concept.png', import.meta.url).href, alt: 'Agile Project Management App' };
   // Generic fallback
   return { src: new URL('../../assets/images/replace-me.svg', import.meta.url).href, alt: `${name} illustration placeholder` };
