@@ -42,3 +42,6 @@ Validate: `npm run test:content` ensures required fields and ISO date formats, a
   - Push to `main` (or `master`). The workflow will run automatically.
   - In the repository settings, under Pages, set the source to "GitHub Actions" if not already.
   - First deploy may take a minute; check the Actions tab for status.
+  
+
+  
