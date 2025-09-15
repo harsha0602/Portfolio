@@ -32,10 +32,7 @@ Validate: `npm run test:content` ensures required fields and ISO date formats, a
 - Open DevTools > Lighthouse, choose Mobile, and run the audit.
   - Targets: Performance ≥ 90, Accessibility ≥ 95, SEO ≥ 95.
 
-## Notes & Assumptions
-- Structured data uses a placeholder canonical URL (`https://portfolio.example.com/`). Replace with your live URL.
-- Location set to "Tempe, AZ" per current MS at ASU; roles include their explicit locations from the CV.
-- Certifications listed on the CV do not include dates; to maintain accuracy and ISO-format requirement, they are not included in `achievements`.
+
 
 ## Deployment (GitHub Pages)
 - The site is set up to deploy to GitHub Pages at `https://harsha0602.github.io/Portfolio/`.
