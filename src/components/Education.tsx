@@ -17,6 +17,7 @@ const Education: React.FC<{ items: EducationItem[] }> = ({ items }) => (
   <section id="education" className="section" aria-labelledby="education-title">
     <div className="container">
       <h2 id="education-title" className="section-title"><GraduationCap size={18}/> Education</h2>
+      <p className="section-intro">My formal education at prestigious universities.</p>
       <div className="grid">
         {items.map((e) => (
           <article key={`${e.school}-${e.degree}`} className="card">

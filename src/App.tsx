@@ -5,7 +5,7 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Education from './components/Education';
 import Skills from './components/Skills';
-import { Briefcase, Brain, Award } from 'lucide-react';
+import { Briefcase, Brain, Award, GraduationCap, Instagram, Twitter, Phone, Mail, MessageCircle, MessageSquare } from 'lucide-react';
 import profile from '../data/profile.json';
 
 export type LinkMap = { email: string; github: string; linkedin: string };
@@ -106,8 +106,18 @@ const App: React.FC = () => {
               </a>
             </li>
             <li>
+              <a href="#education" aria-label="Education" title="Education" className="nav-icon">
+                <GraduationCap size={20} />
+              </a>
+            </li>
+            <li>
               <a href="#achievements" aria-label="Achievements" title="Achievements" className="nav-icon">
                 <Award size={20} />
+              </a>
+            </li>
+            <li>
+              <a href="#contact" aria-label="Contact" title="Contact" className="nav-icon">
+                <Mail size={20} />
               </a>
             </li>
           </ul>
@@ -117,6 +127,7 @@ const App: React.FC = () => {
             <li><a href="#achievements">Achievements</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
           <button className="theme-toggle" aria-label="Toggle dark mode" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
             {theme === 'light' ? '🌙' : '☀️'}
@@ -139,10 +150,43 @@ const App: React.FC = () => {
         <Skills skills={data.skills} />
       </main>
 
-      <footer className="site-footer" role="contentinfo">
-        <p>
-          © {new Date().getFullYear()} {data.name}. Built with React & Vite.
-        </p>
+      <footer id="contact" className="site-footer" role="contentinfo">
+        <div className="container">
+          <h3 className="contact-title">Contact Me</h3>
+          <ul className="contact-links" aria-label="Contact methods">
+            <li>
+              <a className="contact-link" href="https://www.instagram.com/harshavardhankuthadi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram size={18} /> <span>@harshavardhankuthadi</span>
+              </a>
+            </li>
+            <li>
+              <a className="contact-link" href="https://x.com/HVKuthadi?t=Jrs9RHi-i4JFqHLgIFU1jw&s=09" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <Twitter size={18} /> <span>@HVKuthadi</span>
+              </a>
+            </li>
+            <li>
+              <a className="contact-link" href="https://wa.me/919902831555" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <MessageSquare size={18} /> <span>WhatsApp</span>
+              </a>
+            </li>
+            <li>
+              <a className="contact-link" href="tel:+16027414354" aria-label="Call">
+                <Phone size={18} /> <span>+1 602 741-4354</span>
+              </a>
+            </li>
+            <li>
+              <a className="contact-link" href="sms:+16027414354" aria-label="Text message">
+                <MessageCircle size={18} /> <span>Text me</span>
+              </a>
+            </li>
+            <li>
+              <a className="contact-link" href="mailto:harshavardhankuthadi2@gmail.com" aria-label="Email">
+                <Mail size={18} /> <span>harshavardhankuthadi2@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+          <p className="footer-note">© {new Date().getFullYear()} {data.name}. Built with React & Vite.</p>
+        </div>
       </footer>
     </div>
   );

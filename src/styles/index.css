@@ -151,6 +151,11 @@ html[data-theme='dark'] .badge { background: #0f1115; color: #eaeaea; }
 .skills-title { margin: 0 0 .5rem; }
 
 .site-footer { padding: 2rem 1rem; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-muted); }
+.contact-title { margin: 0 0 .75rem; color: var(--color-text); font-size: 1.1rem; }
+.contact-links { list-style: none; padding: 0; margin: 0 auto 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+.contact-link { display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .6rem; border: 1px solid var(--color-border); border-radius: .5rem; color: var(--color-text); text-decoration: none; background: color-mix(in oklab, var(--color-bg) 85%, transparent); }
+.contact-link:hover, .contact-link:focus-visible { outline: 2px solid var(--color-border); outline-offset: 2px; }
+.footer-note { margin-top: 1rem; opacity: 0.85; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
