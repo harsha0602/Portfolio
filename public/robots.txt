@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Note: replace with your live URL when deploying
+Sitemap: https://portfolio.example.com/sitemap.xml
+

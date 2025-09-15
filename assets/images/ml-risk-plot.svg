@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="140" viewBox="0 0 420 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LSTM risk forecasting trend">
+  <defs>
+    <style>
+      .axis { stroke: #0B0D12; stroke-width: 1; }
+      .lineA { fill: none; stroke: #5B8CFF; stroke-width: 2; }
+      .lineB { fill: none; stroke: #22C55E; stroke-width: 2; stroke-dasharray: 4 3; }
+    </style>
+  </defs>
+  <line x1="30" y1="10" x2="30" y2="120" class="axis"/>
+  <line x1="30" y1="120" x2="400" y2="120" class="axis"/>
+  <polyline class="lineA" points="30,100 70,90 110,85 150,70 190,75 230,60 270,55 310,62 350,48 390,44"/>
+  <polyline class="lineB" points="30,105 70,95 110,92 150,82 190,85 230,72 270,67 310,70 350,60 390,56"/>
+</svg>
+

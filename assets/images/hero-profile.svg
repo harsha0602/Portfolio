@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harshavardhan Kuthadi — Software Engineer">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B8CFF"/>
+      <stop offset="100%" stop-color="#61e7be"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="#0B0D12"/>
+  <circle cx="90" cy="90" r="48" fill="url(#g)"/>
+  <rect x="160" y="50" width="130" height="14" rx="7" fill="#E6EAF2"/>
+  <rect x="160" y="72" width="120" height="10" rx="5" fill="#B8C0CF"/>
+  <rect x="160" y="88" width="140" height="10" rx="5" fill="#B8C0CF"/>
+  <rect x="160" y="104" width="110" height="10" rx="5" fill="#B8C0CF"/>
+</svg>
+

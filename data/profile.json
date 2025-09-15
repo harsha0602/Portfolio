@@ -1,0 +1,257 @@
+{
+  "name": "Harshavardhan Kuthadi",
+  "headline": "I build scalable data/ML systems and cloud tooling that turn messy streams into reliable, actionable intelligence.",
+  "location": "Tempe, AZ",
+  "links": {
+    "email": "hkuthadi@asu.edu",
+    "github": "https://github.com/harsha0602",
+    "linkedin": "https://www.linkedin.com/in/hkuthadi/"
+  },
+  "about": {
+    "intro": "I engineer systems that bring hardware to life and teach machines to think—turning data, code, and cloud into real-world intelligence.",
+    "paragraphs": [
+      "I’m a software engineer and master’s student in Software Engineering at ASU. With 3+ years of full‑stack industry experience and a recent internship at Amazon Web Services, I’ve built everything from large‑scale data pipelines and cloud infrastructure to machine‑learning systems that forecast risk and analyze sentiment in real time.",
+      "I enjoy creating software that blends intelligence with scalability—whether it’s migrating terabytes of data across AWS regions, building interactive apps, or experimenting with AI for image, text, and language tasks. Along the way, I’ve won hackathons, refactored major codebases, and designed tools that made life easier for engineers and end‑users alike.",
+      "My focus: designing efficient, reliable systems that think, learn, and scale. My drive: solving complex problems, debugging relentlessly, and delivering impact."
+    ],
+    "tags": [
+      "Full‑Stack Development",
+      "Cloud Computing",
+      "Machine Learning & AI",
+      "Logic Programming",
+      "DSA"
+    ]
+  },
+  "skills": {
+    "Languages": ["Python", "SQL", "TypeScript", "JavaScript", "Scala", "C#", "C++"],
+    "Frameworks/Tools": [
+      "TensorFlow",
+      "PyTorch",
+      "scikit-learn",
+      "Pandas",
+      "NumPy",
+      "OpenCV",
+      "NLTK",
+      "Matplotlib",
+      "Git",
+      "JIRA",
+      "Docker",
+      "Flask",
+      "HTML",
+      "CSS",
+      "CI/CD"
+    ],
+    "Cloud/Databases": ["AWS", "Azure", "MongoDB", "Oracle", "PostgreSQL", "MSSQL"]
+  },
+  "experience": [
+    {
+      "company": "Handshake AI Solutions, LLC",
+      "role": "AI Trainer - Computer Science Expert",
+      "location": "Remote, US",
+      "start": "2025-09",
+      "end": "Present",
+      "summary": "At Handshake AI Solutions, I designed and evaluated 50+ domain-specific prompts across advanced CS topics so models were tested on the tricky edge cases that matter. The work focused on clarity, correctness, and breadth.\n\nI reviewed 100+ outputs and delivered structured feedback that improved internal accuracy by 12% and reduced factual errors by ~20% in test runs. I also expanded evaluation categories, lifting test coverage by 30% and speeding up the fine-tuning feedback loop.",
+      "highlights": [
+        "Developed and evaluated 50+ domain-specific prompts to assess LLM performance across specialized CS subfields, ensuring coverage of edge-case scenarios and nuanced domain knowledge.",
+        "Reviewed 100+ LLM outputs for scientific accuracy, clarity, and depth; structured feedback improved model reliability and reduced factual errors by ~20% in test runs.",
+        "Conducted independent literature-based research to design new evaluation categories, expanding test coverage by 30% and accelerating the feedback cycle for model fine-tuning."
+      ],
+      "tech": ["Prompt Engineering", "LLM Evaluation"]
+    },
+    {
+      "company": "Amazon Web Services (AWS)",
+      "role": "Software Development Engineer Intern",
+      "location": "Seattle, WA",
+      "start": "2025-05",
+      "end": "2025-08",
+      "summary": "I replaced a 3+ hour manual KDS migration SOP with an AWS Glue ETL written in Scala and TypeScript. Data landed in partitioned Parquet on S3 for Athena queries, cutting prep time by ~95% and making ad-hoc analysis practical.\n\nI productionized PySpark prototypes into Scala, added a custom bookmarking fix for Glue crawler races, and tuned compute to halve runtime. I then wired 10+ CloudWatch alarms to watch 100+ active streams, built QuickSight dashboards, and automated infra with AWS CDK. I captured cost/performance trade-offs in a design doc adopted by the team.",
+      "highlights": [
+        "Developed an AWS Glue ETL pipeline in Scala & TypeScript to replace a 3+ hr manual KDS migration SOP, transforming JSON/DynamoDB data into partitioned Parquet for Athena queries; cut prep time by ~95%.",
+        "Benchmarked Glue vs. Step Functions for ETL and Redshift vs. Athena+S3 for storage on 500 GB test data; authored design doc on cost/performance trade-offs adopted by a 4+ engineer team.",
+        "Authored optimized SQL queries from partitioned Parquet outputs, enabling real-time migration assessments across multi-region datasets (1+ TB) and supporting ad-hoc analytics.",
+        "Productionized PySpark prototypes into Scala, right-sized compute, added a custom bookmarking solution & fixed crawler race conditions; reduced runtime by 50%.",
+        "Provisioned infra via CDK (TypeScript) and CloudFormation: S3, Glue jobs/crawlers, Athena, IAM; maintained Git reviews to enable repeatable deployments."
+      ],
+      "tech": [
+        "AWS Glue",
+        "Scala",
+        "TypeScript",
+        "Athena",
+        "DynamoDB",
+        "S3",
+        "Redshift",
+        "Step Functions",
+        "SQL",
+        "PySpark",
+        "AWS CDK",
+        "CloudFormation",
+        "IAM",
+        "Git"
+      ]
+    },
+    {
+      "company": "o9 Solutions, Inc.",
+      "role": "Software Development Engineer",
+      "location": "Bengaluru, India",
+      "start": "2022-07",
+      "end": "2024-07",
+      "summary": "I shipped 10+ reusable modules in a tenant architecture using .NET (C#), MSSQL, and JavaScript/jQuery, so teams could configure and roll out features faster. A Kendo UI conflict-resolution grid reduced merge friction for 20+ client-facing teams by ~40%.\n\nI lifted test coverage by 30% and refactored 10K+ LOC of unit tests for long-term maintainability. Across releases I resolved 250+ bugs and authored notes to keep rollouts predictable and transparent.",
+      "highlights": [
+        "Delivered 10+ reusable modules in a modular tenant architecture using .NET (C#), MSSQL, and JavaScript/jQuery, improving scalability and configuration management across projects.",
+        "Boosted test coverage by 30% by adding unit tests for new .NET (C#) and JavaScript modules; reinforced Jasmine/MSTest suites with mocked payloads and regression cases.",
+        "Resolved 250+ bugs across C# and JavaScript; refactored 60% of the test codebase, reducing code duplication by 10K+ LOC and improving long-term maintainability."
+      ],
+      "tech": [".NET", "C#", "MSSQL", "JavaScript", "jQuery", "Jasmine", "MSTest","KendoUI", "HTML","CSS", "Git"]
+    },
+    {
+      "company": "OpenNets",
+      "role": "Software Developer",
+      "location": "Bengaluru, India",
+      "start": "2021-05",
+      "end": "2022-05",
+      "summary": "I built a network topology simulator with Mininet, Node.js, and MongoDB to model and validate 10+ distinct topologies. The tool reduced deployment misconfigurations by ~30% and made experiments repeatable.\n\nAn AngularJS UI let engineers configure and visualize topologies quickly, cutting setup time per topology by ~40%. I added automated validation layers that drove configuration-related bugs down by >50%.",
+      "highlights": [
+        "Architected and implemented a network topology simulator using Mininet, Node.js, and MongoDB supporting 10+ distinct topologies; reduced misconfigurations in simulator pipelines with automated checks by over 50%.",
+        "Enabled immediate on-call notifications and resolved 95% of incidents within SLA via operational dashboards and alerting.",
+        "Built configuration UI to visualize and manage topologies, cutting setup time by ~40%."
+      ],
+      "tech": ["Mininet", "Node.js", "MongoDB", "AngularJS", "HTML", "CSS", "Git"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Market Risk Forecasting Dashboard",
+      "summary": "This project addresses the challenge of forecasting market volatility and potential drawdown risk. I built a sophisticated AI platform in Python that leverages Long Short‑Term Memory (LSTM) models in TensorFlow to predict market movements and deployed the solution on AWS SageMaker.\n\nTo feed the models, I engineered a robust ETL process that ingests five years’ worth of OHLCV data (more than one million rows) using Python and SQL, creating rolling volatility, moving averages and correlation matrices. The result is a highly accurate tool that outperforms GARCH baselines by 16% and cuts preprocessing time by 30%.",
+      "tech": ["Python", "TensorFlow", "AWS SageMaker", "SQL"],
+      "highlights": [
+        "Improved prediction accuracy by 16% over GARCH baselines using LSTM models in TensorFlow; deployed on AWS SageMaker.",
+        "Developed Python + SQL pipelines to ingest and process 5+ years of OHLCV data (1M+ rows), generating engineered features (rolling volatility, moving averages, correlation matrices) and reducing preprocessing time by 30%."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "WhatsApp Group Chat Analysis",
+      "summary": "In this project I turned raw chat exports into meaningful insights. I processed over 10,000 messages with Pandas and NumPy, applied NLTK for tokenization and stop‑word removal, and used scikit‑learn to quantify sentiment and uncover conversational trends. With regex‑based preprocessing, the pipeline achieves 98% parsing accuracy. This analysis reveals behavioral patterns and emotional tone within group conversations, demonstrating my ability to combine data cleaning and natural‑language techniques.",
+      "tech": ["Python", "Pandas", "NumPy", "NLTK", "scikit-learn"],
+      "highlights": [
+        "Processed 10,000+ messages; extracted trends and insights using NLTK (tokenization, stopwords) and scikit-learn; achieved 98% parsing accuracy via regex-based preprocessing."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Image Clustering for Script Digitalization",
+      "summary": "To streamline the digitization of handwritten manuscripts, I developed a clustering tool using scikit‑learn’s KMeans algorithm and PCA. It groups handwritten scripts by similarity, delivering 92% cluster consistency and improving digitalization efficiency by 30%. This unsupervised approach organizes large volumes of script images, reducing manual effort and accelerating downstream processing.",
+      "tech": ["Python", "scikit-learn", "KMeans", "PCA", "Matplotlib"],
+      "highlights": [
+        "Improved digitalization efficiency by 30% with 92% cluster consistency across test datasets using scikit-learn KMeans and PCA."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Image Restoration of Natural Images (MPRNet)",
+      "summary": "Restoring degraded photos requires both domain knowledge and deep learning. I implemented a restoration pipeline with TensorFlow’s MPRNet, a state‑of‑the‑art architecture for denoising. The model reduces noise levels by 45% and improves peak signal‑to‑noise ratio (PSNR) by 5.2 dB compared to baseline methods, demonstrating a significant uplift in visual quality.",
+      "tech": ["Python", "TensorFlow", "MPRNet"],
+      "highlights": [
+        "Reduced noise levels by 45% and achieved a 5.2 dB PSNR improvement over baselines using MPRNet."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Senti Chat",
+      "summary": "This real‑time messaging app merges modern web technologies with natural‑language processing. I built the front end using React and Next.js and wired it to a Node/Express backend with Pusher for real‑time updates. An integrated NLP service, using NLTK (tokenization and VADER) and scikit‑learn, tags each message with sentiment and emotion in real time. Comprehensive unit tests (Jest/React Testing Library) ensure reliability, and users see live sentiment feedback as they chat.",
+      "tech": ["React", "Next.js", "Express", "Pusher", "NLTK", "scikit-learn", "Jest", "RTL"],
+      "highlights": [
+        "Built React/Next.js chat app with Pusher and an NLP service (NLTK + scikit-learn) tagging sentiment/emotions on the Express backend; added unit tests (Jest/RTL)."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Crypto Notes DApp",
+      "summary": "Combining blockchain with note‑taking, I created a decentralized application where users can store token‑gated notes securely on Ethereum. The front end is built with React/Next.js, while Solidity smart contracts (developed with Hardhat and Ethers.js) enforce permissions. Notes are stored on IPFS for decentralized persistence. The project achieves over 90% test coverage and uses GraphQL queries that reduce latency by roughly 30%, showing mastery of Web3 tooling and test‑driven development.",
+      "tech": ["React", "Next.js", "Solidity", "Hardhat", "Ethers.js", "IPFS", "GraphQL", "Mocha", "Jest"],
+      "highlights": [
+        "Achieved 90%+ test coverage (Mocha/Jest) and reduced query latency ~30% with a GraphQL API; token-gated access via smart contracts + IPFS."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Safe Python Execution Service",
+      "summary": "Executing untrusted code safely is a common security problem. I addressed it by designing a microservice in Flask that runs under nsjail inside Docker and deploys to Google Cloud Run. The service disables networking, imposes rlimits and timeouts, and returns structured JSON results, all while achieving sub‑300 ms p95 latency and scaling to zero when idle. This project underscores expertise in containerization, sandboxing and cloud deployment.",
+      "tech": ["Python", "Flask", "nsjail", "Docker", "GCP Cloud Run"],
+      "highlights": [
+        "Designed a Cloud Run microservice to safely execute untrusted Python via nsjail (no network, rlimits, timeouts), returning structured JSON; sub-300ms p95 latency with scale-to-zero costs."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "HAAS (Heuristic Algorithmic Analysis System)",
+      "summary": "HAAS is a logic‑driven programming language and environment. Using SWI‑Prolog DCGs, Flex/Bison and GCC, I implemented a full compiler pipeline—tokenizer, parser, abstract syntax tree and runtime evaluator. The language supports arithmetic, logic, control flow, ternary operators and an interactive REPL. I complemented HAAS with tutorial modules and sample programs, which shortened onboarding time by 30% and allowed audit‑ready execution via output redirection.",
+      "tech": ["Prolog", "Language Design"],
+      "highlights": [
+        "Implemented 5+ language features (arithmetic, logic, control flow, ternary, REPL).",
+        "Executed 10+ sample programs; 30% faster onboarding with tutorials and output redirection."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Pokemon Game Engine",
+      "summary": "In this C++ project, I built a modular game engine that simulates Pokémon battles. Leveraging object‑oriented programming and custom data structures, the engine supports more than 50 simulated encounters and is extensible, allowing new creatures and abilities to be added easily. It exemplifies an ability to design reusable game frameworks.",
+      "tech": ["C++", "OOP", "Data Structures"],
+      "highlights": [
+        "Validated 50+ simulated battles; extensible design for new Pokémon and abilities."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
+      "name": "Agile Project Management App",
+      "summary": "To improve planning in software development teams, I created an application in Java (Maven) that integrates Planning Poker estimation. By coupling data‑driven scoring with team collaboration features, the app enhances sprint estimation accuracy and supports feature prioritization across multiple projects.",
+      "tech": ["Java", "Maven"],
+      "highlights": [
+        "Boosted sprint estimation accuracy and decision-making across 5+ team projects.",
+        "Integrated Planning Poker and data capture for reproducible estimates."
+      ],
+      "links": { "repo": "", "demo": "" }
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Visual AI Hackathon Winner",
+      "issuer": "Voxel51 (sponsor)",
+      "date": "2025-02",
+      "summary": "Led development of an OCR-based AI model for food safety using Python and Pytesseract."
+    },
+    {
+      "title": "Performer of the Quarter",
+      "issuer": "o9 Solutions",
+      "date": "2021-12",
+      "summary": "Recognized for overdelivering full-stack modules and refactoring the unit-test codebase while meeting demanding SLAs."
+    },
+    {
+      "title": "Performer of the Quarter",
+      "issuer": "o9 Solutions",
+      "date": "2022-06",
+      "summary": "Recognized for overdelivering full-stack modules and refactoring the unit-test codebase while meeting demanding SLAs."
+    },
+    {
+      "title": "AWS Certified Solutions Architect — Associate",
+      "issuer": "Amazon Web Services",
+      "summary": "Validated ability to design and deploy secure, reliable cloud solutions on AWS."
+    }
+  ],
+  "education": [
+    {
+      "school": "Arizona State University, Tempe, AZ",
+      "degree": "Master’s in Software Engineering (Computer Science) | CGPA: 3.67/4",
+      "start": "2024-08",
+      "end": "2026-05",
+      "details": "Coursework: Statistical Machine Learning, Deep Learning, Advanced DSA, Software Design/Requirements/Testing"
+    },
+    {
+      "school": "National Institute of Technology Karnataka, Surathkal, India",
+      "degree": "Bachelor of Technology in Electronics and Communications Engineering",
+      "start": "2018-07",
+      "end": "2022-05",
+      "details": "Coursework: Crypto and Blockchain Technologies, Image and Video Processing, Speech and Audio Processing"
+    }
+  ]
+}
