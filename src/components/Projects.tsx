@@ -38,6 +38,7 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
                 )}
                 <header className="card-header">
                   <h3 className="card-title">{p.name}</h3>
+                  {p.date && <p className="card-meta">{p.date}</p>}
                 </header>
               </div>
             );

@@ -87,7 +87,7 @@ html[data-theme='dark'] body { background: var(--color-bg); }
 .section-intro { margin: 0 0 1rem; color: var(--color-muted); }
 
 .hero-title { font-size: clamp(2rem, 3.6vw + 1rem, 2.6rem); margin: 0; }
-.name-highlight { color: var(--color-accent); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 3px; }
+.name-highlight { color: var(--color-accent); text-decoration: none; }
 .hero-subtitle { color: var(--color-muted); margin: .25rem 0 .5rem; }
 .hero-meta { color: var(--color-muted); margin: 0 0 1rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .5rem; }

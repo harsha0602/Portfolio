@@ -12,7 +12,8 @@
     "paragraphs": [
       "I’m a software engineer and master’s student in Software Engineering at ASU. With 3+ years of full‑stack industry experience and a recent internship at Amazon Web Services, I’ve built everything from large‑scale data pipelines and cloud infrastructure to machine‑learning systems that forecast risk and analyze sentiment in real time.",
       "I enjoy creating software that blends intelligence with scalability—whether it’s migrating terabytes of data across AWS regions, building interactive apps, or experimenting with AI for image, text, and language tasks. Along the way, I’ve won hackathons, refactored major codebases, and designed tools that made life easier for engineers and end‑users alike.",
-      "My focus: designing efficient, reliable systems that think, learn, and scale. My drive: solving complex problems, debugging relentlessly, and delivering impact."
+      "My focus: designing efficient, reliable systems that think, learn, and scale.",
+      "My drive: solving complex problems, debugging relentlessly, and delivering impact."
     ],
     "tags": [
       "Full‑Stack Development",
@@ -23,8 +24,12 @@
     ]
   },
   "skills": {
-    "Languages": ["Python", "SQL", "TypeScript", "JavaScript", "Scala", "C#", "C++"],
+    "Languages": ["Python", "SQL", "TypeScript", "JavaScript", "HTML", "CSS", "Scala", "C#", "C++"],
     "Frameworks/Tools": [
+      "React",
+      "Angular",
+      "Node.js",
+      "Vue.js",
       "TensorFlow",
       "PyTorch",
       "scikit-learn",
@@ -37,8 +42,6 @@
       "JIRA",
       "Docker",
       "Flask",
-      "HTML",
-      "CSS",
       "CI/CD"
     ],
     "Cloud/Databases": ["AWS", "Azure", "MongoDB", "Oracle", "PostgreSQL", "MSSQL"]
@@ -121,6 +124,7 @@
   "projects": [
     {
       "name": "Market Risk Forecasting Dashboard",
+      "date": "Apr 2025",
       "summary": "This project addresses the challenge of forecasting market volatility and potential drawdown risk. I built a sophisticated AI platform in Python that leverages Long Short‑Term Memory (LSTM) models in TensorFlow to predict market movements and deployed the solution on AWS SageMaker.\n\nTo feed the models, I engineered a robust ETL process that ingests five years’ worth of OHLCV data (more than one million rows) using Python and SQL, creating rolling volatility, moving averages and correlation matrices. The result is a highly accurate tool that outperforms GARCH baselines by 16% and cuts preprocessing time by 30%.",
       "tech": ["Python", "TensorFlow", "AWS SageMaker", "SQL"],
       "highlights": [
@@ -131,6 +135,7 @@
     },
     {
       "name": "WhatsApp Group Chat Analysis",
+      "date": "Oct 2024",
       "summary": "In this project I turned raw chat exports into meaningful insights. I processed over 10,000 messages with Pandas and NumPy, applied NLTK for tokenization and stop‑word removal, and used scikit‑learn to quantify sentiment and uncover conversational trends. With regex‑based preprocessing, the pipeline achieves 98% parsing accuracy. This analysis reveals behavioral patterns and emotional tone within group conversations, demonstrating my ability to combine data cleaning and natural‑language techniques.",
       "tech": ["Python", "Pandas", "NumPy", "NLTK", "scikit-learn"],
       "highlights": [
@@ -140,6 +145,7 @@
     },
     {
       "name": "Image Clustering for Script Digitalization",
+      "date": "Feb 2020",
       "summary": "To streamline the digitization of handwritten manuscripts, I developed a clustering tool using scikit‑learn’s KMeans algorithm and PCA. It groups handwritten scripts by similarity, delivering 92% cluster consistency and improving digitalization efficiency by 30%. This unsupervised approach organizes large volumes of script images, reducing manual effort and accelerating downstream processing.",
       "tech": ["Python", "scikit-learn", "KMeans", "PCA", "Matplotlib"],
       "highlights": [
@@ -149,6 +155,7 @@
     },
     {
       "name": "Image Restoration of Natural Images (MPRNet)",
+      "date": "Apr 2021",
       "summary": "Restoring degraded photos requires both domain knowledge and deep learning. I implemented a restoration pipeline with TensorFlow’s MPRNet, a state‑of‑the‑art architecture for denoising. The model reduces noise levels by 45% and improves peak signal‑to‑noise ratio (PSNR) by 5.2 dB compared to baseline methods, demonstrating a significant uplift in visual quality.",
       "tech": ["Python", "TensorFlow", "MPRNet"],
       "highlights": [
@@ -158,6 +165,7 @@
     },
     {
       "name": "Senti Chat",
+      "date": "Sep 2024",
       "summary": "This real‑time messaging app merges modern web technologies with natural‑language processing. I built the front end using React and Next.js and wired it to a Node/Express backend with Pusher for real‑time updates. An integrated NLP service, using NLTK (tokenization and VADER) and scikit‑learn, tags each message with sentiment and emotion in real time. Comprehensive unit tests (Jest/React Testing Library) ensure reliability, and users see live sentiment feedback as they chat.",
       "tech": ["React", "Next.js", "Express", "Pusher", "NLTK", "scikit-learn", "Jest", "RTL"],
       "highlights": [
@@ -167,6 +175,7 @@
     },
     {
       "name": "Crypto Notes DApp",
+      "date": "Aug 2024",
       "summary": "Combining blockchain with note‑taking, I created a decentralized application where users can store token‑gated notes securely on Ethereum. The front end is built with React/Next.js, while Solidity smart contracts (developed with Hardhat and Ethers.js) enforce permissions. Notes are stored on IPFS for decentralized persistence. The project achieves over 90% test coverage and uses GraphQL queries that reduce latency by roughly 30%, showing mastery of Web3 tooling and test‑driven development.",
       "tech": ["React", "Next.js", "Solidity", "Hardhat", "Ethers.js", "IPFS", "GraphQL", "Mocha", "Jest"],
       "highlights": [
@@ -176,6 +185,7 @@
     },
     {
       "name": "Safe Python Execution Service",
+      "date": "Mar 2025",
       "summary": "Executing untrusted code safely is a common security problem. I addressed it by designing a microservice in Flask that runs under nsjail inside Docker and deploys to Google Cloud Run. The service disables networking, imposes rlimits and timeouts, and returns structured JSON results, all while achieving sub‑300 ms p95 latency and scaling to zero when idle. This project underscores expertise in containerization, sandboxing and cloud deployment.",
       "tech": ["Python", "Flask", "nsjail", "Docker", "GCP Cloud Run"],
       "highlights": [
@@ -185,6 +195,7 @@
     },
     {
       "name": "HAAS (Heuristic Algorithmic Analysis System)",
+      "date": "Feb 2025",
       "summary": "HAAS is a logic‑driven programming language and environment. Using SWI‑Prolog DCGs, Flex/Bison and GCC, I implemented a full compiler pipeline—tokenizer, parser, abstract syntax tree and runtime evaluator. The language supports arithmetic, logic, control flow, ternary operators and an interactive REPL. I complemented HAAS with tutorial modules and sample programs, which shortened onboarding time by 30% and allowed audit‑ready execution via output redirection.",
       "tech": ["Prolog", "Language Design", "Algorithms"],
       "highlights": [
@@ -195,6 +206,7 @@
     },
     {
       "name": "Pokemon Game Engine",
+      "date": "Dec 2024",
       "summary": "In this C++ project, I built a modular game engine that simulates Pokémon battles. Leveraging object‑oriented programming and custom data structures, the engine supports more than 50 simulated encounters and is extensible, allowing new creatures and abilities to be added easily. It exemplifies an ability to design reusable game frameworks.",
       "tech": ["C++", "OOP", "Data Structures"],
       "highlights": [
@@ -204,6 +216,7 @@
     },
     {
       "name": "Agile Project Management App",
+      "date": "Jan 2025",
       "summary": "To improve planning in software development teams, I created an application in Java (Maven) that integrates Planning Poker estimation. By coupling data‑driven scoring with team collaboration features, the app enhances sprint estimation accuracy and supports feature prioritization across multiple projects.",
       "tech": ["Java", "Maven", "Data Structures"],
       "highlights": [

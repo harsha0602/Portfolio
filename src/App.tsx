@@ -24,6 +24,7 @@ export type ProjectItem = {
   tech: string[];
   highlights: string[];
   links: { repo?: string; demo?: string };
+  date?: string; // Optional project date or timeframe
 };
 export type AchievementItem = {
   title: string;
@@ -68,6 +69,43 @@ const App: React.FC = () => {
     const toNum = (d: string) => (d === 'Present' ? 999999 : Number(d.replace('-', '')));
     return [...data.experience].sort((a, b) => toNum(b.start) - toNum(a.start));
   }, [data.experience]);
+  const sortedProjects = useMemo(() => {
+    const monthMap: Record<string, number> = {
+      jan: 1, january: 1,
+      feb: 2, february: 2,
+      mar: 3, march: 3,
+      apr: 4, april: 4,
+      may: 5,
+      jun: 6, june: 6,
+      jul: 7, july: 7,
+      aug: 8, august: 8,
+      sep: 9, sept: 9, september: 9,
+      oct: 10, october: 10,
+      nov: 11, november: 11,
+      dec: 12, december: 12,
+    };
+    const toNum = (s?: string) => {
+      if (!s) return 0;
+      const rx = /(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t)?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+(\d{4})/gi;
+      let m: RegExpExecArray | null;
+      let best = 0;
+      while ((m = rx.exec(s))) {
+        const mon = monthMap[m[1].toLowerCase()];
+        const yr = Number(m[2]);
+        if (mon && yr) {
+          const val = yr * 100 + mon;
+          if (val > best) best = val;
+        }
+      }
+      // If no month-year found, try plain YYYY
+      if (!best) {
+        const yr = Number((s.match(/\b(20\d{2})\b/) || [])[1]);
+        if (yr) best = yr * 100 + 1;
+      }
+      return best;
+    };
+    return [...data.projects].sort((a, b) => toNum(b.date) - toNum(a.date));
+  }, [data.projects]);
 
   useEffect(() => {
     // Inject structured data for Person and Projects
@@ -146,7 +184,7 @@ const App: React.FC = () => {
           about={data.about}
         />
         <Experience items={sortedExp} />
-        <Projects items={data.projects} />
+        <Projects items={sortedProjects} />
         <Achievements items={data.achievements} />
         <Education items={data.education} />
         <Skills skills={data.skills} />
