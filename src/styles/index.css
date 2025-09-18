@@ -99,6 +99,10 @@ html[data-theme='dark'] body { background: var(--color-bg); }
 .about-layout { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: start; margin-top: 1rem; }
 @media (min-width: 900px) { .about-layout { grid-template-columns: 340px 1fr; } }
 .about-media { display: flex; justify-content: center; }
+/* On large screens, top-align the photo with the About text and left-align within its column */
+@media (min-width: 900px) {
+  .about-media { margin-top: 3em; }
+}
 .about-photo { width: 100%; max-width: 320px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: .8rem; border: 1px solid var(--color-border); box-shadow: var(--shadow); }
 
 .btn { background: var(--color-primary); color: #132; border: none; border-radius: .6rem; padding: .6rem .9rem; text-decoration: none; font-weight: 600; box-shadow: var(--shadow); }
