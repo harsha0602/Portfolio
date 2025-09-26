@@ -10,6 +10,7 @@ import FlippableCard from './FlippableCard';
 // - remove_neuron.png -> Image Restoration (ML)
 // - WCGA.png -> WhatsApp Group Chat Analysis
 // - project.png -> generic for data/ML when no specific image
+// - Swipe to shop.png -> Swipe-to-Shop Fashion PWA
 
 const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
   return (
@@ -95,6 +96,7 @@ function projectImage(name: string): { src: string; alt: string } | null {
   if (n.includes('haas')) return { src: new URL('../../assets/images/HAAS (Heuristic Algorithmic Analysis System).png', import.meta.url).href, alt: 'HAAS (Heuristic Algorithmic Analysis System)' };
   if (n.includes('pokemon')) return { src: new URL('../../assets/images/Pokemon Game Engine.png', import.meta.url).href, alt: 'Pokémon Game Engine' };
   if (n.includes('agile') && n.includes('project')) return { src: new URL('../../assets/images/Agile Project Management App (kanban concept.png', import.meta.url).href, alt: 'Agile Project Management App' };
+  if (n.includes('swipe') && n.includes('shop')) return { src: new URL('../../assets/images/Swipe to shop.png', import.meta.url).href, alt: 'Swipe-to-Shop Fashion PWA' };
   // Generic fallback
   return { src: new URL('../../assets/images/replace-me.svg', import.meta.url).href, alt: `${name} illustration placeholder` };
 }

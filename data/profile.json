@@ -123,6 +123,18 @@
   ],
   "projects": [
     {
+      "name": "Swipe-to-Shop Fashion PWA",
+      "date": "Sep 2025",
+      "summary": "Clozyt is a mobile-first, swipe-driven fashion PWA that brings the addictive discovery of TikTok and intuitive swipe mechanics of Bumble into shopping. Built with Next.js App Router and Tailwind CSS, it ships as a PWA where users swipe right to like, left to pass, and up for details—with cart and checkout flows tied to every gesture.\n\nEach interaction feeds a live recommendation loop powered by fashion_clip embeddings stored in Qdrant, balancing exploitation with exploration. Normalization jobs clean messy CSV catalogs into a seven-column schema, while the /api/recs/next and /api/feedback endpoints stream five-item batches in under 200 ms p95 and adapt the ratio of top matches versus fresh discoveries in real time.",
+      "tech": ["TypeScript", "PyTorch", "Tailwind CSS", "Qdrant"],
+      "highlights": [
+        "Launched a swipe-driven PWA (right = like, left = pass, up = details) with install prompts, offline caching, and cart/checkout flows on Next.js App Router + Tailwind CSS.",
+        "Delivered adaptive recommendations under 200 ms p95 by embedding products with fashion_clip and querying Qdrant with a dynamic exploit/explore mix.",
+        "Normalized messy CSV catalogs into a seven-column schema powering /api/recs/next and /api/feedback pipelines that respond with five curated items and record user feedback in real time."
+      ],
+      "links": { "repo": "", "demo": "" }
+    },
+    {
       "name": "Market Risk Forecasting Dashboard",
       "date": "Apr 2025",
       "summary": "This project addresses the challenge of forecasting market volatility and potential drawdown risk. I built a sophisticated AI platform in Python that leverages Long Short‑Term Memory (LSTM) models in TensorFlow to predict market movements and deployed the solution on AWS SageMaker.\n\nTo feed the models, I engineered a robust ETL process that ingests five years’ worth of OHLCV data (more than one million rows) using Python and SQL, creating rolling volatility, moving averages and correlation matrices. The result is a highly accurate tool that outperforms GARCH baselines by 16% and cuts preprocessing time by 30%.",
