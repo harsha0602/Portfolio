@@ -132,7 +132,7 @@
         "Delivered adaptive recommendations under 200 ms p95 by embedding products with fashion_clip and querying Qdrant with a dynamic exploit/explore mix.",
         "Normalized messy CSV catalogs into a seven-column schema powering /api/recs/next and /api/feedback pipelines that respond with five curated items and record user feedback in real time."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/Clozyt-Recommendation-Algo", "demo": "" }
     },
     {
       "name": "Market Risk Forecasting Dashboard",

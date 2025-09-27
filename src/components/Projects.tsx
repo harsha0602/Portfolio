@@ -50,7 +50,7 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
                 </header>
                 {/* Detailed description with emphasized metrics and tech; plus explicit tech stack line */}
                 <div>
-                  {renderSummaryWithEmphasis(p.summary, p.tech)}
+                  {renderSummaryWithEmphasis(p.summary, p.tech, p.links.repo)}
                 </div>
                 {/* Highlights removed to avoid duplication with narrative. */}
                 <footer className="card-actions">
@@ -102,11 +102,20 @@ function projectImage(name: string): { src: string; alt: string } | null {
 }
 
 // Reuse emphasis helper similar to Experience to bold metrics and tech terms
-function renderSummaryWithEmphasis(text: string, tech: string[]) {
+function renderSummaryWithEmphasis(text: string, tech: string[], repoUrl?: string) {
   const paras = text.split(/\n\s*\n/);
   const items = paras.map((par, i) => (
     <p key={i} className="summary-par" dangerouslySetInnerHTML={{ __html: emphasize(par.trim(), tech) }} />
   ));
+  if (repoUrl) {
+    items.push(
+      <p key="repo" className="summary-par">
+        <a href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label="View project repository">
+          View repository
+        </a>
+      </p>
+    );
+  }
   const techLine = (
     <p key="tech" className="summary-par tech-line"><strong>Tech stack:</strong> {tech.join(' · ')}</p>
   );
