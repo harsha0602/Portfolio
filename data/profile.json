@@ -52,7 +52,7 @@
       "role": "AI Trainer - Computer Science Expert",
       "location": "Remote, US",
       "start": "2025-09",
-      "end": "Present",
+      "end": "2025-10",
       "summary": "At Handshake AI Solutions, I designed and evaluated 50+ domain-specific prompts across advanced CS topics so models were tested on the tricky edge cases that matter. The work focused on clarity, correctness, and breadth.\n\nI reviewed 100+ outputs and delivered structured feedback that improved internal accuracy by 12% and reduced factual errors by ~20% in test runs. I also expanded evaluation categories, lifting test coverage by 30% and speeding up the fine-tuning feedback loop.",
       "highlights": [
         "Developed and evaluated 50+ domain-specific prompts to assess LLM performance across specialized CS subfields, ensuring coverage of edge-case scenarios and nuanced domain knowledge.",
@@ -143,7 +143,7 @@
         "Improved prediction accuracy by 16% over GARCH baselines using LSTM models in TensorFlow; deployed on AWS SageMaker.",
         "Developed Python + SQL pipelines to ingest and process 5+ years of OHLCV data (1M+ rows), generating engineered features (rolling volatility, moving averages, correlation matrices) and reducing preprocessing time by 30%."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/market-risk-forecasting", "demo": "" }
     },
     {
       "name": "WhatsApp Group Chat Analysis",
@@ -153,7 +153,7 @@
       "highlights": [
         "Processed 10,000+ messages; extracted trends and insights using NLTK (tokenization, stopwords) and scikit-learn; achieved 98% parsing accuracy via regex-based preprocessing."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/group_chat_analysis", "demo": "" }
     },
     {
       "name": "Image Clustering for Script Digitalization",
@@ -183,7 +183,7 @@
       "highlights": [
         "Built React/Next.js chat app with Pusher and an NLP service (NLTK + scikit-learn) tagging sentiment/emotions on the Express backend; added unit tests (Jest/RTL)."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/SentiChat_with_React.js", "demo": "" }
     },
     {
       "name": "Crypto Notes DApp",
@@ -203,7 +203,7 @@
       "highlights": [
         "Designed a Cloud Run microservice to safely execute untrusted Python via nsjail (no network, rlimits, timeouts), returning structured JSON; sub-300ms p95 latency with scale-to-zero costs."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/Safe_Python_Execution_Service", "demo": "" }
     },
     {
       "name": "HAAS (Heuristic Algorithmic Analysis System)",
@@ -214,7 +214,7 @@
         "Implemented 5+ language features (arithmetic, logic, control flow, ternary, REPL).",
         "Executed 10+ sample programs; 30% faster onboarding with tutorials and output redirection."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/SER502-HAAS-Team14", "demo": "" }
     },
     {
       "name": "Pokemon Game Engine",
@@ -235,7 +235,7 @@
         "Boosted sprint estimation accuracy and decision-making across 5+ team projects.",
         "Integrated Planning Poker and data capture for reproducible estimates."
       ],
-      "links": { "repo": "", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/Agile-Project-Management-App", "demo": "" }
     }
   ],
   "achievements": [
