@@ -97,6 +97,7 @@ function projectImage(name: string): { src: string; alt: string } | null {
   if (n.includes('pokemon')) return { src: new URL('../../assets/images/Pokemon Game Engine.png', import.meta.url).href, alt: 'Pokémon Game Engine' };
   if (n.includes('agile') && n.includes('project')) return { src: new URL('../../assets/images/Agile Project Management App (kanban concept.png', import.meta.url).href, alt: 'Agile Project Management App' };
   if (n.includes('swipe') && n.includes('shop')) return { src: new URL('../../assets/images/Swipe to shop.png', import.meta.url).href, alt: 'Swipe-to-Shop Fashion PWA' };
+  if (n.includes('fluidfill')) return { src: new URL('../../assets/images/fluidfill_cover.png', import.meta.url).href, alt: 'FluidFill — AI Document Automation' };
   // Generic fallback
   return { src: new URL('../../assets/images/replace-me.svg', import.meta.url).href, alt: `${name} illustration placeholder` };
 }

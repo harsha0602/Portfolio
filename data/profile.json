@@ -123,6 +123,19 @@
   ],
   "projects": [
     {
+      "name": "FluidFill -- AI Document Automation",
+      "date": "Nov 2025",
+      "summary": "FluidFill is an AI-assisted document tool that turns static .docx legal templates into interactive forms.\n\nUpload a DOCX and an Express gateway streams the file to Postgres while fanning out two FastAPI jobs in parallel (placeholder parsing and HTML preview). Gemini returns a typed schema; if the LLM is unreachable, a deterministic fallback builds one so the flow never stalls. The Next.js UI renders the form on the fly, syncing repeated fields automatically. Click Download to reconstruct a pixel-faithful DOCX with styles preserved.",
+      "tech": ["Python", "FastAPI", "Next.js", "TypeScript", "Postgres", "DOCX", "Gemini API", "Express"],
+      "highlights": [
+        "End-to-end flow: upload -> auto-detect placeholders (brackets, blanks, headers/footers) -> AI typed schema -> dynamic React form -> single-fill sync -> styled DOCX reconstruction.",
+        "Resilient architecture: API gateway streams to Postgres and fans out two FastAPI workers in parallel; a fallback schema builder keeps UX live during LLM outages.",
+        "Thoughtful UX and ops: optimistic debounced saves with request IDs and status pills; versioned schemas and answers in Postgres; health endpoints and auto-migrations.",
+        "LLM guardrails: Gemini prompts enforce typed fields and limits; responses are validated and retried with backoff so users never see raw model errors."
+      ],
+      "links": { "repo": "https://github.com/harsha0602/FluidFill", "demo": "https://youtu.be/StmRbEnZBgs" }
+    },
+    {
       "name": "Swipe-to-Shop Fashion PWA",
       "date": "Sep 2025",
       "summary": "Clozyt is a mobile-first, swipe-driven fashion PWA that brings the addictive discovery of TikTok and intuitive swipe mechanics of Bumble into shopping. Built with Next.js App Router and Tailwind CSS, it ships as a PWA where users swipe right to like, left to pass, and up for details—with cart and checkout flows tied to every gesture.\n\nEach interaction feeds a live recommendation loop powered by fashion_clip embeddings stored in Qdrant, balancing exploitation with exploration. Normalization jobs clean messy CSV catalogs into a seven-column schema, while the /api/recs/next and /api/feedback endpoints stream five-item batches in under 200 ms p95 and adapt the ratio of top matches versus fresh discoveries in real time.",
