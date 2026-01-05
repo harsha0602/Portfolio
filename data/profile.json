@@ -48,6 +48,21 @@
   },
   "experience": [
     {
+      "company": "TappedIn",
+      "role": "Technical Co-founder",
+      "location": "Remote, US",
+      "start": "2025-11",
+      "end": "Present",
+      "summary": "I built the full technical stack for a fantasy market where users 'invest' virtual currency in music artists—turning subjective taste into structured prediction data for A&R teams.\n\nFrom zero to TestFlight in ~5 weeks: React Native + Expo frontend, Supabase backend with 28 migrations, 23 RLS policies, and a queue-based pricing system (pgmq) that cut Spotify API calls by 50x. Every trade runs through atomic PostgreSQL transactions with idempotency keys—no double-charges, no partial updates, no overdraw races. 44 beta testers validated demand on an early prototype; we shipped the production MVP with ~950 test cases across Jest, Vitest, and pgTAP.",
+      "highlights": [
+        "Architected atomic trading engine with FOR UPDATE locks and idempotency guarantees; single PostgreSQL transactions prevent overdraw races and maintain an append-only audit trail.",
+        "Designed queue-based batch pricing (pgmq) that groups 50 artists per Spotify API call, isolates failures, and retries with exponential backoff—50x reduction in external API calls.",
+        "Shipped 11 screens, 22 React Native components, 7 Supabase Edge Functions, 12 RPCs, and 23 row-level security policies; wrote ~950 test cases with full RLS policy validation via pgTAP.",
+        "Debugged Android OAuth failure for days, traced root cause to Expo Go platform limitation, migrated to Development Builds—documented architecture lesson for future reference."
+      ],
+      "tech": ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "pgmq", "Spotify API", "Jest", "Vitest", "pgTAP", "EAS Build"]
+    },
+    {
       "company": "Handshake AI Solutions, LLC",
       "role": "AI Trainer - Computer Science Expert",
       "location": "Remote, US",
@@ -136,6 +151,18 @@
       "links": { "repo": "https://github.com/harsha0602/FluidFill", "demo": "https://youtu.be/StmRbEnZBgs" }
     },
     {
+      "name": "Realtime Study Rooms",
+      "date": "Oct 2025",
+      "summary": "A full-stack demo and tutorial that teaches WebSockets and WebRTC through a collaborative study room experience—lobby, chat, presence, reactions, and browser-to-browser video calls. Built for SER 421; selected as top project based on technical depth, tutorial quality, and completeness.\n\nI designed the Node.js signaling server (ws library) that manages rooms, participants, chat history, and WebRTC offer/answer/ICE exchange over a single WebSocket per client. The React SPA uses custom hooks (useWebSocketClient, useWebRTC) to handle connection lifecycle, getUserMedia, RTCPeerConnection, and remote stream rendering. An 11-step hands-on tutorial takes learners from static UI to full realtime video app, with checkpoints, quick-check questions, and a starter branch with structured TODOs for ~20+ hours of guided implementation.",
+      "tech": ["React", "Node.js", "WebSockets", "WebRTC", "TypeScript", "ws"],
+      "highlights": [
+        "Designed Node.js WebSocket server handling lobby sync, room CRUD, chat broadcast, presence tracking, emoji reactions, typing indicators, and WebRTC signaling—all over a single connection per client.",
+        "Built custom React hooks (useWebSocketClient, useWebRTC) that encapsulate connection management, getUserMedia, RTCPeerConnection lifecycle, and ICE candidate exchange.",
+        "Authored 11-step tutorial with explicit learning outcomes, file-level instructions, checkpoints, and starter branch with TODO stubs—enables ~20+ hours of guided implementation work."
+      ],
+      "links": { "repo": "https://github.com/harsha0602/Websockets_RTC", "demo": "" }
+    },
+    {
       "name": "Swipe-to-Shop Fashion PWA",
       "date": "Sep 2025",
       "summary": "Clozyt is a mobile-first, swipe-driven fashion PWA that brings the addictive discovery of TikTok and intuitive swipe mechanics of Bumble into shopping. Built with Next.js App Router and Tailwind CSS, it ships as a PWA where users swipe right to like, left to pass, and up for details—with cart and checkout flows tied to every gesture.\n\nEach interaction feeds a live recommendation loop powered by fashion_clip embeddings stored in Qdrant, balancing exploitation with exploration. Normalization jobs clean messy CSV catalogs into a seven-column schema, while the /api/recs/next and /api/feedback endpoints stream five-item batches in under 200 ms p95 and adapt the ratio of top matches versus fresh discoveries in real time.",
@@ -146,6 +173,18 @@
         "Normalized messy CSV catalogs into a seven-column schema powering /api/recs/next and /api/feedback pipelines that respond with five curated items and record user feedback in real time."
       ],
       "links": { "repo": "https://github.com/harsha0602/Clozyt-Recommendation-Algo", "demo": "https://www.loom.com/share/5fa8c34bc5ea4a27aeb629be3a661760" }
+    },
+    {
+      "name": "FluxRate — Adaptive Pricing Engine",
+      "date": "Aug 2025",
+      "summary": "FluxRate is an adaptive pricing engine for capacity-constrained physical resources—parking spaces, EV chargers, vending inventory. The core idea: monitor real-time usage, safely control access through gates or actuators, and adjust price dynamically based on load. I built a working MVP to validate the architecture before pursuing it further.\n\nThe simulator is a closed-loop cyber-physical system in Java/Maven: SRC-based gate controllers (entry/exit with explicit modes, timing guards, emergency handling), a plant model for gate motion and occupancy, and a pricing supervisor that adjusts hourly rates when occupancy crosses thresholds. A 24-hour scenario with 50 parking spaces generates detailed CSV logs—per-tick state, session billing, price changes—which I analyzed with Python, pandas, and matplotlib to verify safety properties (capacity bounds, payment-gated exits, no double billing).",
+      "tech": ["Java", "Maven", "Python", "pandas", "matplotlib", "CPS Design", "UML"],
+      "highlights": [
+        "Designed closed-loop CPS architecture with SRC-based gate controllers, plant model, pricing supervisor, and CSV loggers—reusable pattern for parking, EV charging, or vending domains.",
+        "Implemented entry/exit controllers with explicit modes (IDLE → WAITING → RAISING → OPEN → LOWERING → EMERGENCY), timing guards, and occupancy-aware state transitions.",
+        "Built Python analysis pipeline to plot gate modes, occupancy curves, price steps, and cumulative revenue; validated safety properties across 24-hour simulation scenarios."
+      ],
+      "links": { "repo": "https://github.com/harsha0602/ACCPS-Sim", "demo": "https://flux-rate.github.io/FluxRate_LandingPage/" }
     },
     {
       "name": "Market Risk Forecasting Dashboard",

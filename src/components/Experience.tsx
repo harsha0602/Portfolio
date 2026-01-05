@@ -2,7 +2,7 @@ import React from 'react';
 import type { ExperienceItem } from '../App';
 import { TechChip } from './Chips';
 import FlippableCard from './FlippableCard';
-import { Briefcase, Cloud, Bot, Building2, Server } from 'lucide-react';
+import { Briefcase, Cloud, Bot, Building2, Server, Music, ExternalLink } from 'lucide-react';
 
 // Robust YYYY-MM formatter that avoids timezone shifts (e.g., '05' showing as April).
 // We parse year/month and format in UTC so local offsets can't roll back the month.
@@ -74,6 +74,13 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                     <span key={i} className="stat-badge"><strong>{b.label}:</strong> {b.value}</span>
                   ))}
                 </div>
+                {companyLink(exp.company) && (
+                  <div className="card-actions">
+                    <a href={companyLink(exp.company)!} target="_blank" rel="noopener noreferrer" className="btn" style={{background: '#20C997', color: '#000'}} onClick={(e) => e.stopPropagation()}>
+                      Visit Site <ExternalLink size={14} style={{marginLeft: '.3rem'}} />
+                    </a>
+                  </div>
+                )}
               </div>
             );
             return (
@@ -112,10 +119,12 @@ function companyIcon(company: string) {
   if (c.includes('handshake')) return <Bot size={18} aria-label="Handshake AI" />;
   if (c.includes('o9')) return <Building2 size={18} aria-label="o9 Solutions" />;
   if (c.includes('opennets')) return <Server size={18} aria-label="OpenNets" />;
+  if (c.includes('tappedin') || c.includes('tapped')) return <Music size={18} aria-label="TappedIn" />;
   return <Briefcase size={18} aria-label="Company" />;
 }
 
 function logoPath(c: string): string | null {
+  if (c.includes('tappedin') || c.includes('tapped')) return new URL('../../assets/images/tappedin_last_frame.png', import.meta.url).href;
   if (c.includes('amazon') || c.includes('aws')) return new URL('../../assets/images/AWSimage.webp', import.meta.url).href;
   if (c.includes('handshake')) return new URL('../../assets/images/HandshakeImage.webp', import.meta.url).href;
   // Corrected extension to .png (file on disk is O9image.png)
@@ -157,6 +166,12 @@ function escapeReg(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+function companyLink(company: string): string | null {
+  const c = company.toLowerCase();
+  if (c.includes('tappedin') || c.includes('tapped')) return 'https://tappedinapp.com/';
+  return null;
+}
+
 function companyBadges(company: string): { label: string; value: string }[] {
   const c = company.toLowerCase();
   const arr: { label: string; value: string }[] = [];
@@ -173,6 +188,11 @@ function companyBadges(company: string): { label: string; value: string }[] {
   if (c.includes('amazon') || c.includes('aws')) {
     arr.push({ label: 'Code Commits', value: '50+' });
     arr.push({ label: 'Solution Architecture', value: 'Built from scratch' });
+  }
+  if (c.includes('tappedin') || c.includes('tapped')) {
+    arr.push({ label: 'Test Cases', value: '~950' });
+    arr.push({ label: 'Beta Users', value: '44' });
+    arr.push({ label: 'Dev Time', value: '~5 weeks' });
   }
   return arr;
 }
