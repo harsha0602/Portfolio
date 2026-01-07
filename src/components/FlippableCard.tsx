@@ -25,7 +25,7 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
   const autoFlippedRef = useRef(false);
   const isMobileRef = useRef(false);
   const lockedRef = useRef(false);
-  const flipTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const flipTimeoutRef = useRef<number | null>(null);
 
   // Global scroll direction tracker (module-local)
   // We intentionally guard initialization to one-time per page load.
@@ -85,10 +85,10 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
         if (visible && dir === 'down') {
           // Clear any existing timeout
           if (flipTimeoutRef.current) {
-            clearTimeout(flipTimeoutRef.current);
+            window.clearTimeout(flipTimeoutRef.current);
           }
           // Delay the flip so user can see the front side first
-          flipTimeoutRef.current = setTimeout(() => {
+          flipTimeoutRef.current = window.setTimeout(() => {
             // Auto-flip this card and notify others to unflip
             setFlipped(true);
             autoFlippedRef.current = true;
@@ -97,7 +97,7 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
         } else if (!visible) {
           // Clear timeout if card leaves view before flip
           if (flipTimeoutRef.current) {
-            clearTimeout(flipTimeoutRef.current);
+            window.clearTimeout(flipTimeoutRef.current);
             flipTimeoutRef.current = null;
           }
         }
@@ -109,7 +109,7 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
     return () => {
       obs.disconnect();
       if (flipTimeoutRef.current) {
-        clearTimeout(flipTimeoutRef.current);
+        window.clearTimeout(flipTimeoutRef.current);
       }
     };
   }, []);
