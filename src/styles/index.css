@@ -98,12 +98,72 @@ html[data-theme='dark'] body { background: var(--color-bg); }
 /* About layout with profile photo */
 .about-layout { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: start; margin-top: 1rem; }
 @media (min-width: 900px) { .about-layout { grid-template-columns: 340px 1fr; } }
-.about-media { display: flex; justify-content: center; }
+.about-media { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
 /* On large screens, top-align the photo with the About text and left-align within its column */
 @media (min-width: 900px) {
   .about-media { margin-top: 3em; }
 }
 .about-photo { width: 100%; max-width: 320px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: .8rem; border: 1px solid var(--color-border); box-shadow: var(--shadow); }
+
+/* Developing tappedin bubble */
+.developing-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, rgba(97, 231, 190, 0.2) 0%, rgba(91, 140, 255, 0.15) 100%);
+  border: 1.5px solid rgba(97, 231, 190, 0.5);
+  border-radius: 50px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(97, 231, 190, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: bubble-glow 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.developing-bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(97, 231, 190, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.bubble-dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #61e7be 0%, #22C55E 100%);
+  border-radius: 50%;
+  animation: dot-blink 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(97, 231, 190, 0.6);
+}
+.bubble-text {
+  display: inline;
+}
+.tappedin-link {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(135deg, #61e7be, #5B8CFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.3s ease;
+}
+.tappedin-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+  text-decoration-color: #61e7be;
+}
+@keyframes bubble-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(97, 231, 190, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(97, 231, 190, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+}
+@keyframes dot-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+html[data-theme='dark'] .developing-bubble {
+  background: linear-gradient(135deg, rgba(97, 231, 190, 0.15) 0%, rgba(91, 140, 255, 0.1) 100%);
+  border-color: rgba(97, 231, 190, 0.4);
+}
 
 .btn { background: var(--color-primary); color: #132; border: none; border-radius: .6rem; padding: .6rem .9rem; text-decoration: none; font-weight: 600; box-shadow: var(--shadow); }
 .btn:hover, .btn:focus { filter: brightness(0.95); outline: 2px solid #0b0; outline-offset: 2px; }
