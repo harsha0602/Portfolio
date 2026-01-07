@@ -19,6 +19,10 @@ const Hero: React.FC<Props> = ({ name, headline: _headline, location, links, abo
           {/* Assumption: Use `name` dynamically and highlight it for quick scannability. */}
           Hi, my name is <span className="name-highlight">{name}</span>. {about?.intro || 'I engineer systems that bring hardware to life and teach machines to think—turning data, code, and cloud into real-world intelligence.'}
         </h1>
+        <div className="developing-bubble">
+          <span className="bubble-dot"></span>
+          developing <a href="https://tappedinapp.com" target="_blank" rel="noopener noreferrer" className="tappedin-link">tappedin</a>
+        </div>
         <p className="hero-meta" aria-label="Location">{location} • MS Software Engineering @ ASU</p>
         <div className="hero-cta">
           <a className="btn" href={new URL('../../assets/CV.pdf', import.meta.url).href} download aria-label="Download CV"><FileDown size={16} /> Download CV</a>

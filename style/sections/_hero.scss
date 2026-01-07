@@ -28,6 +28,73 @@
     padding: 0rem $default-font-size;
   }
 
+  .developing-bubble {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, rgba(97, 231, 190, 0.15) 0%, rgba(72, 112, 80, 0.1) 100%);
+    border: 1px solid rgba(97, 231, 190, 0.4);
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $secondary-color;
+    backdrop-filter: blur(8px);
+    animation: bubble-pulse 2s ease-in-out infinite;
+
+    .bubble-dot {
+      width: 10px;
+      height: 10px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      animation: dot-pulse 1.5s ease-in-out infinite;
+    }
+
+    .tappedin-link {
+      color: $primary-color;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: darken($primary-color, 15%);
+        text-decoration: underline;
+      }
+    }
+
+    @include respond(tab-port) {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include respond(phone) {
+      font-size: 1.4rem;
+      padding: 0.6rem 1.6rem;
+    }
+  }
+
+  @keyframes bubble-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(97, 231, 190, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(97, 231, 190, 0);
+    }
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(0.8);
+    }
+  }
+
   .hero-title {
     font-size: 5.6rem;
     font-weight: 700;
