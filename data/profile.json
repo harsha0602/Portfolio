@@ -160,7 +160,7 @@
         "Built custom React hooks (useWebSocketClient, useWebRTC) that encapsulate connection management, getUserMedia, RTCPeerConnection lifecycle, and ICE candidate exchange.",
         "Authored 11-step tutorial with explicit learning outcomes, file-level instructions, checkpoints, and starter branch with TODO stubs—enables ~20+ hours of guided implementation work."
       ],
-      "links": { "repo": "https://github.com/harsha0602/Websockets_RTC", "demo": "" }
+      "links": { "repo": "https://github.com/harsha0602/Websockets_RTC", "demo": "https://harsha0602.github.io/Websockets_RTC/" }
     },
     {
       "name": "Swipe-to-Shop Fashion PWA",
