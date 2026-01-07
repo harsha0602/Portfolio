@@ -18,12 +18,14 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
   const [locked, setLocked] = useState(false);
   const [hovering, setHovering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [inView, setInView] = useState(false);
 
   // Unique id per card for coordination
   const idRef = useRef<number>(0);
   const autoFlippedRef = useRef(false);
   const isMobileRef = useRef(false);
   const lockedRef = useRef(false);
+  const flipTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Global scroll direction tracker (module-local)
   // We intentionally guard initialization to one-time per page load.
@@ -74,19 +76,42 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
       ([entry]) => {
         const visible = entry.isIntersecting && entry.intersectionRatio >= 1;
         const dir = ((window as any).__flipScrollDir as 'down' | 'up') || 'down';
+
+        // Set in-view state for pop-out effect (works on all devices)
+        setInView(visible);
+
         if (!isMobileRef.current || lockedRef.current) return;
+
         if (visible && dir === 'down') {
-          // Auto-flip this card and notify others to unflip
-          setFlipped(true);
-          autoFlippedRef.current = true;
-          window.dispatchEvent(new window.CustomEvent(AUTO_FLIP_EVENT, { detail: { id: idRef.current } }));
+          // Clear any existing timeout
+          if (flipTimeoutRef.current) {
+            clearTimeout(flipTimeoutRef.current);
+          }
+          // Delay the flip so user can see the front side first
+          flipTimeoutRef.current = setTimeout(() => {
+            // Auto-flip this card and notify others to unflip
+            setFlipped(true);
+            autoFlippedRef.current = true;
+            window.dispatchEvent(new window.CustomEvent(AUTO_FLIP_EVENT, { detail: { id: idRef.current } }));
+          }, 800); // 800ms delay before flip
+        } else if (!visible) {
+          // Clear timeout if card leaves view before flip
+          if (flipTimeoutRef.current) {
+            clearTimeout(flipTimeoutRef.current);
+            flipTimeoutRef.current = null;
+          }
         }
         // Do not auto-flip on upward scroll; also do not auto-unflip on leave.
       },
       { threshold: [0, 1] }
     );
     obs.observe(ref.current);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      if (flipTimeoutRef.current) {
+        clearTimeout(flipTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Listen for auto-flip broadcasts to unflip previous auto-flipped cards
@@ -137,6 +162,7 @@ const FlippableCard: React.FC<Props> = ({ className = '', front, back, ariaLabel
       ref={ref as any}
       className={`card flip-card ${className}`.trim()}
       data-flipped={flipped || undefined}
+      data-in-view={inView || undefined}
       role="button"
       tabIndex={0}
       aria-pressed={locked}
