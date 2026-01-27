@@ -17,7 +17,7 @@ const Hero: React.FC<Props> = ({ name, headline: _headline, location, links, abo
         {/* Replace hero/about content per request. */}
         <h1 id="hero-title" className="hero-title">
           {/* Assumption: Use `name` dynamically and highlight it for quick scannability. */}
-          Hi, my name is <span className="name-highlight">{name}</span>. {about?.intro || 'I engineer systems that bring hardware to life and teach machines to think—turning data, code, and cloud into real-world intelligence.'}
+          Hi, my name is <span className="name-highlight">{name}</span>. {about?.intro || 'I engineer systems that bring hardware to life and teach machines to think.'}
         </h1>
         <p className="hero-meta" aria-label="Location">{location} • MS Software Engineering @ ASU</p>
         <div className="hero-cta">
@@ -53,10 +53,10 @@ const Hero: React.FC<Props> = ({ name, headline: _headline, location, links, abo
                 <>
                   {/* Fallback text if about is not provided in data/profile.json */}
                   <p className="about-text">
-                    I’m a software engineer and master’s student in Software Engineering at ASU. With 3+ years of full‑stack industry experience and a recent internship at Amazon Web Services, I’ve built everything from large‑scale data pipelines and cloud infrastructure to machine‑learning systems that forecast risk and analyze sentiment in real time.
+                    I am a software engineer and master’s student in Software Engineering at Arizona State University with 3+ years of industry experience across startups and large-scale organizations, including Amazon Web Services. I have built and operated production systems spanning distributed backend services, large-scale data pipelines, cloud infrastructure, and applied machine learning, with work adopted by multiple teams and used in real-world workflows.
                   </p>
                   <p className="about-text">
-                    I enjoy creating software that blends intelligence with scalability—whether it’s migrating terabytes of data across AWS regions, building interactive apps, or experimenting with AI for image, text, and language tasks. Along the way, I’ve won hackathons, refactored major codebases, and designed tools that made life easier for engineers and end‑users alike.
+                    I specialize in taking ambiguous problems to shipped solutions. As both an engineer and a founder/CTO, I have owned systems end-to-end -- from design and implementation to deployment, monitoring, and iteration with users. I thrive in forward-deployed environments that require deep technical judgment, fast iteration, and close collaboration with product, customers, and stakeholders to deliver measurable impact.
                   </p>
                   <p className="about-text">
                     My focus: designing efficient, reliable systems that think, learn, and scale. My drive: solving complex problems, debugging relentlessly, and delivering impact.
