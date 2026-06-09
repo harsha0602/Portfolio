@@ -38,7 +38,7 @@ const Hero: React.FC<Props> = ({ name, headline: _headline, location, links, abo
             />
             <div className="developing-bubble">
               <span className="bubble-dot"></span>
-              <span className="bubble-text">developing <a href="https://tappedinapp.com" target="_blank" rel="noopener noreferrer" className="tappedin-link">TappedIn</a></span>
+              <span className="bubble-text">developing <a href="https://pretorin.com" target="_blank" rel="noopener noreferrer" className="tappedin-link">Pretorin</a></span>
             </div>
           </div>
           <div className="about-content">

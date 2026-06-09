@@ -2,7 +2,7 @@ import React from 'react';
 import type { ExperienceItem } from '../App';
 import { TechChip } from './Chips';
 import FlippableCard from './FlippableCard';
-import { Briefcase, Cloud, Bot, Building2, Server, Music, ExternalLink } from 'lucide-react';
+import { Briefcase, Cloud, Bot, Building2, Server, Music, ShieldCheck, ExternalLink } from 'lucide-react';
 
 // Robust YYYY-MM formatter that avoids timezone shifts (e.g., '05' showing as April).
 // We parse year/month and format in UTC so local offsets can't roll back the month.
@@ -120,6 +120,7 @@ function companyIcon(company: string) {
   if (c.includes('o9')) return <Building2 size={18} aria-label="o9 Solutions" />;
   if (c.includes('opennets')) return <Server size={18} aria-label="OpenNets" />;
   if (c.includes('tappedin') || c.includes('tapped')) return <Music size={18} aria-label="TappedIn" />;
+  if (c.includes('pretorin')) return <ShieldCheck size={18} aria-label="Pretorin" />;
   return <Briefcase size={18} aria-label="Company" />;
 }
 
@@ -169,6 +170,7 @@ function escapeReg(s: string) {
 function companyLink(company: string): string | null {
   const c = company.toLowerCase();
   if (c.includes('tappedin') || c.includes('tapped')) return 'https://tappedinapp.com/';
+  if (c.includes('pretorin')) return 'https://pretorin.com/';
   return null;
 }
 
@@ -188,6 +190,10 @@ function companyBadges(company: string): { label: string; value: string }[] {
   if (c.includes('amazon') || c.includes('aws')) {
     arr.push({ label: 'Code Commits', value: '50+' });
     arr.push({ label: 'Solution Architecture', value: 'Built from scratch' });
+  }
+  if (c.includes('pretorin')) {
+    arr.push({ label: 'Frameworks', value: 'FedRAMP · NIST 800-53 · SOC 2 · CMMC' });
+    arr.push({ label: 'Core', value: 'RAG + pgvector retrieval' });
   }
   if (c.includes('tappedin') || c.includes('tapped')) {
     arr.push({ label: 'Test Cases', value: '~950' });
