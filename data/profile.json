@@ -8,18 +8,18 @@
     "linkedin": "https://www.linkedin.com/in/hkuthadi/"
   },
   "about": {
-    "intro": "I engineer systems that bring hardware to life and teach machines to think.",
+    "intro": "I ship AI systems that hold up in production—from RAG pipelines drafting audit-ready government compliance docs to trading engines that never double-charge.",
     "paragraphs": [
       "I am a software engineer and master’s student in Software Engineering at Arizona State University with 3+ years of industry experience across startups and large-scale organizations, including Amazon Web Services. I have built and operated production systems spanning distributed backend services, large-scale data pipelines, cloud infrastructure, and applied machine learning, with work adopted by multiple teams and used in real-world workflows.",
-      "I specialize in taking ambiguous problems to shipped solutions. As both an engineer and a founder/CTO, I have owned systems end-to-end -- from design and implementation to deployment, monitoring, and iteration with users. I thrive in forward-deployed environments that require deep technical judgment, fast iteration, and close collaboration with product, customers, and stakeholders to deliver measurable impact.",
+      "I specialize in taking ambiguous problems to shipped solutions. As both an engineer and a founder/CTO, I have owned systems end-to-end -- from design and implementation to deployment, monitoring, and iteration with users. Currently at Pretorin, I'm building RAG-powered compliance automation that turns raw evidence into grounded, audit-ready documentation for frameworks like FedRAMP and NIST 800-53. I thrive in forward-deployed environments that require deep technical judgment, fast iteration, and close collaboration with product, customers, and stakeholders to deliver measurable impact.",
       "My focus: designing efficient, reliable systems that think, learn, and scale.",
       "My drive: solving complex problems, debugging relentlessly, and delivering impact."
     ],
     "tags": [
+      "AI & RAG Systems",
       "Full‑Stack Development",
       "Cloud Computing",
-      "Machine Learning & AI",
-      "Logic Programming",
+      "Machine Learning",
       "DSA"
     ]
   },
@@ -48,11 +48,26 @@
   },
   "experience": [
     {
+      "company": "Pretorin",
+      "role": "Product Engineer Intern",
+      "location": "Tempe, AZ",
+      "start": "2026-05",
+      "end": "Present",
+      "summary": "At Pretorin, I'm helping build an AI-native government compliance automation platform—RAG workflows that turn uploaded evidence (policies, logs, screenshots, architecture docs) into grounded, audit-ready compliance documentation for frameworks like FedRAMP, NIST 800-53, SOC 2, CMMC Level 2, and ATO.\n\nEvidence is extracted, chunked, embedded, and semantically retrieved via PostgreSQL + pgvector, then passed to LLMs to draft compliance narratives—always with human review and audit traceability. I work across the full stack: React, FastAPI, PostgreSQL, Docker, and the OpenAI SDK.",
+      "highlights": [
+        "Contributing to an AI-native GRC platform using RAG workflows to automate evidence retrieval, compliance documentation, and control-readiness for FedRAMP, NIST 800-53, SOC 2, CMMC, and ATO.",
+        "Supporting AI pipelines where uploaded evidence is extracted, chunked, embedded, and semantically retrieved (pgvector) before LLMs generate grounded compliance narratives.",
+        "Helping improve control-to-evidence mapping, AI-generated documentation, human review flows, and audit traceability.",
+        "Improving product quality through bug fixes, testing, frontend/backend enhancements, and validation of AI-assisted workflows."
+      ],
+      "tech": ["React", "FastAPI", "PostgreSQL", "pgvector", "Docker", "OpenAI SDK", "RAG", "Python", "TypeScript"]
+    },
+    {
       "company": "TappedIn",
       "role": "Technical Co-founder",
       "location": "Remote, US",
       "start": "2025-11",
-      "end": "Present",
+      "end": "2026-05",
       "summary": "I built the full technical stack for a fantasy market where users 'invest' virtual currency in music artists—turning subjective taste into structured prediction data for A&R teams.\n\nFrom zero to TestFlight in ~5 weeks: React Native + Expo frontend, Supabase backend with 28 migrations, 23 RLS policies, and a queue-based pricing system (pgmq) that cut Spotify API calls by 50x. Every trade runs through atomic PostgreSQL transactions with idempotency keys—no double-charges, no partial updates, no overdraw races. 44 beta testers validated demand on an early prototype; we shipped the production MVP with ~950 test cases across Jest, Vitest, and pgTAP.",
       "highlights": [
         "Architected atomic trading engine with FOR UPDATE locks and idempotency guarantees; single PostgreSQL transactions prevent overdraw races and maintain an append-only audit trail.",
