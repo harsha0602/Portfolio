@@ -125,6 +125,7 @@ function companyIcon(company: string) {
 }
 
 function logoPath(c: string): string | null {
+  if (c.includes('pretorin')) return new URL('../../assets/images/pretorinImage.png', import.meta.url).href;
   if (c.includes('tappedin') || c.includes('tapped')) return new URL('../../assets/images/tappedin_last_frame.png', import.meta.url).href;
   if (c.includes('amazon') || c.includes('aws')) return new URL('../../assets/images/AWSimage.webp', import.meta.url).href;
   if (c.includes('handshake')) return new URL('../../assets/images/HandshakeImage.webp', import.meta.url).href;
