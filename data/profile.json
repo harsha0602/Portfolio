@@ -8,18 +8,19 @@
     "linkedin": "https://www.linkedin.com/in/hkuthadi/"
   },
   "about": {
-    "intro": "I like figuring out how things work, building my own version, and sticking with a problem until it makes sense.",
+    "intro": "I like figuring out how things work, learning unfamiliar stacks, and building useful software. AI is part of both what I build and how I work.",
     "paragraphs": [
-      "I studied electronics before moving into software. My interests still span hardware, machine learning, and computing on devices. I like the point where code starts doing something you can see or interact with.",
-      "I enjoy taking a problem apart, trying things, and debugging until I understand what's going on. Building a small project is usually how I get to grips with a new idea.",
-      "I also like building with other people: talking through an approach, hearing a different take, and taking responsibility for getting my part working. That mix of learning, experimenting, and working things out is what I enjoy about engineering."
+      "I'm a generalist by curiosity. I studied electronics before moving into software, and I still enjoy exploring where hardware and code meet. Web apps, mobile apps, backend services, data pipelines, and machine learning all interest me. I like choosing tools to fit a problem and learning what I need along the way.",
+      "I use AI to explore ideas, work through unfamiliar code, and get more done. I still take responsibility for the result: reviewing generated code, testing changes, and being deliberate about what data and permissions tools get. Understanding what I'm shipping is part of the job.",
+      "I also build AI into software. I enjoy the engineering around the model: connecting it to useful tools and information, checking access, testing failure cases, and making its answers easier to verify. That's where my interest in AI meets my interest in how systems work.",
+      "I learn best by building something, breaking it, and working out why. I like doing that with people who ask good questions and bring a different perspective. The chance to keep learning across different kinds of software is what draws me to engineering."
     ],
     "tags": [
-      "Hardware & software",
-      "Machine learning",
-      "Edge computing",
-      "Learning by building",
-      "Debugging"
+      "Software generalist",
+      "AI engineering",
+      "Web & mobile",
+      "Backend & data",
+      "Hardware curiosity"
     ]
   },
   "skills": {

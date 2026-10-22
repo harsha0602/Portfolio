@@ -14,7 +14,7 @@ const Hero: React.FC<Props> = ({ name, headline, location, links, about }) => {
   return (
     <section id="hero" className="section hero" aria-labelledby="hero-title">
       <div className="container">
-        <p className="hero-eyebrow">Hi, I'm</p>
+        <p className="hero-eyebrow">Software generalist &amp; AI engineer</p>
         <h1 id="hero-title" className="hero-title">
           <span className="name-highlight">{name}</span>
         </h1>
