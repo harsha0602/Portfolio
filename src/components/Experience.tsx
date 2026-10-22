@@ -46,6 +46,9 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                   <p className="card-subtitle">{exp.role}</p>
                   <p className="card-subtitle card-location">{exp.location}</p>
                   <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                  {exp.company === 'TappedIn' && (
+                    <p className="launch-milestone">Live on the App Store <span aria-hidden="true">·</span> <strong>1,000+ users</strong></p>
+                  )}
                 </header>
               </div>
             ) : (
@@ -58,6 +61,9 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                   <p className="card-subtitle">{exp.role}</p>
                   <p className="card-subtitle card-location">{exp.location}</p>
                   <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                  {exp.company === 'TappedIn' && (
+                    <p className="launch-milestone">Live on the App Store <span aria-hidden="true">·</span> <strong>1,000+ users</strong></p>
+                  )}
                   <div className="badges" aria-label="Tech stack">
                     {exp.tech.map((t) => (
                       <TechChip key={t}>{t}</TechChip>
@@ -198,7 +204,8 @@ function companyBadges(company: string): { label: string; value: string }[] {
   }
   if (c.includes('tappedin') || c.includes('tapped')) {
     arr.push({ label: 'Test Cases', value: '~950' });
-    arr.push({ label: 'Beta Users', value: '44' });
+    arr.push({ label: 'Users', value: '1,000+' });
+    arr.push({ label: 'Available On', value: 'App Store' });
     arr.push({ label: 'Dev Time', value: '~5 weeks' });
   }
   return arr;

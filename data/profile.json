@@ -49,7 +49,7 @@
   "experience": [
     {
       "company": "Pretorin",
-      "role": "Product Engineer Intern",
+      "role": "Product Engineer",
       "location": "Tempe, AZ",
       "start": "2026-05",
       "end": "Present",
@@ -68,8 +68,9 @@
       "location": "Remote, US",
       "start": "2025-11",
       "end": "2026-05",
-      "summary": "I built the full technical stack for a fantasy market where users 'invest' virtual currency in music artists—turning subjective taste into structured prediction data for A&R teams.\n\nFrom zero to TestFlight in ~5 weeks: React Native + Expo frontend, Supabase backend with 28 migrations, 23 RLS policies, and a queue-based pricing system (pgmq) that cut Spotify API calls by 50x. Every trade runs through atomic PostgreSQL transactions with idempotency keys—no double-charges, no partial updates, no overdraw races. 44 beta testers validated demand on an early prototype; we shipped the production MVP with ~950 test cases across Jest, Vitest, and pgTAP.",
+      "summary": "I built the full technical stack for TappedIn, a fantasy market where users 'invest' virtual currency in music artists—turning subjective taste into structured prediction data for A&R teams. Now live on the App Store with over 1,000 users.\n\nFrom zero to TestFlight in ~5 weeks: React Native + Expo frontend, Supabase backend with 28 migrations, 23 RLS policies, and a queue-based pricing system (pgmq) that cut Spotify API calls by 50x. Every trade runs through atomic PostgreSQL transactions with idempotency keys—no double-charges, no partial updates, no overdraw races. We launched on the App Store and grew to over 1,000 users, backed by ~950 test cases across Jest, Vitest, and pgTAP.",
       "highlights": [
+        "Launched TappedIn on the App Store, reaching over 1,000 users.",
         "Architected atomic trading engine with FOR UPDATE locks and idempotency guarantees; single PostgreSQL transactions prevent overdraw races and maintain an append-only audit trail.",
         "Designed queue-based batch pricing (pgmq) that groups 50 artists per Spotify API call, isolates failures, and retries with exponential backoff—50x reduction in external API calls.",
         "Shipped 11 screens, 22 React Native components, 7 Supabase Edge Functions, 12 RPCs, and 23 row-level security policies; wrote ~950 test cases with full RLS policy validation via pgTAP.",
