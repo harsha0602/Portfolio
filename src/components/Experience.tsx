@@ -46,6 +46,9 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                   <p className="card-subtitle">{exp.role}</p>
                   <p className="card-subtitle card-location">{exp.location}</p>
                   <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                  {exp.company === 'TappedIn' && (
+                    <p className="launch-milestone">Live on the App Store <span aria-hidden="true">·</span> <strong>1,000+ users</strong></p>
+                  )}
                 </header>
               </div>
             ) : (
@@ -58,6 +61,9 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                   <p className="card-subtitle">{exp.role}</p>
                   <p className="card-subtitle card-location">{exp.location}</p>
                   <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                  {exp.company === 'TappedIn' && (
+                    <p className="launch-milestone">Live on the App Store <span aria-hidden="true">·</span> <strong>1,000+ users</strong></p>
+                  )}
                   <div className="badges" aria-label="Tech stack">
                     {exp.tech.map((t) => (
                       <TechChip key={t}>{t}</TechChip>

@@ -193,19 +193,18 @@ html[data-theme='dark'] .developing-bubble {
 .company-link-btn:hover { transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 .experience-front { position: relative; }
 
-/* Flippable card */
-.flip-card { perspective: 1200px; position: relative; padding: 0; cursor: pointer; min-height: var(--flip-h, 260px); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.flip-card .flip-inner { position: relative; width: 100%; height: 100%; transition: transform var(--flip-speed, 500ms) ease; transform-style: preserve-3d; will-change: transform; }
-.flip-card[data-flipped="true"] .flip-inner { transform: rotateY(180deg); z-index: 2; }
-.flip-card[data-flipped="true"] { min-height: var(--flip-h-flipped, calc(var(--flip-h, 260px) + 120px)); box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
-/* Pop-out effect when card is in view or hovered */
-.flip-card[data-in-view="true"], .flip-card:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.15); z-index: 1; }
-.flip-face { position: relative; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: .9rem; overflow: hidden; transform: translateZ(0); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-.flip-front, .flip-back { position: absolute; inset: 0; padding: 1rem; display: flex; flex-direction: column; }
-.flip-front { overflow: hidden; }
-.flip-back { overflow: auto; background: var(--color-card); }
-.flip-back { transform: rotateY(180deg) translateZ(0); }
-.flip-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+/* Content-sized cards with explicit, keyboard-accessible details. */
+.flip-card { display: flex; flex-direction: column; min-width: 0; padding: 1rem; box-shadow: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.flip-card:hover, .flip-card:focus-within { border-color: var(--color-accent); box-shadow: var(--shadow); }
+.card-overview { min-width: 0; }
+.card-details { border-top: 1px solid var(--color-border); padding-top: 1.25rem; margin-top: 1rem; overflow-wrap: anywhere; }
+.card-details[hidden] { display: none; }
+.card-toggle { display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 44px; width: 100%; margin-top: 1rem; padding: .65rem 0; border: 0; border-top: 1px solid var(--color-border); background: transparent; color: var(--color-accent); font: inherit; font-weight: 600; cursor: pointer; text-align: left; }
+.card-toggle:hover { color: var(--color-text); }
+.card-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: .25rem; }
+.launch-milestone { display: flex; flex-wrap: wrap; gap: .25rem; margin: .75rem 0 0; padding: .5rem .65rem; border-radius: .4rem; background: color-mix(in srgb, var(--color-primary) 12%, var(--color-card)); color: var(--color-text); font-size: .9rem; }
+.card-header { margin-top: 1rem; }
+#experience .grid, #projects .grid { align-items: start; }
 
 /* Project cover overlay */
 .project-cover { position: relative; border-radius: .9rem; overflow: hidden; border: 1px solid var(--color-border); aspect-ratio: 16 / 9; }
@@ -248,21 +247,12 @@ html[data-theme='dark'] .badge { background: #0f1115; color: #eaeaea; }
   * { transition: none !important; animation: none !important; }
 }
 
-/* Slow down flip on coarse pointers (mobile/tablet) */
-@media (pointer: coarse), (max-width: 720px) {
-  .flip-card .flip-inner { transition-duration: 1000ms; }
-}
-
 img { max-width: 100%; height: auto; }
 
 /* Project media area to maintain consistent card height even without images */
 .project-media { margin-top: .5rem; }
 .project-media img { width: 100%; height: auto; border-radius: .5rem; border: 1px solid var(--color-border); }
 .image-placeholder { width: 100%; height: 200px; background: var(--color-card); border: 1px solid var(--color-border); border-radius: .5rem; }
-
-/* Card specific heights */
-.flip-card--project { --flip-h: 360px; --flip-h-flipped: 440px; }
-.flip-card--experience { --flip-h: 420px; --flip-h-flipped: 520px; }
 
 /* Experience cover overlay */
 .experience-cover { position: relative; border-radius: .9rem; overflow: hidden; border: 1px solid var(--color-border); aspect-ratio: 16 / 9; }
@@ -274,10 +264,7 @@ img { max-width: 100%; height: auto; }
 /* Compact mobile tiles for better viewport usage */
 @media (max-width: 600px) {
   .grid { gap: .75rem; }
-  .flip-card.card { padding: .6rem; border-radius: .75rem; }
-  .flip-front, .flip-back { padding: .6rem; }
-  .flip-card--project { --flip-h: 320px; --flip-h-flipped: 390px; }
-  .flip-card--experience { --flip-h: 380px; --flip-h-flipped: 460px; }
+  .flip-card.card { padding: 1rem; border-radius: .75rem; }
   .experience-cover, .project-cover { aspect-ratio: 16 / 10; }
   .badge { font-size: .75rem; padding: .1rem .4rem; }
   .experience-title-on-image, .project-title-on-image { font-size: clamp(0.95rem, 4vw, 1.1rem); }
