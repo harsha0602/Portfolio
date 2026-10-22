@@ -14,12 +14,12 @@ const Hero: React.FC<Props> = ({ name, headline, location, links, about }) => {
   return (
     <section id="hero" className="section hero" aria-labelledby="hero-title">
       <div className="container">
-        <p className="hero-eyebrow">Product engineer &amp; technical co-founder</p>
+        <p className="hero-eyebrow">Hi, I'm</p>
         <h1 id="hero-title" className="hero-title">
           <span className="name-highlight">{name}</span>
         </h1>
         <p className="hero-subtitle">{about?.intro || headline}</p>
-        <p className="hero-meta" aria-label="Location">{location} · M.S. Software Engineering, ASU</p>
+        <p className="hero-meta" aria-label="Location">Based in {location}</p>
         <div className="hero-cta">
           <a className="btn" href={new URL('../../assets/CV.pdf', import.meta.url).href} download aria-label="Download CV"><FileDown size={16} /> Download CV</a>
           <a className="btn btn-secondary" href={`mailto:${links.email}`} aria-label="Email Harshavardhan"><Mail size={16} /> Email</a>
@@ -36,10 +36,6 @@ const Hero: React.FC<Props> = ({ name, headline, location, links, about }) => {
               loading="lazy"
               decoding="async"
             />
-            <div className="developing-bubble">
-              <span className="bubble-dot"></span>
-              <span className="bubble-text">Building at <a href="https://pretorin.com" target="_blank" rel="noopener noreferrer" className="tappedin-link">Pretorin</a></span>
-            </div>
           </div>
           <div className="about-content">
             {/* About block (revamped) */}
