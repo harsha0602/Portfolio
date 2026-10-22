@@ -7,7 +7,7 @@ const Achievements: React.FC<{ items: AchievementItem[] }> = ({ items }) => (
   <section id="achievements" className="section" aria-labelledby="achievements-title">
     <div className="container">
       <h2 id="achievements-title" className="section-title"><Award size={18}/> Achievements &amp; Milestones</h2>
-      <p className="section-intro">Products shipped, team wins, and recognition.</p>
+      <p className="section-intro">A product launch, a hackathon win, and recognition at work.</p>
       <div className="grid">
         {items.map((a) => (
           <article key={`${a.title}-${a.date}`} className="card">

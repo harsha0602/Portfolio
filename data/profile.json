@@ -1,6 +1,6 @@
 {
   "name": "Harshavardhan Kuthadi",
-  "headline": "I build scalable data/ML systems and cloud tooling that turn messy streams into reliable, actionable intelligence.",
+  "headline": "Product engineer at Pretorin and technical co-founder of TappedIn.",
   "location": "Tempe, AZ",
   "links": {
     "email": "hkuthadi@asu.edu",
@@ -8,43 +8,60 @@
     "linkedin": "https://www.linkedin.com/in/hkuthadi/"
   },
   "about": {
-    "intro": "I ship AI systems that hold up in production—from RAG pipelines drafting audit-ready government compliance docs to trading engines that never double-charge.",
+    "intro": "I build software for compliance teams at Pretorin. I also co-founded TappedIn, a music app with over 1,000 users.",
     "paragraphs": [
-      "I am a software engineer and master’s student in Software Engineering at Arizona State University with 3+ years of industry experience across startups and large-scale organizations, including Amazon Web Services. I have built and operated production systems spanning distributed backend services, large-scale data pipelines, cloud infrastructure, and applied machine learning, with work adopted by multiple teams and used in real-world workflows.",
-      "I specialize in taking ambiguous problems to shipped solutions. As both an engineer and a founder/CTO, I have owned systems end-to-end -- from design and implementation to deployment, monitoring, and iteration with users. Currently at Pretorin, I'm building RAG-powered compliance automation that turns raw evidence into grounded, audit-ready documentation for frameworks like FedRAMP and NIST 800-53. I thrive in forward-deployed environments that require deep technical judgment, fast iteration, and close collaboration with product, customers, and stakeholders to deliver measurable impact.",
-      "My focus: designing efficient, reliable systems that think, learn, and scale.",
-      "My drive: solving complex problems, debugging relentlessly, and delivering impact."
+      "At Pretorin, I work on the web app, Python services, and AI tools. I'm building Compliance Claw, a product that connects OpenClaw with Pretorin and is designed for customers to deploy as their own always-on compliance agent. I also work on our in-app assistant and integrations with other AI clients.",
+      "Before Pretorin, I built data pipelines at AWS and worked on enterprise planning software at o9 Solutions. I like working on both the feature people see and the code that keeps it running.",
+      "I completed my master's in Software Engineering at Arizona State University in May 2026. Outside work, I co-founded TappedIn and built its mobile app and backend. It's now on the App Store."
     ],
     "tags": [
-      "AI & RAG Systems",
-      "Full‑Stack Development",
-      "Cloud Computing",
-      "Machine Learning",
-      "DSA"
+      "Product engineering",
+      "Python & TypeScript",
+      "React & React Native",
+      "APIs & integrations",
+      "Data pipelines"
     ]
   },
   "skills": {
-    "Languages": ["Python", "SQL", "TypeScript", "JavaScript", "HTML", "CSS", "Scala", "C#", "C++"],
+    "Languages": [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "C#",
+      "Java",
+      "Scala",
+      "C++",
+      "HTML",
+      "CSS"
+    ],
     "Frameworks/Tools": [
       "React",
-      "Angular",
+      "React Native",
+      "Next.js",
+      "FastAPI",
       "Node.js",
-      "Vue.js",
-      "TensorFlow",
+      ".NET",
+      "OpenAI Agents SDK",
+      "OpenClaw",
       "PyTorch",
       "scikit-learn",
-      "Pandas",
-      "NumPy",
-      "OpenCV",
-      "NLTK",
-      "Matplotlib",
-      "Git",
-      "JIRA",
       "Docker",
-      "Flask",
-      "CI/CD"
+      "Git",
+      "GitHub Actions",
+      "pytest",
+      "Playwright",
+      "Vitest"
     ],
-    "Cloud/Databases": ["AWS", "Azure", "MongoDB", "Oracle", "PostgreSQL", "MSSQL"]
+    "Cloud/Databases": [
+      "AWS",
+      "Azure AKS",
+      "PostgreSQL",
+      "pgvector",
+      "MSSQL",
+      "MongoDB",
+      "Supabase"
+    ]
   },
   "experience": [
     {
@@ -53,14 +70,27 @@
       "location": "Tempe, AZ",
       "start": "2026-05",
       "end": "Present",
-      "summary": "At Pretorin, I'm helping build an AI-native government compliance automation platform—RAG workflows that turn uploaded evidence (policies, logs, screenshots, architecture docs) into grounded, audit-ready compliance documentation for frameworks like FedRAMP, NIST 800-53, SOC 2, CMMC Level 2, and ATO.\n\nEvidence is extracted, chunked, embedded, and semantically retrieved via PostgreSQL + pgvector, then passed to LLMs to draft compliance narratives—always with human review and audit traceability. I work across the full stack: React, FastAPI, PostgreSQL, Docker, and the OpenAI SDK.",
+      "summary": "I build across Pretorin's web app, backend, and agent tools. I joined as an intern in May 2026 and became a full-time Product Engineer in September. My current work includes Compliance Claw, a customer-deployable product that connects OpenClaw with Pretorin and runs as an always-on compliance agent.",
       "highlights": [
-        "Contributing to an AI-native GRC platform using RAG workflows to automate evidence retrieval, compliance documentation, and control-readiness for FedRAMP, NIST 800-53, SOC 2, CMMC, and ATO.",
-        "Supporting AI pipelines where uploaded evidence is extracted, chunked, embedded, and semantically retrieved (pgvector) before LLMs generate grounded compliance narratives.",
-        "Helping improve control-to-evidence mapping, AI-generated documentation, human review flows, and audit traceability.",
-        "Improving product quality through bug fixes, testing, frontend/backend enhancements, and validation of AI-assisted workflows."
+        "Own development of Compliance Claw and the in-app assistant that helps people navigate Pretorin and get support.",
+        "Work on MCP hosting and plugins so people can use Pretorin's tools from OpenAI, Anthropic, and other AI clients.",
+        "Build Python and FastAPI services that check permissions, look up relevant evidence, and keep responses linked to their sources. Add tests for denied access and prompt injection.",
+        "Improve the agent development stack and CLI releases. Added signed packages, checksums, and software bills of materials; reduced macOS installation time from seven minutes to three."
       ],
-      "tech": ["React", "FastAPI", "PostgreSQL", "pgvector", "Docker", "OpenAI SDK", "RAG", "Python", "TypeScript"]
+      "tech": [
+        "Python",
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "OpenClaw",
+        "MCP",
+        "PostgreSQL",
+        "pgvector",
+        "OpenAI Agents SDK",
+        "pytest",
+        "Playwright"
+      ],
+      "overview": "Compliance Claw, the in-app assistant, and integrations with AI clients."
     },
     {
       "company": "TappedIn",
@@ -68,15 +98,26 @@
       "location": "Remote, US",
       "start": "2025-11",
       "end": "2026-05",
-      "summary": "I built the full technical stack for TappedIn, a fantasy market where users 'invest' virtual currency in music artists—turning subjective taste into structured prediction data for A&R teams. Now live on the App Store with over 1,000 users.\n\nFrom zero to TestFlight in ~5 weeks: React Native + Expo frontend, Supabase backend with 28 migrations, 23 RLS policies, and a queue-based pricing system (pgmq) that cut Spotify API calls by 50x. Every trade runs through atomic PostgreSQL transactions with idempotency keys—no double-charges, no partial updates, no overdraw races. We launched on the App Store and grew to over 1,000 users, backed by ~950 test cases across Jest, Vitest, and pgTAP.",
+      "summary": "I co-founded TappedIn and built its React Native app and PostgreSQL backend. People use virtual currency to back emerging artists and track how their picks grow. The app is live on the App Store with over 1,000 users.",
       "highlights": [
-        "Launched TappedIn on the App Store, reaching over 1,000 users.",
-        "Architected atomic trading engine with FOR UPDATE locks and idempotency guarantees; single PostgreSQL transactions prevent overdraw races and maintain an append-only audit trail.",
-        "Designed queue-based batch pricing (pgmq) that groups 50 artists per Spotify API call, isolates failures, and retries with exponential backoff—50x reduction in external API calls.",
-        "Shipped 11 screens, 22 React Native components, 7 Supabase Edge Functions, 12 RPCs, and 23 row-level security policies; wrote ~950 test cases with full RLS policy validation via pgTAP.",
-        "Debugged Android OAuth failure for days, traced root cause to Expo Go platform limitation, migrated to Development Builds—documented architecture lesson for future reference."
+        "Built artist discovery, user portfolios, trading, and account flows with React Native and Expo.",
+        "Keep balance changes and trades in a single database transaction, with checks that prevent a repeated request from charging twice.",
+        "Batch Spotify artist updates through a queue and retry failed requests. Added tests for the app, APIs, database permissions, and trading logic."
       ],
-      "tech": ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "pgmq", "Spotify API", "Jest", "Vitest", "pgTAP", "EAS Build"]
+      "tech": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "pgmq",
+        "Spotify API",
+        "Jest",
+        "Vitest",
+        "pgTAP",
+        "EAS Build"
+      ],
+      "overview": "A music app where people back artists they discover early."
     },
     {
       "company": "Handshake AI Solutions, LLC",
@@ -84,13 +125,17 @@
       "location": "Remote, US",
       "start": "2025-09",
       "end": "2025-10",
-      "summary": "At Handshake AI Solutions, I designed and evaluated 50+ domain-specific prompts across advanced CS topics so models were tested on the tricky edge cases that matter. The work focused on clarity, correctness, and breadth.\n\nI reviewed 100+ outputs and delivered structured feedback that improved internal accuracy by 12% and reduced factual errors by ~20% in test runs. I also expanded evaluation categories, lifting test coverage by 30% and speeding up the fine-tuning feedback loop.",
+      "summary": "I wrote computer science questions and reviewed model answers at Handshake AI Solutions. The work involved checking technical correctness, finding missing edge cases, and explaining why an answer was wrong.",
       "highlights": [
-        "Developed and evaluated 50+ domain-specific prompts to assess LLM performance across specialized CS subfields, ensuring coverage of edge-case scenarios and nuanced domain knowledge.",
-        "Reviewed 100+ LLM outputs for scientific accuracy, clarity, and depth; structured feedback improved model reliability and reduced factual errors by ~20% in test runs.",
-        "Conducted independent literature-based research to design new evaluation categories, expanding test coverage by 30% and accelerating the feedback cycle for model fine-tuning."
+        "Wrote more than 50 prompts across computer science topics, including cases that required careful reasoning.",
+        "Reviewed more than 100 model responses and gave specific feedback on incorrect claims, incomplete explanations, and code errors.",
+        "Researched new evaluation topics and added questions that covered gaps in the existing tasks."
       ],
-      "tech": ["Prompt Engineering", "LLM Evaluation"]
+      "tech": [
+        "Prompt Engineering",
+        "LLM Evaluation"
+      ],
+      "overview": "Computer science tasks for testing and reviewing language models."
     },
     {
       "company": "Amazon Web Services (AWS)",
@@ -98,13 +143,12 @@
       "location": "Seattle, WA",
       "start": "2025-05",
       "end": "2025-08",
-      "summary": "I replaced a 3+ hour manual KDS migration SOP with an AWS Glue ETL written in Scala and TypeScript. Data landed in partitioned Parquet on S3 for Athena queries, cutting prep time by ~95% and making ad-hoc analysis practical.\n\nI productionized PySpark prototypes into Scala, added a custom bookmarking fix for Glue crawler races, and tuned compute to halve runtime. I then wired 10+ CloudWatch alarms to watch 100+ active streams, built QuickSight dashboards, and automated infra with AWS CDK. I captured cost/performance trade-offs in a design doc adopted by the team.",
+      "summary": "During my AWS internship, I built a data pipeline for assessing Kinesis stream migrations. It replaced a manual process that took more than three hours with data that the team could query in Athena.",
       "highlights": [
-        "Developed an AWS Glue ETL pipeline in Scala & TypeScript to replace a 3+ hr manual KDS migration SOP, transforming JSON/DynamoDB data into partitioned Parquet for Athena queries; cut prep time by ~95%.",
-        "Benchmarked Glue vs. Step Functions for ETL and Redshift vs. Athena+S3 for storage on 500 GB test data; authored design doc on cost/performance trade-offs adopted by a 4+ engineer team.",
-        "Authored optimized SQL queries from partitioned Parquet outputs, enabling real-time migration assessments across multi-region datasets (1+ TB) and supporting ad-hoc analytics.",
-        "Productionized PySpark prototypes into Scala, right-sized compute, added a custom bookmarking solution & fixed crawler race conditions; reduced runtime by 50%.",
-        "Provisioned infra via CDK (TypeScript) and CloudFormation: S3, Glue jobs/crawlers, Athena, IAM; maintained Git reviews to enable repeatable deployments."
+        "Built AWS Glue jobs in Scala and PySpark to turn JSON and DynamoDB exports into partitioned Parquet on S3. Reduced data preparation time by about 95%.",
+        "Moved prototypes into Scala, fixed crawler timing and job-bookmark issues, and adjusted compute settings to cut runtime by 50%.",
+        "Set up infrastructure with AWS CDK and CloudFormation. Added CloudWatch alerts and dashboards for more than 100 active streams.",
+        "Compared storage and processing options and wrote design documents covering costs, schemas, and partitioning."
       ],
       "tech": [
         "AWS Glue",
@@ -121,7 +165,8 @@
         "CloudFormation",
         "IAM",
         "Git"
-      ]
+      ],
+      "overview": "Data pipelines and migration tools for the Kinesis team."
     },
     {
       "company": "o9 Solutions, Inc.",
@@ -129,13 +174,26 @@
       "location": "Bengaluru, India",
       "start": "2022-07",
       "end": "2024-07",
-      "summary": "I shipped 10+ reusable modules in a tenant architecture using .NET (C#), MSSQL, and JavaScript/jQuery, so teams could configure and roll out features faster. A Kendo UI conflict-resolution grid reduced merge friction for 20+ client-facing teams by ~40%.\n\nI lifted test coverage by 30% and refactored 10K+ LOC of unit tests for long-term maintainability. Across releases I resolved 250+ bugs and authored notes to keep rollouts predictable and transparent.",
+      "summary": "At o9 Solutions, I worked on the JavaScript frontend and C# backend of an enterprise planning platform. My work covered dashboard configuration, versioning, and the tools teams used to merge changes between tenant environments.",
       "highlights": [
-        "Delivered 10+ reusable modules in a modular tenant architecture using .NET (C#), MSSQL, and JavaScript/jQuery, improving scalability and configuration management across projects.",
-        "Boosted test coverage by 30% by adding unit tests for new .NET (C#) and JavaScript modules; reinforced Jasmine/MSTest suites with mocked payloads and regression cases.",
-        "Resolved 250+ bugs across C# and JavaScript; refactored 60% of the test codebase, reducing code duplication by 10K+ LOC and improving long-term maintainability."
+        "Built configuration screens for visualization widgets so consultants could set up dashboards without writing custom code.",
+        "Developed Git-style versioning and conflict resolution for tenant configurations used by more than 20 teams.",
+        "Refactored Jasmine tests and the code they covered, removing more than 10,000 lines of duplicate code. Fixed frontend and backend bugs across releases."
       ],
-      "tech": [".NET", "C#", "MSSQL", "JavaScript", "jQuery", "Jasmine", "MSTest","KendoUI", "HTML","CSS", "Git"]
+      "tech": [
+        ".NET",
+        "C#",
+        "MSSQL",
+        "JavaScript",
+        "jQuery",
+        "Jasmine",
+        "MSTest",
+        "KendoUI",
+        "HTML",
+        "CSS",
+        "Git"
+      ],
+      "overview": "Dashboard tools, configuration versioning, and test maintenance."
     },
     {
       "company": "OpenNets",
@@ -143,201 +201,355 @@
       "location": "Bengaluru, India",
       "start": "2021-05",
       "end": "2022-05",
-      "summary": "I built a network topology simulator with Mininet, Node.js, and MongoDB to model and validate 10+ distinct topologies. The tool reduced deployment misconfigurations by ~30% and made experiments repeatable.\n\nAn AngularJS UI let engineers configure and visualize topologies quickly, cutting setup time per topology by ~40%. I added automated validation layers that drove configuration-related bugs down by >50%.",
+      "summary": "I built a network topology simulator at OpenNets. Engineers could configure networks in a browser, run simulations, and check settings before using them in deployment scenarios.",
       "highlights": [
-        "Architected and implemented a network topology simulator using Mininet, Node.js, and MongoDB supporting 10+ distinct topologies; reduced misconfigurations in simulator pipelines with automated checks by over 50%.",
-        "Enabled immediate on-call notifications and resolved 95% of incidents within SLA via operational dashboards and alerting.",
-        "Built configuration UI to visualize and manage topologies, cutting setup time by ~40%."
+        "Used Mininet, Node.js, and MongoDB to model and validate more than 10 network topologies.",
+        "Built an AngularJS interface for editing settings and viewing network layouts.",
+        "Added automated configuration checks to catch errors before running a simulation."
       ],
-      "tech": ["Mininet", "Node.js", "MongoDB", "AngularJS", "HTML", "CSS", "Git"]
+      "tech": [
+        "Mininet",
+        "Node.js",
+        "MongoDB",
+        "AngularJS",
+        "HTML",
+        "CSS",
+        "Git"
+      ],
+      "overview": "A network simulator and the interface for configuring it."
     }
   ],
   "projects": [
     {
-      "name": "FluidFill -- AI Document Automation",
+      "name": "FluidFill",
       "date": "Nov 2025",
-      "summary": "FluidFill is an AI-assisted document tool that turns static .docx legal templates into interactive forms.\n\nUpload a DOCX and an Express gateway streams the file to Postgres while fanning out two FastAPI jobs in parallel (placeholder parsing and HTML preview). Gemini returns a typed schema; if the LLM is unreachable, a deterministic fallback builds one so the flow never stalls. The Next.js UI renders the form on the fly, syncing repeated fields automatically. Click Download to reconstruct a pixel-faithful DOCX with styles preserved.",
-      "tech": ["Python", "FastAPI", "Next.js", "TypeScript", "Postgres", "DOCX", "Gemini API", "Express"],
-      "highlights": [
-        "End-to-end flow: upload -> auto-detect placeholders (brackets, blanks, headers/footers) -> AI typed schema -> dynamic React form -> single-fill sync -> styled DOCX reconstruction.",
-        "Resilient architecture: API gateway streams to Postgres and fans out two FastAPI workers in parallel; a fallback schema builder keeps UX live during LLM outages.",
-        "Thoughtful UX and ops: optimistic debounced saves with request IDs and status pills; versioned schemas and answers in Postgres; health endpoints and auto-migrations.",
-        "LLM guardrails: Gemini prompts enforce typed fields and limits; responses are validated and retried with backoff so users never see raw model errors."
+      "summary": "FluidFill turns Word templates into forms. Upload a document, fill in the detected fields, and download a completed copy with the original formatting.",
+      "tech": [
+        "Python",
+        "FastAPI",
+        "Next.js",
+        "TypeScript",
+        "Postgres",
+        "DOCX",
+        "Gemini API",
+        "Express"
       ],
-      "links": { "repo": "https://github.com/harsha0602/FluidFill", "demo": "https://youtu.be/StmRbEnZBgs" }
+      "highlights": [
+        "Built a Next.js form editor and Python services that detect placeholders and generate document previews.",
+        "Used Gemini to identify fields, with a parser fallback when the model is unavailable. Kept repeated fields in sync and saved form answers in PostgreSQL."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/FluidFill",
+        "demo": "https://youtu.be/StmRbEnZBgs"
+      },
+      "overview": "Fill out a document once, even when the same field appears in several places."
     },
     {
       "name": "Realtime Study Rooms",
       "date": "Oct 2025",
-      "summary": "A full-stack demo and tutorial that teaches WebSockets and WebRTC through a collaborative study room experience—lobby, chat, presence, reactions, and browser-to-browser video calls. Built for SER 421; selected as top project based on technical depth, tutorial quality, and completeness.\n\nI designed the Node.js signaling server (ws library) that manages rooms, participants, chat history, and WebRTC offer/answer/ICE exchange over a single WebSocket per client. The React SPA uses custom hooks (useWebSocketClient, useWebRTC) to handle connection lifecycle, getUserMedia, RTCPeerConnection, and remote stream rendering. An 11-step hands-on tutorial takes learners from static UI to full realtime video app, with checkpoints, quick-check questions, and a starter branch with structured TODOs for ~20+ hours of guided implementation.",
-      "tech": ["React", "Node.js", "WebSockets", "WebRTC", "TypeScript", "ws"],
-      "highlights": [
-        "Designed Node.js WebSocket server handling lobby sync, room CRUD, chat broadcast, presence tracking, emoji reactions, typing indicators, and WebRTC signaling—all over a single connection per client.",
-        "Built custom React hooks (useWebSocketClient, useWebRTC) that encapsulate connection management, getUserMedia, RTCPeerConnection lifecycle, and ICE candidate exchange.",
-        "Authored 11-step tutorial with explicit learning outcomes, file-level instructions, checkpoints, and starter branch with TODO stubs—enables ~20+ hours of guided implementation work."
+      "summary": "I built this study-room app and a tutorial for a software engineering course. People can join rooms, chat, see who's online, and make video calls in the browser.",
+      "tech": [
+        "React",
+        "Node.js",
+        "WebSockets",
+        "WebRTC",
+        "TypeScript",
+        "ws"
       ],
-      "links": { "repo": "https://github.com/harsha0602/Websockets_RTC", "demo": "https://harsha0602.github.io/Websockets_RTC/" }
+      "highlights": [
+        "Built a Node.js WebSocket server for rooms, messages, and the connection setup needed for WebRTC video calls.",
+        "Wrote React hooks for connection management and media streams, plus an 11-step tutorial and starter code for other students."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/Websockets_RTC",
+        "demo": "https://harsha0602.github.io/Websockets_RTC/"
+      },
+      "overview": "Study rooms with chat, online status, and video calls."
     },
     {
-      "name": "Swipe-to-Shop Fashion PWA",
+      "name": "Clozyt",
       "date": "Sep 2025",
-      "summary": "Clozyt is a mobile-first, swipe-driven fashion PWA that brings the addictive discovery of TikTok and intuitive swipe mechanics of Bumble into shopping. Built with Next.js App Router and Tailwind CSS, it ships as a PWA where users swipe right to like, left to pass, and up for details—with cart and checkout flows tied to every gesture.\n\nEach interaction feeds a live recommendation loop powered by fashion_clip embeddings stored in Qdrant, balancing exploitation with exploration. Normalization jobs clean messy CSV catalogs into a seven-column schema, while the /api/recs/next and /api/feedback endpoints stream five-item batches in under 200 ms p95 and adapt the ratio of top matches versus fresh discoveries in real time.",
-      "tech": ["TypeScript", "PyTorch", "Tailwind CSS", "Qdrant"],
-      "highlights": [
-        "Launched a swipe-driven PWA (right = like, left = pass, up = details) with install prompts, offline caching, and cart/checkout flows on Next.js App Router + Tailwind CSS.",
-        "Delivered adaptive recommendations under 200 ms p95 by embedding products with fashion_clip and querying Qdrant with a dynamic exploit/explore mix.",
-        "Normalized messy CSV catalogs into a seven-column schema powering /api/recs/next and /api/feedback pipelines that respond with five curated items and record user feedback in real time."
+      "summary": "Clozyt lets people browse clothes by swiping: right to like, left to skip, and up for details. Their choices help decide what appears next.",
+      "tech": [
+        "TypeScript",
+        "PyTorch",
+        "Tailwind CSS",
+        "Qdrant"
       ],
-      "links": { "repo": "https://github.com/harsha0602/Clozyt-Recommendation-Algo", "demo": "https://www.loom.com/share/5fa8c34bc5ea4a27aeb629be3a661760" }
+      "highlights": [
+        "Built the shopping interface with Next.js and Tailwind CSS, including a cart and checkout flow.",
+        "Used FashionCLIP and Qdrant to find similar products, mixed in new suggestions, and built APIs that record feedback and return the next batch of items."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/Clozyt-Recommendation-Algo",
+        "demo": "https://www.loom.com/share/5fa8c34bc5ea4a27aeb629be3a661760"
+      },
+      "overview": "A shopping app that learns from the clothes you like and skip."
     },
     {
-      "name": "FluxRate — Adaptive Pricing Engine",
+      "name": "FluxRate",
       "date": "Aug 2025",
-      "summary": "FluxRate is an adaptive pricing engine for capacity-constrained physical resources—parking spaces, EV chargers, vending inventory. The core idea: monitor real-time usage, safely control access through gates or actuators, and adjust price dynamically based on load. I built a working MVP to validate the architecture before pursuing it further.\n\nThe simulator is a closed-loop cyber-physical system in Java/Maven: SRC-based gate controllers (entry/exit with explicit modes, timing guards, emergency handling), a plant model for gate motion and occupancy, and a pricing supervisor that adjusts hourly rates when occupancy crosses thresholds. A 24-hour scenario with 50 parking spaces generates detailed CSV logs—per-tick state, session billing, price changes—which I analyzed with Python, pandas, and matplotlib to verify safety properties (capacity bounds, payment-gated exits, no double billing).",
-      "tech": ["Java", "Maven", "Python", "pandas", "matplotlib", "CPS Design", "UML"],
-      "highlights": [
-        "Designed closed-loop CPS architecture with SRC-based gate controllers, plant model, pricing supervisor, and CSV loggers—reusable pattern for parking, EV charging, or vending domains.",
-        "Implemented entry/exit controllers with explicit modes (IDLE → WAITING → RAISING → OPEN → LOWERING → EMERGENCY), timing guards, and occupancy-aware state transitions.",
-        "Built Python analysis pipeline to plot gate modes, occupancy curves, price steps, and cumulative revenue; validated safety properties across 24-hour simulation scenarios."
+      "summary": "FluxRate is a Java simulation of a parking lot. It models entry and exit gates, tracks occupancy, and changes hourly prices as the lot fills up.",
+      "tech": [
+        "Java",
+        "Maven",
+        "Python",
+        "pandas",
+        "matplotlib",
+        "CPS Design",
+        "UML"
       ],
-      "links": { "repo": "https://github.com/harsha0602/ACCPS-Sim", "demo": "https://flux-rate.github.io/FluxRate_LandingPage/" }
+      "highlights": [
+        "Implemented gate states, timing checks, emergency handling, and payment checks for exiting vehicles.",
+        "Ran a 24-hour scenario with 50 spaces and used Python plots to check occupancy, billing, gate behavior, and price changes."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/ACCPS-Sim",
+        "demo": "https://flux-rate.github.io/FluxRate_LandingPage/"
+      },
+      "overview": "A parking simulation with gate controls and prices that change with demand."
     },
     {
       "name": "Market Risk Forecasting Dashboard",
       "date": "Apr 2025",
-      "summary": "This project addresses the challenge of forecasting market volatility and potential drawdown risk. I built a sophisticated AI platform in Python that leverages Long Short‑Term Memory (LSTM) models in TensorFlow to predict market movements and deployed the solution on AWS SageMaker.\n\nTo feed the models, I engineered a robust ETL process that ingests five years’ worth of OHLCV data (more than one million rows) using Python and SQL, creating rolling volatility, moving averages and correlation matrices. The result is a highly accurate tool that outperforms GARCH baselines by 16% and cuts preprocessing time by 30%.",
-      "tech": ["Python", "TensorFlow", "AWS SageMaker", "SQL"],
-      "highlights": [
-        "Improved prediction accuracy by 16% over GARCH baselines using LSTM models in TensorFlow; deployed on AWS SageMaker.",
-        "Developed Python + SQL pipelines to ingest and process 5+ years of OHLCV data (1M+ rows), generating engineered features (rolling volatility, moving averages, correlation matrices) and reducing preprocessing time by 30%."
+      "summary": "I built a Python project to study market volatility and drawdown risk. It prepares historical price data, trains LSTM models, and compares their predictions with statistical baselines.",
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "AWS SageMaker",
+        "SQL"
       ],
-      "links": { "repo": "https://github.com/harsha0602/market-risk-forecasting", "demo": "" }
+      "highlights": [
+        "Processed historical price and trading-volume data with Python and SQL, including rolling volatility, moving averages, and correlations.",
+        "Trained TensorFlow models and deployed an inference workflow on AWS SageMaker."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/market-risk-forecasting",
+        "demo": ""
+      },
+      "overview": "Experiments in forecasting market volatility from historical price data."
     },
     {
       "name": "WhatsApp Group Chat Analysis",
       "date": "Oct 2024",
-      "summary": "In this project I turned raw chat exports into meaningful insights. I processed over 10,000 messages with Pandas and NumPy, applied NLTK for tokenization and stop‑word removal, and used scikit‑learn to quantify sentiment and uncover conversational trends. With regex‑based preprocessing, the pipeline achieves 98% parsing accuracy. This analysis reveals behavioral patterns and emotional tone within group conversations, demonstrating my ability to combine data cleaning and natural‑language techniques.",
-      "tech": ["Python", "Pandas", "NumPy", "NLTK", "scikit-learn"],
-      "highlights": [
-        "Processed 10,000+ messages; extracted trends and insights using NLTK (tokenization, stopwords) and scikit-learn; achieved 98% parsing accuracy via regex-based preprocessing."
+      "summary": "This Python project parses WhatsApp exports so you can look at activity over time, common words, and sentiment across a conversation.",
+      "tech": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "NLTK",
+        "scikit-learn"
       ],
-      "links": { "repo": "https://github.com/harsha0602/group_chat_analysis", "demo": "" }
+      "highlights": [
+        "Parsed more than 10,000 messages with Python, Pandas, and NumPy.",
+        "Cleaned message text with NLTK and used scikit-learn to examine sentiment and conversation patterns."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/group_chat_analysis",
+        "demo": ""
+      },
+      "overview": "Explore message activity and sentiment in exported group chats."
     },
     {
-      "name": "Image Clustering for Script Digitalization",
+      "name": "Handwritten Script Clustering",
       "date": "Feb 2020",
-      "summary": "To streamline the digitization of handwritten manuscripts, I developed a clustering tool using scikit‑learn’s KMeans algorithm and PCA. It groups handwritten scripts by similarity, delivering 92% cluster consistency and improving digitalization efficiency by 30%. This unsupervised approach organizes large volumes of script images, reducing manual effort and accelerating downstream processing.",
-      "tech": ["Python", "scikit-learn", "KMeans", "PCA", "Matplotlib"],
-      "highlights": [
-        "Improved digitalization efficiency by 30% with 92% cluster consistency across test datasets using scikit-learn KMeans and PCA."
+      "summary": "I built a tool for organizing handwritten script images into similar groups. It uses clustering to help sort a collection before further review or processing.",
+      "tech": [
+        "Python",
+        "scikit-learn",
+        "KMeans",
+        "PCA",
+        "Matplotlib"
       ],
-      "links": { "repo": "", "demo": "" }
+      "highlights": [
+        "Used PCA to reduce image features and KMeans to group similar samples.",
+        "Compared the resulting groups and plotted them with Matplotlib to inspect how well they separated."
+      ],
+      "links": {
+        "repo": "",
+        "demo": ""
+      },
+      "overview": "Group images of handwriting by visual similarity."
     },
     {
-      "name": "Image Restoration of Natural Images (MPRNet)",
+      "name": "Image Restoration with MPRNet",
       "date": "Apr 2021",
-      "summary": "Restoring degraded photos requires both domain knowledge and deep learning. I implemented a restoration pipeline with TensorFlow’s MPRNet, a state‑of‑the‑art architecture for denoising. The model reduces noise levels by 45% and improves peak signal‑to‑noise ratio (PSNR) by 5.2 dB compared to baseline methods, demonstrating a significant uplift in visual quality.",
-      "tech": ["Python", "TensorFlow", "MPRNet"],
-      "highlights": [
-        "Reduced noise levels by 45% and achieved a 5.2 dB PSNR improvement over baselines using MPRNet."
+      "summary": "I worked with MPRNet to restore degraded natural images and compare the results with the original inputs.",
+      "tech": [
+        "Python",
+        "MPRNet",
+        "Image processing"
       ],
-      "links": { "repo": "", "demo": "" }
+      "highlights": [
+        "Built an image-restoration workflow around a neural network model.",
+        "Compared restored images with baseline results using visual checks and peak signal-to-noise ratio."
+      ],
+      "links": {
+        "repo": "",
+        "demo": ""
+      },
+      "overview": "Experiments in restoring noisy or damaged images."
     },
     {
       "name": "Senti Chat",
       "date": "Sep 2024",
-      "summary": "This real‑time messaging app merges modern web technologies with natural‑language processing. I built the front end using React and Next.js and wired it to a Node/Express backend with Pusher for real‑time updates. An integrated NLP service, using NLTK (tokenization and VADER) and scikit‑learn, tags each message with sentiment and emotion in real time. Comprehensive unit tests (Jest/React Testing Library) ensure reliability, and users see live sentiment feedback as they chat.",
-      "tech": ["React", "Next.js", "Express", "Pusher", "NLTK", "scikit-learn", "Jest", "RTL"],
-      "highlights": [
-        "Built React/Next.js chat app with Pusher and an NLP service (NLTK + scikit-learn) tagging sentiment/emotions on the Express backend; added unit tests (Jest/RTL)."
+      "summary": "Senti Chat adds sentiment labels to a live conversation. I built the React interface and connected it to an Express backend and a Python text-analysis service.",
+      "tech": [
+        "React",
+        "Next.js",
+        "Express",
+        "Pusher",
+        "NLTK",
+        "scikit-learn",
+        "Jest",
+        "RTL"
       ],
-      "links": { "repo": "https://github.com/harsha0602/SentiChat_with_React.js", "demo": "" }
+      "highlights": [
+        "Used Pusher to deliver new messages and NLTK to process text and score sentiment.",
+        "Added tests with Jest and React Testing Library for the chat interface and its behavior."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/SentiChat_with_React.js",
+        "demo": ""
+      },
+      "overview": "A chat app that labels the sentiment of incoming messages."
     },
     {
-      "name": "Crypto Notes DApp",
+      "name": "Crypto Notes",
       "date": "Aug 2024",
-      "summary": "Combining blockchain with note‑taking, I created a decentralized application where users can store token‑gated notes securely on Ethereum. The front end is built with React/Next.js, while Solidity smart contracts (developed with Hardhat and Ethers.js) enforce permissions. Notes are stored on IPFS for decentralized persistence. The project achieves over 90% test coverage and uses GraphQL queries that reduce latency by roughly 30%, showing mastery of Web3 tooling and test‑driven development.",
-      "tech": ["React", "Next.js", "Solidity", "Hardhat", "Ethers.js", "IPFS", "GraphQL", "Mocha", "Jest"],
-      "highlights": [
-        "Achieved 90%+ test coverage (Mocha/Jest) and reduced query latency ~30% with a GraphQL API; token-gated access via smart contracts + IPFS."
+      "summary": "I built a notes app that uses wallet authentication and smart contracts to decide who can access a note. The interface uses React and Next.js, with note storage on IPFS.",
+      "tech": [
+        "React",
+        "Next.js",
+        "Solidity",
+        "Hardhat",
+        "Ethers.js",
+        "IPFS",
+        "GraphQL",
+        "Mocha",
+        "Jest"
       ],
-      "links": { "repo": "", "demo": "" }
+      "highlights": [
+        "Wrote Solidity contracts and used Hardhat and Ethers.js for local development and wallet interaction.",
+        "Added tests for access rules and note operations, and a GraphQL API for querying stored data."
+      ],
+      "links": {
+        "repo": "",
+        "demo": ""
+      },
+      "overview": "A notes app with access controlled by an Ethereum wallet."
     },
     {
       "name": "Safe Python Execution Service",
       "date": "Mar 2025",
-      "summary": "Executing untrusted code safely is a common security problem. I addressed it by designing a microservice in Flask that runs under nsjail inside Docker and deploys to Google Cloud Run. The service disables networking, imposes rlimits and timeouts, and returns structured JSON results, all while achieving sub‑300 ms p95 latency and scaling to zero when idle. This project underscores expertise in containerization, sandboxing and cloud deployment.",
-      "tech": ["Python", "Flask", "nsjail", "Docker", "GCP Cloud Run"],
-      "highlights": [
-        "Designed a Cloud Run microservice to safely execute untrusted Python via nsjail (no network, rlimits, timeouts), returning structured JSON; sub-300ms p95 latency with scale-to-zero costs."
+      "summary": "This Flask service runs submitted Python code in an isolated process and returns the output as JSON. I used nsjail and Docker to restrict access to the host.",
+      "tech": [
+        "Python",
+        "Flask",
+        "nsjail",
+        "Docker",
+        "GCP Cloud Run"
       ],
-      "links": { "repo": "https://github.com/harsha0602/Safe_Python_Execution_Service", "demo": "" }
+      "highlights": [
+        "Disabled network access and set limits on execution time and system resources.",
+        "Packaged the service for Google Cloud Run so it can stop when no requests are running."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/Safe_Python_Execution_Service",
+        "demo": ""
+      },
+      "overview": "Run submitted Python code with limits on what it can do."
     },
     {
-      "name": "HAAS (Heuristic Algorithmic Analysis System)",
+      "name": "HAAS",
       "date": "Feb 2025",
-      "summary": "HAAS is a logic‑driven programming language and environment. Using SWI‑Prolog DCGs, Flex/Bison and GCC, I implemented a full compiler pipeline—tokenizer, parser, abstract syntax tree and runtime evaluator. The language supports arithmetic, logic, control flow, ternary operators and an interactive REPL. I complemented HAAS with tutorial modules and sample programs, which shortened onboarding time by 30% and allowed audit‑ready execution via output redirection.",
-      "tech": ["Prolog", "Language Design", "Algorithms"],
-      "highlights": [
-        "Implemented 5+ language features (arithmetic, logic, control flow, ternary, REPL).",
-        "Executed 10+ sample programs; 30% faster onboarding with tutorials and output redirection."
+      "summary": "I worked on HAAS, a logic-based programming language. The project covers reading source code, parsing expressions, evaluating programs, and showing results in an interactive prompt.",
+      "tech": [
+        "Prolog",
+        "Language Design",
+        "Algorithms"
       ],
-      "links": { "repo": "https://github.com/harsha0602/SER502-HAAS-Team14", "demo": "" }
+      "highlights": [
+        "Implemented arithmetic, logic, control flow, and ternary expressions with Prolog grammar rules and compiler tools.",
+        "Added sample programs and tutorials to explain the language and help others run it."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/SER502-HAAS-Team14",
+        "demo": ""
+      },
+      "overview": "A small programming language with a parser, evaluator, and interactive prompt."
     },
     {
       "name": "Pokemon Game Engine",
       "date": "Dec 2024",
-      "summary": "In this C++ project, I built a modular game engine that simulates Pokémon battles. Leveraging object‑oriented programming and custom data structures, the engine supports more than 50 simulated encounters and is extensible, allowing new creatures and abilities to be added easily. It exemplifies an ability to design reusable game frameworks.",
-      "tech": ["C++", "OOP", "Data Structures"],
-      "highlights": [
-        "Validated 50+ simulated battles; extensible design for new Pokémon and abilities."
+      "summary": "I built a battle simulator in C++ with separate components for creatures, abilities, and game rules. The structure lets new creatures and moves be added without rewriting the battle loop.",
+      "tech": [
+        "C++",
+        "OOP",
+        "Data Structures"
       ],
-      "links": { "repo": "", "demo": "" }
+      "highlights": [
+        "Used object-oriented design and custom data structures to represent game state.",
+        "Ran simulated battles to check interactions between moves, abilities, and battle rules."
+      ],
+      "links": {
+        "repo": "",
+        "demo": ""
+      },
+      "overview": "A C++ simulator for Pokemon battles."
     },
     {
       "name": "Agile Project Management App",
       "date": "Jan 2025",
-      "summary": "To improve planning in software development teams, I created an application in Java (Maven) that integrates Planning Poker estimation. By coupling data‑driven scoring with team collaboration features, the app enhances sprint estimation accuracy and supports feature prioritization across multiple projects.",
-      "tech": ["Java", "Maven", "Data Structures"],
-      "highlights": [
-        "Boosted sprint estimation accuracy and decision-making across 5+ team projects.",
-        "Integrated Planning Poker and data capture for reproducible estimates."
+      "summary": "I built a Java app for Planning Poker sessions. Team members can compare estimates, discuss differences, and record their decisions for later planning.",
+      "tech": [
+        "Java",
+        "Maven",
+        "Data Structures"
       ],
-      "links": { "repo": "https://github.com/harsha0602/Agile-Project-Management-App", "demo": "" }
+      "highlights": [
+        "Implemented the estimation flow and the data structures for tracking tasks and votes.",
+        "Used Maven to build the app and keep the project dependencies organized."
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/Agile-Project-Management-App",
+        "demo": ""
+      },
+      "overview": "Planning Poker and task estimates for software teams."
     }
   ],
   "achievements": [
     {
       "title": "Built and launched TappedIn",
       "issuer": "TappedIn · Technical Co-founder",
-      "summary": "Technical co-founder of a music-discovery app, live on the App Store with over 1,000 users."
+      "summary": "Co-founded TappedIn and built its app and backend. Now on the App Store with over 1,000 users."
     },
     {
       "title": "Visual AI Hackathon Winner",
       "issuer": "Voxel51 · Arizona State University",
       "date": "2025-02",
-      "summary": "Won with Food Sage, a team-built app that scans food labels, extracts ingredients, and categorizes potential ingredient risks."
+      "summary": "Won with the Food Sage team at ASU. We built an app that scans food labels, extracts ingredients, and flags potential ingredient risks."
     },
     {
       "title": "2× Performer of the Quarter",
       "issuer": "o9 Solutions",
-      "summary": "Received o9 Solutions’ Performer of the Quarter award twice."
+      "summary": "Awarded Performer of the Quarter twice at o9 Solutions."
     }
   ],
   "education": [
     {
       "school": "Arizona State University, Tempe, AZ",
-      "degree": "Master’s in Software Engineering (Computer Science) | CGPA: 3.67/4",
+      "degree": "Master's in Software Engineering | GPA: 3.67/4",
       "start": "2024-08",
       "end": "2026-05",
-      "details": "Coursework: Statistical Machine Learning, Deep Learning, Advanced DSA, Software Design/Requirements/Testing"
+      "details": "Coursework included machine learning, data structures and algorithms, software design, and software testing."
     },
     {
       "school": "National Institute of Technology Karnataka, Surathkal, India",
       "degree": "Bachelor of Technology in Electronics and Communications Engineering",
       "start": "2018-07",
       "end": "2022-05",
-      "details": "Coursework: Crypto and Blockchain Technologies, Image and Video Processing, Speech and Audio Processing"
+      "details": "Coursework included image processing, speech processing, and blockchain technology."
     }
   ]
 }

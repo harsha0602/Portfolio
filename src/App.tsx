@@ -15,6 +15,7 @@ export type ExperienceItem = {
   location: string;
   start: string; // ISO YYYY-MM
   end: string; // ISO YYYY-MM or "Present"
+  overview?: string;
   highlights: string[];
   tech: string[];
 };
@@ -22,6 +23,7 @@ export type ProjectItem = {
   name: string;
   summary: string;
   tech: string[];
+  overview?: string;
   highlights: string[];
   links: { repo?: string; demo?: string };
   date?: string; // Optional project date or timeframe
@@ -117,9 +119,9 @@ const App: React.FC = () => {
       '@type': 'Person',
       name: data.name,
       email: `mailto:${data.links.email}`,
-      url: window.location.origin,
+      url: 'https://harsha0602.github.io/Portfolio/',
       sameAs,
-      jobTitle: 'Software Engineer',
+      jobTitle: 'Product Engineer',
     };
     if (ld) ld.textContent = JSON.stringify(jsonLd);
   }, [data.links.email, data.links.github, data.links.linkedin, data.name]);

@@ -13,6 +13,12 @@ run('goto', url);
 run('console', '--clear');
 const count = evaluate('document.querySelectorAll(".card-toggle").length');
 assert.equal(count, 20, 'Expected 6 experience and 14 project cards');
+assert.equal(evaluate('document.querySelectorAll(".card-overview-text").length'), 20, 'Every work card should explain what it is');
+const allCopy = evaluate('document.querySelector("main").textContent');
+assert.doesNotMatch(allCopy, /[\u2014\u2013\u2011]|AI-native|audit-ready|sophisticated AI|showing mastery|prestigious universities/iu);
+assert.match(allCopy, /Compliance Claw/);
+assert.match(allCopy, /full-time Product Engineer in September/);
+
 const achievements = evaluate('document.querySelector("#achievements").innerText');
 assert.match(achievements, /Built and launched TappedIn/);
 assert.match(achievements, /2× Performer of the Quarter/);
@@ -57,7 +63,7 @@ for (const [width, height] of sizes) {
       run('click', selector);
       assert(evaluate(`document.querySelectorAll('.card-details')[${i}].hidden`));
     }
-    const layout = evaluate(`(() => {const visible=e=>!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length);return {overflow:document.documentElement.scrollWidth>innerWidth,clipped:[...document.querySelectorAll('.card-overview,.card-header,.hero-title,.contact-link')].filter(visible).filter(e=>e.scrollWidth>e.clientWidth+1).map(e=>e.className),smallTargets:[...document.querySelectorAll('button,.hero-cta a,.contact-link,.nav-list a')].filter(visible).filter(e=>e.getBoundingClientRect().height<44).map(e=>e.textContent),images:[...document.images].filter(e=>e.complete&&!e.naturalWidth).map(e=>e.src),title:document.querySelector('#experience .card-subtitle').textContent,milestone:document.querySelector('.launch-milestone').textContent};})()`);
+    const layout = evaluate(`(() => {const visible=e=>!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length);return {overflow:document.documentElement.scrollWidth>innerWidth,clipped:[...document.querySelectorAll('.card-overview,.card-overview-text,.card-header,.hero-title,.contact-link')].filter(visible).filter(e=>e.scrollWidth>e.clientWidth+1).map(e=>e.className),smallTargets:[...document.querySelectorAll('button,.hero-cta a,.contact-link,.nav-list a')].filter(visible).filter(e=>e.getBoundingClientRect().height<44).map(e=>e.textContent),images:[...document.images].filter(e=>e.complete&&!e.naturalWidth).map(e=>e.src),title:document.querySelector('#experience .card-subtitle').textContent,milestone:document.querySelector('.launch-milestone').textContent};})()`);
     assert(!layout.overflow && !layout.clipped.length && !layout.smallTargets.length && !layout.images.length, `${width}/${theme}: ${JSON.stringify(layout)}`);
     assert.equal(layout.title, 'Product Engineer');
     assert.match(layout.milestone, /App Store.*1,000\+ users/);

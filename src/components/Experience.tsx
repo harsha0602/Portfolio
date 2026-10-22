@@ -25,7 +25,7 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
     <section id="experience" className="section" aria-labelledby="experience-title">
       <div className="container">
         <h2 id="experience-title" className="section-title"><Briefcase size={18}/> Experience</h2>
-        <p className="section-intro">What I built, shipped, and improved.</p>
+        <p className="section-intro">The teams I have worked with and what I built.</p>
         <div className="grid">
           {items.map((exp) => {
             const img = logoPath(exp.company.toLowerCase());
@@ -45,7 +45,8 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                   <h3 className="card-title">{exp.company}</h3>
                   <p className="card-subtitle">{exp.role}</p>
                   <p className="card-subtitle card-location">{exp.location}</p>
-                  <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                  <p className="card-meta">{formatDate(exp.start)} to {formatDate(exp.end)}</p>
+                  {exp.overview && <p className="card-overview-text">{exp.overview}</p>}
                   {exp.company === 'TappedIn' && (
                     <p className="launch-milestone">Live on the App Store <span aria-hidden="true">·</span> <strong>1,000+ users</strong></p>
                   )}
@@ -60,7 +61,8 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                   </h3>
                   <p className="card-subtitle">{exp.role}</p>
                   <p className="card-subtitle card-location">{exp.location}</p>
-                  <p className="card-meta">{formatDate(exp.start)} – {formatDate(exp.end)}</p>
+                  <p className="card-meta">{formatDate(exp.start)} to {formatDate(exp.end)}</p>
+                  {exp.overview && <p className="card-overview-text">{exp.overview}</p>}
                   {exp.company === 'TappedIn' && (
                     <p className="launch-milestone">Live on the App Store <span aria-hidden="true">·</span> <strong>1,000+ users</strong></p>
                   )}
@@ -74,12 +76,11 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
             );
             const back = (
               <div>
-                {exp.summary && renderSummaryWithEmphasis(exp.summary, exp.tech)}
-                <div className="stat-badges" aria-label="Stats">
-                  {companyBadges(exp.company).map((b, i) => (
-                    <span key={i} className="stat-badge"><strong>{b.label}:</strong> {b.value}</span>
-                  ))}
-                </div>
+                {exp.summary && <p className="summary-par">{exp.summary}</p>}
+                <ul className="highlights">
+                  {exp.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                </ul>
+                <p className="tech-line">Built with: {exp.tech.join(', ')}</p>
                 {companyLink(exp.company) && (
                   <div className="card-actions">
                     <a href={companyLink(exp.company)!} target="_blank" rel="noopener noreferrer" className="btn" style={{background: '#20C997', color: '#000'}} onClick={(e) => e.stopPropagation()}>
@@ -146,72 +147,9 @@ function logoPath(c: string): string | null {
   return null;
 }
 
-// Render summary paragraphs from a single string allowing double newlines to break paragraphs
-function renderSummaryWithEmphasis(text: string, tech: string[]) {
-  const paras = text.split(/\n\s*\n/);
-  const items = paras.map((par, i) => (
-    <p key={i} className="summary-par" dangerouslySetInnerHTML={{ __html: emphasize(par.trim(), tech) }} />
-  ));
-  // Always include a tech stack line to surface all technologies used.
-  const techLine = (
-    <p key="tech" className="summary-par tech-line"><strong>Tech stack:</strong> {tech.join(' · ')}</p>
-  );
-  return [ ...items, techLine ];
-}
-
-function emphasize(s: string, tech: string[]) {
-  let out = escapeHtml(s);
-  // Bold numbers/metrics like 95%, 5.2 dB, 300ms, 10+, 250+
-  out = out.replace(/(~?\d+(?:\.\d+)?\s?(?:%|dB|ms|GB|TB))|(\b\d+\+\b)/gi, '<strong>$&</strong>');
-  // Bold tech tokens from the list
-  for (const t of tech) {
-    const rx = new RegExp(`\\b${escapeReg(t)}\\b`, 'gi');
-    out = out.replace(rx, (m) => `<strong>${m}</strong>`);
-  }
-  return out;
-}
-
-function escapeHtml(s: string) {
-  return s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c] as string));
-}
-
-function escapeReg(s: string) {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
 function companyLink(company: string): string | null {
   const c = company.toLowerCase();
   if (c.includes('tappedin') || c.includes('tapped')) return 'https://tappedinapp.com/';
   if (c.includes('pretorin')) return 'https://pretorin.com/';
   return null;
-}
-
-function companyBadges(company: string): { label: string; value: string }[] {
-  const c = company.toLowerCase();
-  const arr: { label: string; value: string }[] = [];
-  if (c.includes('o9')) {
-    arr.push({ label: 'Bugs Fixed', value: '250+' });
-    arr.push({ label: 'Code Commits', value: '600+' });
-    arr.push({ label: 'Features', value: '10+' });
-  }
-  if (c.includes('opennets')) {
-    arr.push({ label: 'Bugs Fixed', value: '100+' });
-    arr.push({ label: 'Code Commits', value: '150+' });
-    arr.push({ label: 'Features', value: '4' });
-  }
-  if (c.includes('amazon') || c.includes('aws')) {
-    arr.push({ label: 'Code Commits', value: '50+' });
-    arr.push({ label: 'Solution Architecture', value: 'Built from scratch' });
-  }
-  if (c.includes('pretorin')) {
-    arr.push({ label: 'Frameworks', value: 'FedRAMP · NIST 800-53 · SOC 2 · CMMC' });
-    arr.push({ label: 'Core', value: 'RAG + pgvector retrieval' });
-  }
-  if (c.includes('tappedin') || c.includes('tapped')) {
-    arr.push({ label: 'Test Cases', value: '~950' });
-    arr.push({ label: 'Users', value: '1,000+' });
-    arr.push({ label: 'Available On', value: 'App Store' });
-    arr.push({ label: 'Dev Time', value: '~5 weeks' });
-  }
-  return arr;
 }

@@ -1,6 +1,6 @@
-# Harshavardhan Kuthadi — Portfolio
+# Harshavardhan Kuthadi | Portfolio
 
-Refactored to a minimal React + Vite app with content sourced from `assets/CV.pdf` and centralized in `data/profile.json`.
+React + Vite portfolio with copy centralized in `data/profile.json`. The public CV is generated from the same content.
 
 ## Install & Run
 - Prerequisites: Node.js 18+ (recommend 20)
@@ -14,17 +14,17 @@ Refactored to a minimal React + Vite app with content sourced from `assets/CV.pd
 - Fields:
   - `name`, `headline`, `location`, `links`
   - `skills` grouped as `Languages`, `Frameworks/Tools`, `Cloud/Databases`
-  - `experience[]` with `company`, `role`, `location`, `start`, `end`, `highlights[]`, `tech[]`
-  - `projects[]` with `name`, `summary`, `tech[]`, `highlights[]`, `links{repo,demo}`
+  - `experience[]` with `company`, `overview`, `role`, `location`, `start`, `end`, `highlights[]`, `tech[]`
+  - `projects[]` with `name`, `overview`, `summary`, `tech[]`, `highlights[]`, `links{repo,demo}`
   - `achievements[]` with `title`, `issuer`, `date(YYYY-MM)`, `summary`
   - `education[]` with `school`, `degree`, `start`, `end`, `details`
 
 Validate: `npm run test:content` ensures required fields and ISO date formats, and verifies experience is sorted newest-first.
 
 ## Add a New Project / Experience
-- Project: add an object to `projects[]` with tech and 1–2 impacts (quantified when possible). External links should use `target="_blank"` and `rel="noopener noreferrer"`.
+- Project: add an object to `projects[]` with tech and one or two impacts (quantified when possible). External links should use `target="_blank"` and `rel="noopener noreferrer"`.
 - Experience: add to `experience[]` and keep `start`/`end` as `YYYY-MM`. Up to 3 highlights recommended.
-- Keep entries concise and scannable; the UI shows 1–2 sentences and up to 3 bullet highlights.
+- Each card shows a short overview. Read details reveals the description, work bullets, tools, and links.
 
 ## Run Lighthouse Locally
 - After `npm run build`, run `npm run preview`.
@@ -54,3 +54,7 @@ BROWSE_BIN=/path/to/gstack/browse/dist/browse node scripts/validate-ui.mjs http:
 ```
 
 The check covers 18 viewport sizes from 320px to 1920px, including landscape and both sides of layout breakpoints, in light and dark themes. It tests section navigation, all experience/project detail controls, keyboard activation, touch-target heights, clipping, broken loaded images, theme persistence, and browser errors. Run this before merging UI changes. This uses Chromium viewport emulation; physical-device and other browser-engine testing remain separate checks.
+
+## Update the downloadable CV
+
+After editing the profile, run `python3 scripts/generate-cv.py` with ReportLab installed (`python3 -m pip install reportlab`). Review both pages of `assets/CV.pdf` before publishing. The generator keeps the public download consistent with the website and includes the internship-to-full-time transition at Pretorin.

@@ -63,4 +63,15 @@ data.education.forEach((e, i) => {
   assert(/^[0-9]{4}-[0-9]{2}$/.test(e.start) && /^[0-9]{4}-[0-9]{2}$/.test(e.end), `education[${i}] dates must be YYYY-MM`);
 });
 
+// Keep published copy free of the filler and punctuation removed in the copy review.
+const strings = (value) => typeof value === 'string' ? [value] :
+  value && typeof value === 'object' ? Object.values(value).flatMap(strings) : [];
+for (const text of strings(data)) {
+  assert(!/[\u2014\u2013\u2011]/u.test(text), `Use plain punctuation in portfolio copy: ${text}`);
+  assert(!/AI-native|audit-ready|sophisticated AI|showing mastery|prestigious universities|actionable intelligence|forward-deployed/iu.test(text), `Rewrite vague portfolio wording: ${text}`);
+}
+for (const item of [...data.experience, ...data.projects]) {
+  assert(typeof item.overview === 'string' && item.overview.length > 0, 'Every work card needs a short overview');
+}
+assert(data.experience[0].summary.includes('Compliance Claw'), 'Pretorin must name Compliance Claw correctly');
 console.log('OK: data/profile.json valid');
