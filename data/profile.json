@@ -1,6 +1,6 @@
 {
   "name": "Harshavardhan Kuthadi",
-  "headline": "Product engineer at Pretorin and technical co-founder of TappedIn.",
+  "headline": "Software engineer building web and mobile apps, backend services, and data pipelines.",
   "location": "Tempe, AZ",
   "links": {
     "email": "hkuthadi@asu.edu",
@@ -70,7 +70,7 @@
       "location": "Tempe, AZ",
       "start": "2026-05",
       "end": "Present",
-      "summary": "I build across Pretorin's web app, backend, and agent tools. I joined as an intern in May 2026 and became a full-time Product Engineer in September. My current work includes Compliance Claw, a customer-deployable product that connects OpenClaw with Pretorin and runs as an always-on compliance agent.",
+      "summary": "I've been a Product Engineer at Pretorin since May 2026. I work across the web app, backend, and agent tools. My current work includes Compliance Claw, a customer-deployable product that connects OpenClaw with Pretorin and runs as an always-on compliance agent.",
       "highlights": [
         "Own development of Compliance Claw and the in-app assistant that helps people navigate Pretorin and get support.",
         "Work on MCP hosting and plugins so people can use Pretorin's tools from OpenAI, Anthropic, and other AI clients.",
@@ -127,9 +127,7 @@
       "end": "2025-10",
       "summary": "I wrote computer science questions and reviewed model answers at Handshake AI Solutions. The work involved checking technical correctness, finding missing edge cases, and explaining why an answer was wrong.",
       "highlights": [
-        "Wrote more than 50 prompts across computer science topics, including cases that required careful reasoning.",
-        "Reviewed more than 100 model responses and gave specific feedback on incorrect claims, incomplete explanations, and code errors.",
-        "Researched new evaluation topics and added questions that covered gaps in the existing tasks."
+        "Wrote more than 50 computer science prompts and reviewed more than 100 model answers for technical correctness, edge cases, and code errors."
       ],
       "tech": [
         "Prompt Engineering",
@@ -551,5 +549,6 @@
       "end": "2022-05",
       "details": "Coursework included image processing, speech processing, and blockchain technology."
     }
-  ]
+  ],
+  "professionalSummary": "Software engineer with 3+ years of experience building web and mobile apps, backend services, and data pipelines. Background in Python, TypeScript, C#, SQL, cloud infrastructure, and machine learning, with an M.S. in Software Engineering from Arizona State University."
 }
