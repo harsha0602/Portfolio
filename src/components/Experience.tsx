@@ -198,7 +198,8 @@ function companyBadges(company: string): { label: string; value: string }[] {
   }
   if (c.includes('tappedin') || c.includes('tapped')) {
     arr.push({ label: 'Test Cases', value: '~950' });
-    arr.push({ label: 'Beta Users', value: '44' });
+    arr.push({ label: 'Users', value: '1,000+' });
+    arr.push({ label: 'Available On', value: 'App Store' });
     arr.push({ label: 'Dev Time', value: '~5 weeks' });
   }
   return arr;
