@@ -8,18 +8,18 @@
     "linkedin": "https://www.linkedin.com/in/hkuthadi/"
   },
   "about": {
-    "intro": "I build software for compliance teams at Pretorin. I also co-founded TappedIn, a music app with over 1,000 users.",
+    "intro": "I like figuring out how things work, building my own version, and sticking with a problem until it makes sense.",
     "paragraphs": [
-      "At Pretorin, I work on the web app, Python services, and AI tools. I'm building Compliance Claw, a product that connects OpenClaw with Pretorin and is designed for customers to deploy as their own always-on compliance agent. I also work on our in-app assistant and integrations with other AI clients.",
-      "Before Pretorin, I built data pipelines at AWS and worked on enterprise planning software at o9 Solutions. I like working on both the feature people see and the code that keeps it running.",
-      "I completed my master's in Software Engineering at Arizona State University in May 2026. Outside work, I co-founded TappedIn and built its mobile app and backend. It's now on the App Store."
+      "I studied electronics before moving into software. My interests still span hardware, machine learning, and computing on devices. I like the point where code starts doing something you can see or interact with.",
+      "I enjoy taking a problem apart, trying things, and debugging until I understand what's going on. Building a small project is usually how I get to grips with a new idea.",
+      "I also like building with other people: talking through an approach, hearing a different take, and taking responsibility for getting my part working. That mix of learning, experimenting, and working things out is what I enjoy about engineering."
     ],
     "tags": [
-      "Product engineering",
-      "Python & TypeScript",
-      "React & React Native",
-      "APIs & integrations",
-      "Data pipelines"
+      "Hardware & software",
+      "Machine learning",
+      "Edge computing",
+      "Learning by building",
+      "Debugging"
     ]
   },
   "skills": {

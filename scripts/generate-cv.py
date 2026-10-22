@@ -35,7 +35,7 @@ story=[]
 story.append(para(profile['name'], 'CVName'))
 story.append(para('Product Engineer | '+profile['location'], 'CVMeta'))
 story.append(Paragraph('<link href="mailto:hkuthadi@asu.edu">hkuthadi@asu.edu</link> | <link href="https://github.com/harsha0602">github.com/harsha0602</link> | <link href="https://www.linkedin.com/in/hkuthadi/">linkedin.com/in/hkuthadi</link> | <link href="https://harsha0602.github.io/Portfolio/">Portfolio</link>', styles['CVBody']))
-story.append(para(profile['about']['intro']))
+story.append(para(profile['headline']))
 story.append(para('EXPERIENCE', 'CVSection'))
 for index, item in enumerate(profile['experience']):
     if index == 4:
