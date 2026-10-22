@@ -57,4 +57,4 @@ The check covers 18 viewport sizes from 320px to 1920px, including landscape and
 
 ## Update the downloadable CV
 
-After editing the profile, run `python3 scripts/generate-cv.py` with ReportLab installed (`python3 -m pip install reportlab`). Review both pages of `assets/CV.pdf` before publishing. The generator keeps the public download consistent with the website and uses a separate professional summary so the CV stays independent of the personal homepage.
+The CV selection is configured in `data/cv-projects.json`; entries already on the portfolio reuse `data/profile.json`. After editing the profile or CV selection, run `python3 scripts/generate-cv.py` with ReportLab installed (`python3 -m pip install reportlab`). Review both pages of `assets/CV.pdf` before publishing. The generator keeps the public download consistent with the website and uses a separate professional summary so the CV stays independent of the personal homepage.

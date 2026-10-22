@@ -1,0 +1,47 @@
+{
+  "selected": [
+    "FluidFill",
+    "Realtime Study Rooms",
+    "Clozyt",
+    "FluxRate",
+    "JobCity",
+    "Food Sage"
+  ],
+  "additional": [
+    {
+      "name": "JobCity",
+      "date": "",
+      "overview": "A 3D job-search tracker with listings collected from public job feeds.",
+      "tech": [
+        "React Three Fiber",
+        "FastAPI",
+        "MongoDB",
+        "Docker"
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/JobCity"
+      },
+      "highlights": [
+        "Built a 3D interface for exploring jobs and tracking applications, backed by FastAPI and MongoDB.",
+        "Added ingestion adapters for five ATS sources and normalized their listings. Added tests for access rules, job filters, and ingestion, with CI for tests and container builds."
+      ]
+    },
+    {
+      "name": "Food Sage",
+      "date": "Feb 2025",
+      "overview": "A team project that extracts ingredients from photos of food labels.",
+      "tech": [
+        "Python",
+        "OpenCV",
+        "Tesseract OCR"
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/foodSage"
+      },
+      "highlights": [
+        "Worked on image preprocessing and OCR to locate ingredient lists and extract their text.",
+        "Won the Visual AI Hackathon with the Food Sage team at Arizona State University."
+      ]
+    }
+  ]
+}
