@@ -1,6 +1,6 @@
 # Harshavardhan Kuthadi | Portfolio
 
-Refactored to a minimal React + Vite app with content sourced from `assets/CV.pdf` and centralized in `data/profile.json`.
+React + Vite portfolio with copy centralized in `data/profile.json`. The public CV is generated from the same content.
 
 ## Install & Run
 - Prerequisites: Node.js 18+ (recommend 20)
@@ -54,3 +54,7 @@ BROWSE_BIN=/path/to/gstack/browse/dist/browse node scripts/validate-ui.mjs http:
 ```
 
 The check covers 18 viewport sizes from 320px to 1920px, including landscape and both sides of layout breakpoints, in light and dark themes. It tests section navigation, all experience/project detail controls, keyboard activation, touch-target heights, clipping, broken loaded images, theme persistence, and browser errors. Run this before merging UI changes. This uses Chromium viewport emulation; physical-device and other browser-engine testing remain separate checks.
+
+## Update the downloadable CV
+
+After editing the profile, run `python3 scripts/generate-cv.py` with ReportLab installed (`python3 -m pip install reportlab`). Review both pages of `assets/CV.pdf` before publishing. The generator keeps the public download consistent with the website and includes the internship-to-full-time transition at Pretorin.
