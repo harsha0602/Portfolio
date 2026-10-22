@@ -8,7 +8,7 @@
 
 :root {
   --color-primary: #61e7be; /* from style/base/_variables.scss */
-  --color-accent: #5B8CFF;
+  --color-accent: #315ec4;
   --color-success: #22C55E;
   --color-warning: #F59E0B;
   --color-bg: #ffffff;
@@ -20,6 +20,7 @@
 }
 
 html[data-theme='dark'] {
+  --color-accent: #83a7ff;
   --color-bg: #0f1115;
   --color-text: #e6eaf2;
   --color-muted: #c9c9cf;
@@ -86,17 +87,18 @@ html[data-theme='dark'] body { background: var(--color-bg); }
 .section-title { font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem); margin: 0 0 0.5rem; color: var(--color-accent); }
 .section-intro { margin: 0 0 1rem; color: var(--color-muted); }
 
-.hero-title { font-size: clamp(2rem, 3.6vw + 1rem, 2.6rem); margin: 0; }
+.hero-title { font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1.12; letter-spacing: -.035em; margin: 0; overflow-wrap: anywhere; text-wrap: balance; }
+.hero-eyebrow { margin: 0 0 1rem; color: var(--color-muted); font-size: .9rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 .name-highlight { color: var(--color-accent); text-decoration: none; }
-.hero-subtitle { color: var(--color-muted); margin: .25rem 0 .5rem; }
+.hero-subtitle { max-width: 760px; color: var(--color-text); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; margin: 1.25rem 0 1rem; text-wrap: pretty; }
 .hero-meta { color: var(--color-muted); margin: 0 0 1rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .5rem; }
 
 /* Hero panel gradient to add depth */
-.hero { background: linear-gradient(135deg, rgba(91,140,255,0.12), rgba(97,231,190,0.10)); border-radius: 1rem; }
+.hero { background: linear-gradient(135deg, rgba(91,140,255,0.12), rgba(97,231,190,0.10)); border-radius: 0; }
 
 /* About layout with profile photo */
-.about-layout { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: start; margin-top: 1rem; }
+.about-layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; margin-top: 3rem; }
 @media (min-width: 900px) { .about-layout { grid-template-columns: 340px 1fr; } }
 .about-media { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
 /* On large screens, top-align the photo with the About text and left-align within its column */

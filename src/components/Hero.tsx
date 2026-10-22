@@ -14,11 +14,11 @@ const Hero: React.FC<Props> = ({ name, headline: _headline, location, links, abo
   return (
     <section id="hero" className="section hero" aria-labelledby="hero-title">
       <div className="container">
-        {/* Replace hero/about content per request. */}
+        <p className="hero-eyebrow">Product engineer &amp; technical co-founder</p>
         <h1 id="hero-title" className="hero-title">
-          {/* Assumption: Use `name` dynamically and highlight it for quick scannability. */}
-          Hi, my name is <span className="name-highlight">{name}</span>. {about?.intro || 'I engineer systems that bring hardware to life and teach machines to think.'}
+          <span className="name-highlight">{name}</span>
         </h1>
+        <p className="hero-subtitle">{about?.intro || 'I engineer systems that bring hardware to life and teach machines to think.'}</p>
         <p className="hero-meta" aria-label="Location">{location} • MS Software Engineering @ ASU</p>
         <div className="hero-cta">
           <a className="btn" href={new URL('../../assets/CV.pdf', import.meta.url).href} download aria-label="Download CV"><FileDown size={16} /> Download CV</a>
