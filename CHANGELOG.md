@@ -1,3 +1,8 @@
+## 2026-10-22 - CV layout and experience updates
+
+- Restored the earlier serif CV template, broadened the professional summary, and added six selected projects.
+- Listed Pretorin as Product Engineer since May 2026 and condensed Handshake to one bullet.
+
 ## 2025-09-15 — Refactor to React/Vite, data-driven content
 
 - Parsed `assets/CV.pdf` and created `data/profile.json` with Experience, Projects, Achievements, Skills, Education.

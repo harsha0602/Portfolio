@@ -17,7 +17,8 @@ assert.equal(evaluate('document.querySelectorAll(".card-overview-text").length')
 const allCopy = evaluate('document.querySelector("main").textContent');
 assert.doesNotMatch(allCopy, /[\u2014\u2013\u2011]|AI-native|audit-ready|sophisticated AI|showing mastery|prestigious universities/iu);
 assert.match(allCopy, /Compliance Claw/);
-assert.match(allCopy, /full-time Product Engineer in September/);
+assert.match(allCopy, /Product Engineer at Pretorin since May 2026/);
+assert.doesNotMatch(allCopy, /joined as an intern|became a full-time Product Engineer/i);
 
 const achievements = evaluate('document.querySelector("#achievements").innerText');
 assert.match(achievements, /Built and launched TappedIn/);
