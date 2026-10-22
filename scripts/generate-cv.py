@@ -56,8 +56,10 @@ for item in profile['experience']:
  story.append(Spacer(1,4))
 story.append(PageBreak())
 story+=section('SELECTED PROJECTS')
-for name in ['FluidFill','Realtime Study Rooms','Clozyt','FluxRate','Safe Python Execution Service','Market Risk Forecasting Dashboard']:
- item=next(p for p in profile['projects'] if p['name']==name)
+cv_projects=json.loads((ROOT / 'data/cv-projects.json').read_text())
+project_lookup={item['name']:item for item in profile['projects']+cv_projects['additional']}
+for name in cv_projects['selected']:
+ item=project_lookup[name]
  links=[]
  for label,key in [('Code','repo'),('Demo','demo')]:
   if item['links'].get(key):links.append('<link href="'+escape(item['links'][key],{'"':'&quot;'})+'" color="blue"><u>'+label+'</u></link>')
