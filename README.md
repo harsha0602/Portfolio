@@ -42,6 +42,15 @@ Validate: `npm run test:content` ensures required fields and ISO date formats, a
   - Push to `main` (or `master`). The workflow will run automatically.
   - In the repository settings, under Pages, set the source to "GitHub Actions" if not already.
   - First deploy may take a minute; check the Actions tab for status.
-  
 
-  
+
+
+## Responsive UI regression checks
+
+Build and serve the production bundle with `npm run build` and `npm run preview`. With the shared gstack browser installed, run:
+
+```sh
+BROWSE_BIN=/path/to/gstack/browse/dist/browse node scripts/validate-ui.mjs http://127.0.0.1:4173/Portfolio/
+```
+
+The check covers 18 viewport sizes from 320px to 1920px, including landscape and both sides of layout breakpoints, in light and dark themes. It tests section navigation, all experience/project detail controls, keyboard activation, touch-target heights, clipping, broken loaded images, theme persistence, and browser errors. Run this before merging UI changes. This uses Chromium viewport emulation; physical-device and other browser-engine testing remain separate checks.
