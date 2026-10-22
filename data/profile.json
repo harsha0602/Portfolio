@@ -308,27 +308,20 @@
   ],
   "achievements": [
     {
+      "title": "Built and launched TappedIn",
+      "issuer": "TappedIn · Technical Co-founder",
+      "summary": "Technical co-founder of a music-discovery app, live on the App Store with over 1,000 users."
+    },
+    {
       "title": "Visual AI Hackathon Winner",
-      "issuer": "Voxel51 (sponsor)",
+      "issuer": "Voxel51 · Arizona State University",
       "date": "2025-02",
-      "summary": "Led development of an OCR-based AI model for food safety using Python and Pytesseract."
+      "summary": "Won with Food Sage, a team-built app that scans food labels, extracts ingredients, and categorizes potential ingredient risks."
     },
     {
-      "title": "Performer of the Quarter",
+      "title": "2× Performer of the Quarter",
       "issuer": "o9 Solutions",
-      "date": "2021-12",
-      "summary": "Recognized for overdelivering full-stack modules and refactoring the unit-test codebase while meeting demanding SLAs."
-    },
-    {
-      "title": "Performer of the Quarter",
-      "issuer": "o9 Solutions",
-      "date": "2022-06",
-      "summary": "Recognized for overdelivering full-stack modules and refactoring the unit-test codebase while meeting demanding SLAs."
-    },
-    {
-      "title": "AWS Certified Solutions Architect — Associate",
-      "issuer": "Amazon Web Services",
-      "summary": "Validated ability to design and deploy secure, reliable cloud solutions on AWS."
+      "summary": "Received o9 Solutions’ Performer of the Quarter award twice."
     }
   ],
   "education": [
