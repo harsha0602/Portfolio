@@ -278,3 +278,9 @@ img { max-width: 100%; height: auto; }
   .card-subtitle { font-size: .9rem; }
   .card-meta { font-size: .8rem; }
 }
+
+/* Give each card a useful summary before the detailed work. */
+.card-overview-text { margin: .85rem 0 0; color: var(--color-muted); line-height: 1.6; text-wrap: pretty; }
+.card-details .highlights { margin: 1rem 0; padding-left: 1.25rem; }
+.card-details .highlights li { margin: .65rem 0; }
+.card-details .tech-line { margin: 1rem 0; color: var(--color-muted); font-size: .9rem; }

@@ -1,4 +1,4 @@
-# Harshavardhan Kuthadi — Portfolio
+# Harshavardhan Kuthadi | Portfolio
 
 Refactored to a minimal React + Vite app with content sourced from `assets/CV.pdf` and centralized in `data/profile.json`.
 
@@ -14,17 +14,17 @@ Refactored to a minimal React + Vite app with content sourced from `assets/CV.pd
 - Fields:
   - `name`, `headline`, `location`, `links`
   - `skills` grouped as `Languages`, `Frameworks/Tools`, `Cloud/Databases`
-  - `experience[]` with `company`, `role`, `location`, `start`, `end`, `highlights[]`, `tech[]`
-  - `projects[]` with `name`, `summary`, `tech[]`, `highlights[]`, `links{repo,demo}`
+  - `experience[]` with `company`, `overview`, `role`, `location`, `start`, `end`, `highlights[]`, `tech[]`
+  - `projects[]` with `name`, `overview`, `summary`, `tech[]`, `highlights[]`, `links{repo,demo}`
   - `achievements[]` with `title`, `issuer`, `date(YYYY-MM)`, `summary`
   - `education[]` with `school`, `degree`, `start`, `end`, `details`
 
 Validate: `npm run test:content` ensures required fields and ISO date formats, and verifies experience is sorted newest-first.
 
 ## Add a New Project / Experience
-- Project: add an object to `projects[]` with tech and 1–2 impacts (quantified when possible). External links should use `target="_blank"` and `rel="noopener noreferrer"`.
+- Project: add an object to `projects[]` with tech and one or two impacts (quantified when possible). External links should use `target="_blank"` and `rel="noopener noreferrer"`.
 - Experience: add to `experience[]` and keep `start`/`end` as `YYYY-MM`. Up to 3 highlights recommended.
-- Keep entries concise and scannable; the UI shows 1–2 sentences and up to 3 bullet highlights.
+- Each card shows a short overview. Read details reveals the description, work bullets, tools, and links.
 
 ## Run Lighthouse Locally
 - After `npm run build`, run `npm run preview`.

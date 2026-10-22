@@ -17,7 +17,7 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
     <section id="projects" className="section" aria-labelledby="projects-title">
       <div className="container">
         <h2 id="projects-title" className="section-title"><Brain size={18}/> Projects</h2>
-        <p className="section-intro">Selected builds with measurable impact.</p>
+        <p className="section-intro">Things I have built, from class projects to apps.</p>
         <div className="grid">
           {items.map((p) => {
             const img = projectImage(p.name);
@@ -40,6 +40,7 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
                 <header className="card-header">
                   <h3 className="card-title">{p.name}</h3>
                   {p.date && <p className="card-meta">{p.date}</p>}
+                  {p.overview && <p className="card-overview-text">{p.overview}</p>}
                 </header>
               </div>
             );
@@ -48,11 +49,11 @@ const Projects: React.FC<{ items: ProjectItem[] }> = ({ items }) => {
                 <header className="card-header">
                   <h3 className="card-title">{p.name}</h3>
                 </header>
-                {/* Detailed description with emphasized metrics and tech; plus explicit tech stack line */}
-                <div>
-                  {renderSummaryWithEmphasis(p.summary, p.tech)}
-                </div>
-                {/* Highlights removed to avoid duplication with narrative. */}
+                <p className="summary-par">{p.summary}</p>
+                <ul className="highlights">
+                  {p.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                </ul>
+                <p className="tech-line">Built with: {p.tech.join(', ')}</p>
                 <footer className="card-actions">
                   {p.links.demo && (
                     <a className="btn btn-tertiary" href={p.links.demo} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} demo`}>
@@ -96,42 +97,12 @@ function projectImage(name: string): { src: string; alt: string } | null {
   if (n.includes('haas')) return { src: new URL('../../assets/images/HAAS (Heuristic Algorithmic Analysis System).png', import.meta.url).href, alt: 'HAAS (Heuristic Algorithmic Analysis System)' };
   if (n.includes('pokemon')) return { src: new URL('../../assets/images/Pokemon Game Engine.png', import.meta.url).href, alt: 'Pokémon Game Engine' };
   if (n.includes('agile') && n.includes('project')) return { src: new URL('../../assets/images/Agile Project Management App (kanban concept.png', import.meta.url).href, alt: 'Agile Project Management App' };
-  if (n.includes('swipe') && n.includes('shop')) return { src: new URL('../../assets/images/Swipe to shop.png', import.meta.url).href, alt: 'Swipe-to-Shop Fashion PWA' };
-  if (n.includes('fluidfill')) return { src: new URL('../../assets/images/fluidfill_cover.png', import.meta.url).href, alt: 'FluidFill — AI Document Automation' };
+  if (n.includes('clozyt') || (n.includes('swipe') && n.includes('shop'))) return { src: new URL('../../assets/images/Swipe to shop.png', import.meta.url).href, alt: 'Swipe-to-Shop Fashion PWA' };
+  if (n.includes('fluidfill')) return { src: new URL('../../assets/images/fluidfill_cover.png', import.meta.url).href, alt: 'FluidFill document forms' };
   if (n.includes('realtime') && n.includes('study')) return { src: new URL('../../assets/images/Realtime_study.png', import.meta.url).href, alt: 'Realtime Study Rooms' };
-  if (n.includes('fluxrate') || (n.includes('adaptive') && n.includes('pricing'))) return { src: new URL('../../assets/images/FluxRate.png', import.meta.url).href, alt: 'FluxRate Adaptive Pricing Engine' };
+  if (n.includes('fluxrate') || (n.includes('adaptive') && n.includes('pricing'))) return { src: new URL('../../assets/images/FluxRate.png', import.meta.url).href, alt: 'FluxRate parking simulation' };
   // Generic fallback
   return { src: new URL('../../assets/images/replace-me.svg', import.meta.url).href, alt: `${name} illustration placeholder` };
-}
-
-// Reuse emphasis helper similar to Experience to bold metrics and tech terms
-function renderSummaryWithEmphasis(text: string, tech: string[]) {
-  const paras = text.split(/\n\s*\n/);
-  const items = paras.map((par, i) => (
-    <p key={i} className="summary-par" dangerouslySetInnerHTML={{ __html: emphasize(par.trim(), tech) }} />
-  ));
-  const techLine = (
-    <p key="tech" className="summary-par tech-line"><strong>Tech stack:</strong> {tech.join(' · ')}</p>
-  );
-  return [ ...items, techLine ];
-}
-
-function emphasize(s: string, tech: string[]) {
-  let out = escapeHtml(s);
-  out = out.replace(/(~?\d+(?:\.\d+)?\s?(?:%|dB|ms|GB|TB))|(\b\d+\+\b)/gi, '<strong>$&</strong>');
-  for (const t of tech) {
-    const rx = new RegExp(`\\b${escapeReg(t)}\\b`, 'gi');
-    out = out.replace(rx, (m) => `<strong>${m}</strong>`);
-  }
-  return out;
-}
-
-function escapeHtml(s: string) {
-  return s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c] as string));
-}
-
-function escapeReg(s: string) {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 export default Projects;

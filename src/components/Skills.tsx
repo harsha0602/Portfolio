@@ -14,7 +14,7 @@ const Skills: React.FC<Props> = ({ skills }) => {
     <section id="skills" className="section" aria-labelledby="skills-title">
       <div className="container">
         <h2 id="skills-title" className="section-title"><Wrench size={18}/> Skills</h2>
-        <p className="section-intro">Tools I use often.</p>
+        <p className="section-intro">Languages and tools I have worked with.</p>
         <div className="skills-grid">
           {Object.entries(skills).map(([group, list]) => (
             <div className="skills-card" key={group}>

@@ -17,14 +17,14 @@ const Education: React.FC<{ items: EducationItem[] }> = ({ items }) => (
   <section id="education" className="section" aria-labelledby="education-title">
     <div className="container">
       <h2 id="education-title" className="section-title"><GraduationCap size={18}/> Education</h2>
-      <p className="section-intro">My formal education at prestigious universities.</p>
+      <p className="section-intro">Where I studied.</p>
       <div className="grid">
         {items.map((e) => (
           <article key={`${e.school}-${e.degree}`} className="card">
             <header className="card-header">
               <h3 className="card-title">{e.school}</h3>
               <p className="card-subtitle">{e.degree}</p>
-              <p className="card-meta">{fmt(e.start)} – {fmt(e.end)}</p>
+              <p className="card-meta">{fmt(e.start)} to {fmt(e.end)}</p>
             </header>
             <p>{e.details}</p>
           </article>
