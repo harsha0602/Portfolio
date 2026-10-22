@@ -29,7 +29,7 @@ export type ProjectItem = {
 export type AchievementItem = {
   title: string;
   issuer: string;
-  date: string; // ISO YYYY-MM
+  date?: string; // ISO YYYY-MM when known
   summary: string;
 };
 export type EducationItem = {

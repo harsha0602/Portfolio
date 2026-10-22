@@ -85,6 +85,11 @@ const Experience: React.FC<{ items: ItemWithSummary[] }> = ({ items }) => {
                     <a href={companyLink(exp.company)!} target="_blank" rel="noopener noreferrer" className="btn" style={{background: '#20C997', color: '#000'}} onClick={(e) => e.stopPropagation()}>
                       Visit Site <ExternalLink size={14} style={{marginLeft: '.3rem'}} />
                     </a>
+                    {exp.company === 'TappedIn' && (
+                      <a href="https://apps.apple.com/us/app/tappedin-music-scouting/id6749257951" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" aria-label="Open TappedIn on the App Store">
+                        App Store <ExternalLink size={14} aria-hidden="true" />
+                      </a>
+                    )}
                   </div>
                 )}
               </div>

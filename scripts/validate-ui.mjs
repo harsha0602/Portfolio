@@ -13,6 +13,13 @@ run('goto', url);
 run('console', '--clear');
 const count = evaluate('document.querySelectorAll(".card-toggle").length');
 assert.equal(count, 20, 'Expected 6 experience and 14 project cards');
+const achievements = evaluate('document.querySelector("#achievements").innerText');
+assert.match(achievements, /Built and launched TappedIn/);
+assert.match(achievements, /2× Performer of the Quarter/);
+assert.doesNotMatch(achievements, /AWS Certified|top 10|2021-12|2022-06/i);
+assert.equal(evaluate('document.querySelectorAll("#achievements article").length'), 3);
+assert(!evaluate('[...document.querySelectorAll("#achievements .chip")].some(e => !e.textContent.trim())'));
+
 for (const [width, height] of sizes) {
   run('viewport', `${width}x${height}`);
   for (const theme of ['dark', 'light']) {
@@ -40,6 +47,13 @@ for (const [width, height] of sizes) {
       const state = evaluate(`(() => {const b=document.querySelectorAll('.card-toggle')[${i}];const d=document.getElementById(b.getAttribute('aria-controls'));return {expanded:b.getAttribute('aria-expanded'),visible:!d.hidden && d.getBoundingClientRect().height>0,clipped:d.scrollHeight>d.clientHeight+1,overflow:document.documentElement.scrollWidth>innerWidth};})()`);
       assert.equal(state.expanded, 'true');
       assert(state.visible && !state.clipped && !state.overflow, `Card ${i} at ${width}/${theme}: ${JSON.stringify(state)}`);
+      if (i === 1) {
+        const appLink = evaluate(`(() => {const a=document.querySelector('#experience article:nth-child(2) a[aria-label="Open TappedIn on the App Store"]');const r=a.getBoundingClientRect();return {href:a.href,target:a.target,rel:a.rel,height:r.height,width:r.width,visible:r.height>0};})()`);
+        assert.equal(appLink.href, 'https://apps.apple.com/us/app/tappedin-music-scouting/id6749257951');
+        assert.equal(appLink.target, '_blank');
+        assert.match(appLink.rel, /noopener/);
+        assert(appLink.visible && appLink.height >= 44 && appLink.width >= 44);
+      }
       run('click', selector);
       assert(evaluate(`document.querySelectorAll('.card-details')[${i}].hidden`));
     }

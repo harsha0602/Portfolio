@@ -182,7 +182,7 @@ html[data-theme='dark'] .developing-bubble {
 .card-subtitle { margin: 0 0 .25rem; color: var(--color-muted); }
 .card-location { opacity: 0.95; }
 .card-meta { margin: 0 0 .5rem; color: var(--color-muted); font-size: .95rem; }
-.card-actions { display: flex; gap: .5rem; margin-top: .5rem; }
+.card-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
 .company-logo { width: 20px; height: 20px; object-fit: contain; display: inline-block; }
 .summary-par { margin: 0 0 .6rem; }
 .tech-line { opacity: 0.9; }
