@@ -36,6 +36,17 @@ const Hero: React.FC<Props> = ({ name, headline, location, links, about }) => {
               loading="lazy"
               decoding="async"
             />
+            <a
+              className="developing-bubble"
+              href="https://pretorin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Developing Pretorin (opens in a new tab)"
+            >
+              <span className="bubble-dot" aria-hidden="true" />
+              <span>Developing <span className="developing-company">Pretorin</span></span>
+              <span className="bubble-arrow" aria-hidden="true">↗</span>
+            </a>
           </div>
           <div className="about-content">
             {/* About block (revamped) */}

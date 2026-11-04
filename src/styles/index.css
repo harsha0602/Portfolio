@@ -108,9 +108,12 @@ html[data-theme='dark'] body { background: var(--color-bg); }
 }
 .about-photo { width: 100%; max-width: 320px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: .8rem; border: 1px solid var(--color-border); box-shadow: var(--shadow); }
 
-/* Developing tappedin bubble */
+/* Current-work link beneath the profile photo. */
 .developing-bubble {
   display: inline-flex;
+  max-width: 100%;
+  min-height: 44px;
+  text-decoration: none;
   align-items: center;
   gap: 0.6rem;
   background: linear-gradient(135deg, rgba(97, 231, 190, 0.2) 0%, rgba(91, 140, 255, 0.15) 100%);
@@ -130,6 +133,7 @@ html[data-theme='dark'] body { background: var(--color-bg); }
   box-shadow: 0 6px 25px rgba(97, 231, 190, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .bubble-dot {
+  flex-shrink: 0;
   width: 8px;
   height: 8px;
   background: linear-gradient(135deg, #61e7be 0%, #22C55E 100%);
@@ -137,23 +141,14 @@ html[data-theme='dark'] body { background: var(--color-bg); }
   animation: dot-blink 1.5s ease-in-out infinite;
   box-shadow: 0 0 8px rgba(97, 231, 190, 0.6);
 }
-.bubble-text {
-  display: inline;
-}
-.tappedin-link {
-  color: var(--color-primary);
-  font-weight: 700;
-  text-decoration: none;
-  background: linear-gradient(135deg, #61e7be, #5B8CFF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: opacity 0.3s ease;
-}
-.tappedin-link:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-  text-decoration-color: #61e7be;
+.developing-company { color: var(--color-accent); font-weight: 700; }
+.bubble-arrow { color: var(--color-accent); transition: transform .2s ease; }
+.developing-bubble:hover .bubble-arrow { transform: translate(2px, -2px); }
+.developing-bubble:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .developing-bubble, .bubble-dot { animation: none; }
+  .developing-bubble, .bubble-arrow { transition: none; }
+  .developing-bubble:hover, .developing-bubble:hover .bubble-arrow { transform: none; }
 }
 @keyframes bubble-glow {
   0%, 100% { box-shadow: 0 4px 20px rgba(97, 231, 190, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
