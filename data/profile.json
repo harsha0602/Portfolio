@@ -311,7 +311,7 @@
     {
       "name": "JobCity",
       "date": "Jun 2026",
-      "overview": "A 3D job-search tracker with listings collected from public job feeds.",
+      "overview": "A 3D city that makes finding jobs and discovering candidates feel more like a game.",
       "tech": [
         "React Three Fiber",
         "FastAPI",
@@ -322,10 +322,10 @@
         "repo": "https://github.com/harsha0602/JobCity"
       },
       "highlights": [
-        "Built a 3D interface for exploring jobs and tracking applications, backed by FastAPI and MongoDB.",
-        "Added ingestion adapters for five ATS sources and normalized their listings. Added tests for access rules, job filters, and ingestion, with CI for tests and container builds."
+        "The company map groups jobs by employer and location. Taller buildings represent more openings, and a company keeps the same color across locations.",
+        "The recruiter map was designed to give each candidate a building whose height reflects how many applications they have sent. Recruiters would see the count without seeing individual application details."
       ],
-      "summary": "JobCity gives job seekers a 3D view of open roles and a place to track their applications. It pulls listings from five public applicant tracking systems and puts them in a common format."
+      "summary": "I started JobCity to see if finding a job or a candidate could feel like exploring a city. Job seekers can filter open roles and visit companies on a 3D map. I built the job search prototype using live listings from five public job feeds and designed a second map for recruiters."
     },
     {
       "name": "Food Sage",
