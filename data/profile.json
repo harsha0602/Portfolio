@@ -310,7 +310,7 @@
     },
     {
       "name": "JobCity",
-      "date": "",
+      "date": "Jun 2026",
       "overview": "A 3D job-search tracker with listings collected from public job feeds.",
       "tech": [
         "React Three Fiber",
