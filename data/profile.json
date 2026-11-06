@@ -309,6 +309,43 @@
       "overview": "A parking simulation with gate controls and prices that change with demand."
     },
     {
+      "name": "JobCity",
+      "date": "",
+      "overview": "A 3D job-search tracker with listings collected from public job feeds.",
+      "tech": [
+        "React Three Fiber",
+        "FastAPI",
+        "MongoDB",
+        "Docker"
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/JobCity"
+      },
+      "highlights": [
+        "Built a 3D interface for exploring jobs and tracking applications, backed by FastAPI and MongoDB.",
+        "Added ingestion adapters for five ATS sources and normalized their listings. Added tests for access rules, job filters, and ingestion, with CI for tests and container builds."
+      ],
+      "summary": "JobCity gives job seekers a 3D view of open roles and a place to track their applications. It pulls listings from five public applicant tracking systems and puts them in a common format."
+    },
+    {
+      "name": "Food Sage",
+      "date": "Feb 2025",
+      "overview": "A team project that extracts ingredients from photos of food labels.",
+      "tech": [
+        "Python",
+        "OpenCV",
+        "Tesseract OCR"
+      ],
+      "links": {
+        "repo": "https://github.com/harsha0602/foodSage"
+      },
+      "highlights": [
+        "Worked on image preprocessing and OCR to locate ingredient lists and extract their text.",
+        "Won the Visual AI Hackathon with the Food Sage team at Arizona State University."
+      ],
+      "summary": "Food Sage reads ingredient lists from photos of food packaging. Our team used image preprocessing and optical character recognition to pick out the ingredient panel and extract its text."
+    },
+    {
       "name": "Market Risk Forecasting Dashboard",
       "date": "Apr 2025",
       "summary": "I built a Python project to study market volatility and drawdown risk. It prepares historical price data, trains LSTM models, and compares their predictions with statistical baselines.",

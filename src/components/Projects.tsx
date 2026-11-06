@@ -101,6 +101,8 @@ function projectImage(name: string): { src: string; alt: string } | null {
   if (n.includes('fluidfill')) return { src: new URL('../../assets/images/fluidfill_cover.png', import.meta.url).href, alt: 'FluidFill document forms' };
   if (n.includes('realtime') && n.includes('study')) return { src: new URL('../../assets/images/Realtime_study.png', import.meta.url).href, alt: 'Realtime Study Rooms' };
   if (n.includes('fluxrate') || (n.includes('adaptive') && n.includes('pricing'))) return { src: new URL('../../assets/images/FluxRate.png', import.meta.url).href, alt: 'FluxRate parking simulation' };
+  if (n === 'jobcity') return { src: new URL('../../assets/images/jobcity-cover.webp', import.meta.url).href, alt: 'Illustration of a city with job listings floating over buildings' };
+  if (n === 'food sage') return { src: new URL('../../assets/images/food-sage-cover.webp', import.meta.url).href, alt: 'Illustration of a phone scanning ingredients on a food package' };
   // Generic fallback
   return { src: new URL('../../assets/images/replace-me.svg', import.meta.url).href, alt: `${name} illustration placeholder` };
 }
